@@ -25,7 +25,7 @@ export const gbpLocation = {
   ],
   menuUrl: "/",
   directionsUrl: "https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9",
-  mapEmbedUrl: "https://maps.google.com/maps?q=Brampton%20Smoke%20Cannabis%20132%20Falby%20Rd%20Unit%20B%2C%20Brampton%2C%20ON%20L6P%204L9&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  mapEmbedUrl: "https://maps.google.com/maps?q=132%20Falby%20Rd%20Unit%20B%2C%20Brampton%2C%20ON%20L6P%204L9&t=&z=15&ie=UTF8&iwloc=&output=embed",
   latitude: "43.7915",
   longitude: "-79.6432",
   hours: ["Open 24 Hours"],
