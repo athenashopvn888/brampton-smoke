@@ -74,6 +74,7 @@ export default function Footer() {
               <Link href="/info/cheap-weed-york">Cheap Weed Brampton</Link>
               <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
               <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
+              <Link href="/weed-dispensary-brampton/">Brampton Smoke Cannabis Weed Dispensary in Brampton</Link>
               <Link href="/contact">Contact Us</Link>
               <a
                 href="https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9"
