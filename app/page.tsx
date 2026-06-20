@@ -300,7 +300,7 @@ export default function HomePage() {
               Welcome to <strong>Brampton Smoke Cannabis</strong>, Brampton's premier 24-hour cannabis destination at 132 Falby Rd Unit B. We carry an electrifying selection of top-shelf strains around the clock — from ultra-rare exotics to solid everyday budget picks.
             </p>
             <p className={styles.seoPanelText}>
-              Open 24 hours, 7 days a week — Brampton Smoke Cannabis never closes. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down after a late shift or stocking up for the weekend, our knowledgeable staff is always here for you.
+              Open 24 hours, 7 days a week — Brampton Smoke Cannabis never closes. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down after a late shift or stocking up for the weekend, our knowledgeable staff can help during listed store hours.
             </p>
             <p className={styles.seoPanelText}>
               Searching for a cannabis dispensary in Brampton or the surrounding area? Brampton Smoke Cannabis is your 24-hour destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
@@ -361,14 +361,6 @@ export default function HomePage() {
           </div>
 
           <div className={styles.reviewCtaRow}>
-            <a
-              href="https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.reviewsWrite}
-            >
-              ✍ Write a Google Review
-            </a>
           </div>
         </div>
       </section>
@@ -400,14 +392,6 @@ export default function HomePage() {
                 <br />
                 Brampton, ON L6P 4L9
                 <br />
-                <a
-                  href="https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.storeLink}
-                >
-                  Get Directions →
-                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -432,16 +416,6 @@ export default function HomePage() {
 
           {/* Map wrapper */}
           <div className={styles.mapWrap}>
-            <iframe
-              src="https://maps.google.com/maps?q=132%20Falby%20Rd%20Unit%20B,+Brampton,+ON+L6P%204L9&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="350"
-              style={{ border: 0, display: "block" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Brampton Smoke Cannabis — 132 Falby Rd Unit B, Brampton"
-            ></iframe>
           </div>
         </div>
       </section>

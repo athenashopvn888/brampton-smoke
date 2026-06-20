@@ -101,20 +101,9 @@ const jsonLd = {
       closes: "23:59",
     },
   ],
-  sameAs: [
-    "https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9",
-    "https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9",
-  ],
-  hasMap: "https://maps.google.com/?q=132+Falby+Rd+Unit+B,+Brampton,+ON+L6P+4L9",
   areaServed: {
     "@type": "City",
     name: "Brampton",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "15",
-    bestRating: "5",
   },
 };
 
