@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://bramptonsmokecannabis.com"),
   title: {
-    default: "Brampton Smoke Cannabis — Premium Cannabis Dispensary, Brampton",
+    default: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
     template: "%s | Brampton Smoke Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at Brampton Smoke Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Brampton's uplifting dispensary at 132 Falby Rd Unit B. Open 24 Hours.",
+    "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Brampton",
     "weed store Brampton",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://bramptonsmokecannabis.com",
     siteName: "Brampton Smoke Cannabis",
-    title: "Brampton Smoke Cannabis — Premium Brampton Cannabis Dispensary",
+    title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Brampton's uplifting dispensary at 132 Falby Rd Unit B. Open 24 Hours.",
+      "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
         url: "https://bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brampton Smoke Cannabis — Brampton's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 132 Falby Rd Unit B, Brampton.",
+    title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
+    description: "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: ["https://bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
