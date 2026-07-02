@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "BSC01",
   storeName: "Brampton Smoke Cannabis",
   city: "Brampton",
-  domain: "bramptonsmokecannabis.com",
+  domain: "www.bramptonsmokecannabis.com",
   storePath: "/weed-dispensary-brampton",
 };
 
