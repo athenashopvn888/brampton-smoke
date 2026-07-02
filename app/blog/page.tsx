@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import BlogContent from "./BlogContent";
+import { STORE_BLOG_CONFIG } from "./staticPosts";
 
 export const metadata: Metadata = {
-  title: "Cannabis Blog & Guides — Brampton Smoke Cannabis | Brampton",
-  description: "Read the latest strain reviews, dosing guides, and cannabis news from Brampton Smoke Cannabis in Brampton.",
+  title: `${STORE_BLOG_CONFIG.storeName} Blog | Adult 19+ Store Guides`,
+  description: `Read adult 19+ store guides and local visit-planning notes from ${STORE_BLOG_CONFIG.storeName}.`,
   alternates: {
-    canonical: "https://bramptonsmokecannabis.com/blog",
+    canonical: `https://${STORE_BLOG_CONFIG.domain}/blog`,
   },
 };
 
