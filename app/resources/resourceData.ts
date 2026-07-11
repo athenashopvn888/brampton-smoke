@@ -68,7 +68,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "heading": "Local Notes For Brampton",
-        "body": "Brampton Smoke Cannabis serves shoppers around Brampton, Queen Street, Kennedy Road, Bramalea. If you searched for a weed dispensary in Brampton, this resource section keeps the visit simple: right store, right menu lane, right next step."
+        "body": "Brampton Smoke Cannabis serves shoppers around Brampton. If you searched for a weed dispensary in Brampton, this resource section keeps the visit simple: right store, right menu lane, right next step."
       }
     ]
   },
@@ -233,7 +233,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "seoTitle": "Brampton Smoke Cannabis Resource Centre Launch",
     "description": "The Brampton Smoke Cannabis resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     "eyebrow": "Resource Update",
-    "intro": "The resource centre is here to make the menu easier to shop. No stiff SEO talk, no fake certainty, just cleaner notes for real shoppers.",
+    "intro": "The resource centre is here to make the menu easier to shop. No stiff SEO talk, no stale menu claims, just cleaner notes for real shoppers.",
     "cards": [
       {
         "title": "Menu Guide",
@@ -276,9 +276,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "slug": "native-smokes",
     "title": "Brampton Smoke Cannabis Native Smokes Resource",
     "seoTitle": "Brampton Smoke Cannabis Native Smokes | $25 Carton Notes",
-    "description": "Brampton Smoke Cannabis Native smokes resource with cigarette brand names shown on the menu and $25 carton notes where listed.",
+    "description": "Brampton Smoke Cannabis Native smokes resource with cigarette brand names shown in the store source file and $25/carton notes where listed.",
     "eyebrow": "Native Smokes",
-    "intro": "Brampton Smoke Cannabis shoppers looking for Native smokes can use this page as a cleaner starting point. Brand names shown on the cigarette menu include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Nexus Full, Nexus Lights, and Time Full. Some carton-style listings show around $25, but shoppers should check the current menu or staff before making the trip.",
+    "intro": "Brampton Smoke Cannabis shoppers looking for Native smokes can use this page as a cleaner starting point. The store source file currently shows these $25/carton cigarette lines: Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights. Check the current menu or staff before making the trip.",
     "cards": [
       {
         "title": "Cigarette Menu",
@@ -298,25 +298,31 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Brands Shoppers May See",
-        "body": "The cigarette menu may show brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Nexus Full, Nexus Lights, and Time Full. The exact shelf can change, so treat this as a menu guide and confirm current options before choosing.",
+        "heading": "Brand Names Shown In The Store Source",
+        "body": "The cigarette menu source currently lists these $25/carton lines: Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights. Treat this as a menu guide and confirm current options before choosing.",
         "bullets": [
-          "Canadian Lights",
-          "Canadian Full",
-          "Putters",
-          "Canadian Goose Full",
-          "Canadian Goose Lights",
-          "Canadian Menthol",
+          "Rolled Gold Full",
+          "Rolled Gold Lights",
+          "BB Full Carton",
+          "BB Lights Carton",
           "Canadian Classics Original",
           "Canadian Classics Silver",
+          "Canadian Full",
+          "Canadian Goose Full",
+          "Canadian Goose Lights",
+          "Canadian Lights",
+          "Canadian Menthol",
           "Nexus Full",
           "Nexus Lights",
-          "Time Full"
+          "Playfare Ultra Lights",
+          "Putters",
+          "Time Full",
+          "Time Lights"
         ]
       },
       {
-        "heading": "$25 Carton Notes",
-        "body": "Where the menu lists $25 carton-style Native cigarettes, this resource points shoppers to the cigarette category first. Check the current menu or ask staff for what is available today."
+        "heading": "$25/carton Notes",
+        "body": "Where the menu lists $25/carton Native cigarettes, this resource points shoppers to the cigarette category first. Check the current menu or ask staff for what is available today."
       },
       {
         "heading": "Keep The Visit Simple",
@@ -328,9 +334,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "slug": "native-smokes/native-cigarettes-guide",
     "title": "Brampton Smoke Cannabis Native Cigarettes Guide",
     "seoTitle": "Brampton Smoke Cannabis Native Cigarettes Guide | Brands and Carton Notes",
-    "description": "A shopper-friendly Native cigarettes guide for Brampton Smoke Cannabis, including brand names shown on the menu and $25 carton notes where listed.",
+    "description": "A shopper-friendly Native cigarettes guide for Brampton Smoke Cannabis, including $25/carton brand names shown in the store source file.",
     "eyebrow": "Native Cigarettes Guide",
-    "intro": "If Native cigarettes are part of the stop, start with the cigarette category and compare the current listings. Brampton Smoke Cannabis menu brand names may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Nexus Full, Nexus Lights, and Time Full.",
+    "intro": "If Native cigarettes are part of the stop, start with the cigarette category and compare the current listings. Brampton Smoke Cannabis source data currently includes these $25/carton lines: Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights.",
     "cards": [
       {
         "title": "Cigarette Menu",
@@ -350,20 +356,26 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Compare The Brand Names",
-        "body": "Look for the brand name first, then compare the posted price and any item notes. The menu may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Nexus Full, Nexus Lights, and Time Full.",
+        "heading": "Compare The $25/carton Brand Names",
+        "body": "Look for the brand name first, then compare the posted price and any item notes. The store source currently includes Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights.",
         "bullets": [
-          "Canadian Lights",
-          "Canadian Full",
-          "Putters",
-          "Canadian Goose Full",
-          "Canadian Goose Lights",
-          "Canadian Menthol",
+          "Rolled Gold Full",
+          "Rolled Gold Lights",
+          "BB Full Carton",
+          "BB Lights Carton",
           "Canadian Classics Original",
           "Canadian Classics Silver",
+          "Canadian Full",
+          "Canadian Goose Full",
+          "Canadian Goose Lights",
+          "Canadian Lights",
+          "Canadian Menthol",
           "Nexus Full",
           "Nexus Lights",
-          "Time Full"
+          "Playfare Ultra Lights",
+          "Putters",
+          "Time Full",
+          "Time Lights"
         ]
       },
       {

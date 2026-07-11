@@ -63,10 +63,10 @@ export default function Footer() {
               <Link href="/blog/brampton-smoke-cannabis-local-visit-guide-2026">Local Visit Guide</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/info/york-weed-dispensary">Brampton Dispensary</Link>
-              <Link href="/info/cheap-weed-york">Cheap Weed Brampton</Link>
-              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
+              <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>
+              <Link href="/info/cheap-weed-brampton">Cheap Weed Brampton</Link>
+              <Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>
+              <Link href="/info/weed-store-near-brampton">Weed Store Near Brampton</Link>
               <Link href="/weed-dispensary-brampton/">Brampton Smoke Cannabis Weed Dispensary in Brampton</Link>
               <Link href="/contact">Contact Us</Link>
             </nav>
