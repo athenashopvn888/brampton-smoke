@@ -4,61 +4,49 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ — Brampton Smoke Cannabis | Brampton Dispensary Questions",
-  description:
-    "Frequently asked questions about Brampton Smoke Cannabis in Brampton. Hours, location, products, pricing, bundle offers, and everything you need to know before visiting.",
+  title: "FAQ | Brampton Smoke Cannabis",
+  description: "Frequently asked questions about Brampton Smoke Cannabis in Brampton, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
   alternates: {
-    canonical: "https://bramptonsmokecannabis.com/faq",
+    canonical: "https://www.bramptonsmokecannabis.com/faq",
   },
 };
 
 const FAQ_CATEGORIES = [
   {
-    title: "📍 Location & Hours",
+    title: "Location and Hours",
     faqs: [
-      { q: "Where is Brampton Smoke Cannabis located?", a: "We are located at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. We're easily accessible by TTC bus routes and close to major highways like the 401." },
-      { q: "Is Brampton Smoke Cannabis open 24 hours?", a: "Yes. Brampton Smoke Cannabis at 132 Falby Rd Unit B in Brampton is a verified 24-hour location. Adult customers 19+ can use this page to review store details, hours, and menu/category links before visiting. Use the current store page or contact Brampton Smoke Cannabis directly before visiting to confirm the latest store details, hours, and menu/category information." },
-      { q: "Is there parking nearby?", a: "Yes. Free street parking is available nearby on surrounding streets in the evenings. We're also easily accessible by local transit." },
-      { q: "How far are you from Mississauga?", a: "We're just 5 minutes from the highways and central transit routes. We are centrally located and easy to reach." },
-      { q: "What's the best way to get to Brampton Smoke Cannabis?", a: "We're easily accessible by car, bus, or foot. We are easily accessible by car, local transit, or bus routes. Free parking is available on surrounding streets." },
+      { q: "Where is Brampton Smoke Cannabis located?", a: "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the store page for directions and contact options before visiting." },
+      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
+      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],
   },
   {
-    title: "🌿 Products & Menu",
+    title: "Products and Menu",
     faqs: [
-      { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." },
-      { q: "Do you have a live menu?", a: "Yes! Our online menu at bramptonsmokecannabis.com updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
-      { q: "What are your flower tiers?", a: "Exotic ($10-$12/g, THC 35-39%) — ultra-rare top-shelf genetics. Premium ($7-$10/g, THC 32-34%) — connoisseur-grade. AAA+ ($5-$6/g, THC 30-32%) — heavy hitters, our most popular tier. AA ($4/g, THC 27-29%) — quality daily drivers. Budget ($3/g, THC 24-27%) — reliable value flower." },
-      { q: "Do you sell edibles?", a: "Yes! We carry a variety of edibles including gummies, chocolates, baked goods, and more. THC content varies. Check our live menu for current availability." },
-      { q: "Do you sell vapes?", a: "Yes — both disposable vapes and refillable vape pens. We carry both nicotine vapes and THC vapes from top brands." },
-      { q: "Do you sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Brampton, including premium and value brands in multiple varieties." },
+      { q: "What menu categories can shoppers compare?", a: "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed." },
+      { q: "How should shoppers use the menu?", a: "Pick one category first, then compare product name, format, weight or package size, posted price, and item notes." },
+      { q: "Do menu details change?", a: "Yes. Product names, prices, and availability can change, so use the current menu or ask staff before making the trip." },
     ],
   },
   {
-    title: "💰 Pricing & Bundle Offers",
+    title: "Flower and Value",
     faqs: [
-      { q: "What is the cheapest weed you sell?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. These are the most competitive prices you'll find in Brampton." },
-      { q: "What bundle pricing do you offer?", a: "Flower bundle pricing includes a 3g total option — the 3g total is shown clearly before purchase. Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing, with 6g total pricing." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with freshness and quality guaranteed." },
-      { q: "How does bundle pricing work?", a: "The 3g bundle pricing applies to every tier automatically. The 6g bundle pricing applies to Exotic, Premium, and AAA+ tiers. These are our standard everyday bundle offers." },
-      { q: "How does the tier pricing work?", a: "Each flower strain is graded into one of five quality tiers. The tier determines the per-gram price. This transparent system means you always know exactly what you're paying — no confusing markups or inconsistent pricing." },
+      { q: "Where should cheap weed shoppers start?", a: "Start with Budget and AA flower, then compare the current listings before choosing." },
+      { q: "Where should premium flower shoppers start?", a: "Use Premium or Exotic flower when the visit is about the higher shelf lanes." },
+      { q: "How do shoppers avoid guessing?", a: "Stay inside one tier, compare the posted details, and ask staff when the final choice needs a current answer." },
     ],
   },
   {
-    title: "🛒 Shopping & Experience",
+    title: "Native Smokes",
     faqs: [
-      { q: "Do I need an appointment?", a: "No. Brampton Smoke Cannabis is walk-in only. Use the current store page or contact Brampton Smoke Cannabis directly before visiting to confirm the latest store details, hours, and menu/category information." },
-      { q: "Can I order online?", a: "Currently, Brampton Smoke Cannabis is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
-      { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
-      { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
-      { q: "Can your staff help me choose a strain?", a: "Absolutely! Our knowledgeable budtenders are here to help. Whether you're a first-time buyer or a seasoned connoisseur, we can recommend strains based on your preferences, desired effects, and budget." },
-      { q: "Is there a minimum purchase?", a: "No minimum purchase required. You can buy as little as 1 gram." },
+      { q: "Does Brampton Smoke Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
+      { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and availability through the menu or staff." },
+      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
     ],
   },
 ];
 
 export default function FAQPage() {
-  // JSON-LD for FAQ page
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -82,20 +70,10 @@ export default function FAQPage() {
       />
       <main className={styles.main}>
         <Navbar />
-
-        {/* FAQ Banner */}
-        <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
-          <img
-            src="/banners/07_FAQ.webp"
-            alt="Brampton Smoke Cannabis FAQ — Your Questions Answered"
-            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-          />
-        </section>
-
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Everything you need to know about Brampton Smoke Cannabis — Brampton&apos;s premium dispensary at 132 Falby Rd Unit B in Brampton.
+            Straight answers for shopping Brampton Smoke Cannabis: store page first, menu category second, staff when the current detail matters.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
@@ -113,7 +91,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call us at <strong>(905) 226-7966</strong> or visit us at 132 Falby Rd Unit B, Brampton.
+              Call <a href="tel:+19052267966">(905) 226-7966</a> or use the store page before visiting.
             </p>
           </div>
         </div>

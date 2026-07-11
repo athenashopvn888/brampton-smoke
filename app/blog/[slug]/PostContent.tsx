@@ -162,9 +162,9 @@ export default function PostContent({ managerPost = null, slug, storeName = STOR
         )}
 
         <div className={styles.cta}>
-          <p><strong>{storeName}</strong> - use the store page for current store details before visiting.</p>
+          <p><strong>{storeName}</strong> keeps the store page as the clean place to check current menu details, directions, contact options, and staff help before visiting.</p>
           {ctaLine && <p>{ctaLine}</p>}
-          <Link href={STORE_BLOG_CONFIG.storePath} className={styles.ctaBtn}>Store Page</Link>
+          <Link href={STORE_BLOG_CONFIG.storePath} className={styles.ctaBtn}>Open Store Page</Link>
         </div>
 
         <Link href="/blog" className={styles.backLink}>Back to Blog</Link>

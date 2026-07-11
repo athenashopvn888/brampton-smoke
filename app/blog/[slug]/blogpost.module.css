@@ -1,5 +1,5 @@
 .main { min-height: 100vh; background: var(--bg-primary); }
-.content { max-width: 780px; margin: 0 auto; padding: 104px 24px 64px; }
+.content { max-width: 780px; margin: 0 auto; padding: 112px 24px 64px; }
 .loading, .notFound { text-align: center; padding: 80px 24px; color: var(--text-secondary); }
 .notFound h1 { font-size: 28px; font-weight: 900; color: var(--text-primary); margin: 0 0 8px; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-bottom: 32px; flex-wrap: wrap; }
@@ -23,7 +23,7 @@
   font-weight: 900;
   color: var(--text-primary);
   margin: 0 0 12px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.15;
 }
 .meta { display: flex; gap: 8px; font-size: 14px; color: var(--text-secondary); flex-wrap: wrap; }
@@ -68,3 +68,5 @@
 }
 .backLink { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 600; }
 .backLink:hover { color: var(--green-mid); }
+
+@media (max-width: 640px) { .content { padding: 118px 22px 56px; } .contentP, .contentList li { font-size: 18px; line-height: 1.85; } .contentH2 { font-size: 26px; } }

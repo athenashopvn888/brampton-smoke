@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { STATIC_POSTS } from "./blog/staticPosts";
+import { RESOURCE_PAGES } from "./resources/resourceData";
 
 const BASE = "https://www.bramptonsmokecannabis.com";
 
@@ -15,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/games`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
   ];
 
   /* Tier pages */
@@ -65,7 +65,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  /* Resource pages */
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
+    url: page.slug ? `${BASE}/resources/${page.slug}` : `${BASE}/resources`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: page.slug ? 0.6 : 0.7,
+  }));
 
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...blogPosts, ...seoPages];
+
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...blogPosts, ...resourcePages, ...seoPages];
 }
 
