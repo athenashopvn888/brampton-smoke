@@ -5,82 +5,64 @@ export interface ItemEffects {
   consume: string;
 }
 
+const menuNotes = [
+  { emoji: "*", label: "Menu Listed" },
+  { emoji: "+", label: "Compare Details" },
+  { emoji: "i", label: "Ask Staff" },
+];
+
 export function getItemData(category: string, name: string): ItemEffects {
   const cat = category.toUpperCase();
 
   if (cat === "EDIBLES") {
     return {
-      effects: [
-        { emoji: "🕒", label: "Long Lasting" },
-        { emoji: "😌", label: "Body High" },
-        { emoji: "🍬", label: "Flavorful" },
-      ],
-      description: `${name} is a premium cannabis edible available at Brampton Smoke Cannabis. Made with high-quality distillate or full-spectrum extract, it provides a consistent, long-lasting, and discreet experience. Perfect for those who prefer not to smoke while still enjoying the full benefits of cannabis.`,
-      metaDescription: `Buy ${name} cannabis edibles in Brampton at Brampton Smoke Cannabis. Consistent, discreet, and long-lasting effects. Walk-in available 24/7.`,
-      consume: "Start low and go slow. We recommend starting with 5-10mg of THC. Edibles can take 45 to 120 minutes to take full effect. Wait at least 2 hours before consuming more.",
+      effects: menuNotes,
+      description: `${name} is listed in the edibles category at Brampton Smoke Cannabis. Compare the product name, package details, posted price, and item notes on the current menu before choosing.`,
+      metaDescription: `Shop ${name} edibles in Brampton at Brampton Smoke Cannabis. Check the current menu and ask staff for current details before visiting.`,
+      consume: "Read the package and current menu notes carefully. Ask staff if any edible detail is unclear before choosing.",
     };
   }
 
   if (cat.includes("VAPE")) {
     return {
-      effects: [
-        { emoji: "💨", label: "Fast Acting" },
-        { emoji: "⚡", label: "Potent" },
-        { emoji: "🤫", label: "Discreet" },
-      ],
-      description: `${name} is a high-quality vape product available at Brampton Smoke Cannabis. Designed for convenience and discretion, this vape delivers smooth, flavorful vapor and rapid effects. Engineered for reliability, it ensures a premium experience from the first pull to the last.`,
-      metaDescription: `Shop ${name} vape pens and cartridges in Brampton at Brampton Smoke Cannabis. Fast-acting and potent. Walk-in available 24/7.`,
-      consume: "Take 1-2 small puffs and wait 10-15 minutes to gauge the effects before consuming more. Do not chain-vape to avoid burning the coil.",
+      effects: menuNotes,
+      description: `${name} is listed in a vape category at Brampton Smoke Cannabis. Compare the format, product name, posted price, and menu notes before choosing.`,
+      metaDescription: `Shop ${name} vape listings in Brampton at Brampton Smoke Cannabis. Check the current menu for product details before visiting.`,
+      consume: "Use as directed on the package. Ask staff if the format or compatibility details are unclear.",
     };
   }
 
   if (cat === "CONCENTRATES") {
     return {
-      effects: [
-        { emoji: "🚀", label: "Highly Potent" },
-        { emoji: "⚡", label: "Fast Acting" },
-        { emoji: "💎", label: "Pure" },
-      ],
-      description: `${name} is a premium cannabis concentrate known for its exceptional purity and potency. Crafted using advanced extraction techniques, it preserves the rich terpene profile of the original strain for maximum flavor and effect. Available now at Brampton Smoke Cannabis.`,
-      metaDescription: `Buy ${name} cannabis concentrate in Brampton at Brampton Smoke Cannabis. Highly potent and pure extracts. Walk-in available 24/7.`,
-      consume: "Best consumed using a dab rig, concentrate pen, or by sprinkling a small amount over flower. Due to its high potency, start with an extremely small amount (the size of a grain of rice).",
+      effects: menuNotes,
+      description: `${name} is listed in the concentrates category at Brampton Smoke Cannabis. Compare the product type, posted notes, price, and current menu details before choosing.`,
+      metaDescription: `Shop ${name} concentrates in Brampton at Brampton Smoke Cannabis. Confirm current product details through the menu or staff.`,
+      consume: "Use as directed on the package. Ask staff when a concentrate format detail matters.",
     };
   }
 
   if (cat === "PREROLLS") {
     return {
-      effects: [
-        { emoji: "🌿", label: "Classic High" },
-        { emoji: "⏱️", label: "Quick Onset" },
-        { emoji: "🤝", label: "Shareable" },
-      ],
-      description: `${name} is a ready-to-smoke pre-roll made from premium cannabis flower. Perfectly ground and expertly rolled for a smooth, even burn every time. Skip the rolling and enjoy a high-quality smoke straight out of the tube.`,
-      metaDescription: `Get ${name} pre-rolled joints in Brampton at Brampton Smoke Cannabis. Premium flower, perfectly rolled. Walk-in available 24/7.`,
-      consume: "Light the end evenly while rotating the joint to prevent canoeing. Take smooth, slow inhales. Wait 10-15 minutes after a few puffs to gauge the effects.",
+      effects: menuNotes,
+      description: `${name} is listed in the pre-roll category at Brampton Smoke Cannabis. Compare the format, pack details, product notes, and current price before choosing.`,
+      metaDescription: `Shop ${name} pre-rolls in Brampton at Brampton Smoke Cannabis. Use the current menu for product details before visiting.`,
+      consume: "Use as directed on the package. Ask staff if the format or pack detail is unclear.",
     };
   }
 
   if (cat === "MAGIC & OTHERS") {
     return {
-      effects: [
-        { emoji: "🌀", label: "Specialty" },
-        { emoji: "🧠", label: "Mind Expanding" },
-        { emoji: "✨", label: "Euphoric" },
-      ],
-      description: `${name} is a premium specialty product curated for quality and consistency. Whether you are careful use for mental clarity or exploring a deeper journey, this product delivers a reliable and profound experience.`,
-      metaDescription: `Shop ${name} specialty specialty items in Brampton at Brampton Smoke Cannabis. High quality and consistent. Walk-in available 24/7.`,
-      consume: "For careful use, consume 0.1g - 0.3g. For a full experience, start with 1g - 2g. Always consume in a safe, comfortable environment. Effects can take 30-90 minutes to onset.",
+      effects: menuNotes,
+      description: `${name} is a specialty listing at Brampton Smoke Cannabis. Specialty items can vary, so use the current menu and staff for store-specific details.`,
+      metaDescription: `Shop ${name} specialty listings in Brampton at Brampton Smoke Cannabis. Check the current menu before visiting.`,
+      consume: "Use as directed on the package and ask staff if any detail is unclear.",
     };
   }
 
-  // Fallback for Add-Ons, Cigarettes, etc.
   return {
-    effects: [
-      { emoji: "⭐", label: "Premium Quality" },
-      { emoji: "✅", label: "Reliable" },
-    ],
-    description: `${name} is a top-quality product available right now at Brampton Smoke Cannabis. We source only the best products to ensure our customers are fully satisfied.`,
-    metaDescription: `Buy ${name} in Brampton at Brampton Smoke Cannabis. Premium quality and best prices. Walk-in available 24/7.`,
-    consume: "Use as directed on the packaging.",
+    effects: menuNotes,
+    description: `${name} is listed at Brampton Smoke Cannabis. Compare the current menu details and ask staff if the item note needs a current answer.`,
+    metaDescription: `Shop ${name} in Brampton at Brampton Smoke Cannabis. Use the current menu or staff for current details before visiting.`,
+    consume: "Use as directed on the package.",
   };
 }

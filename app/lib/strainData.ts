@@ -1,35 +1,21 @@
-/* -- Auto-generated strain effects & SEO descriptions -- */
-
 interface StrainEffects {
   effects: { emoji: string; label: string }[];
   description: string;
   metaDescription: string;
 }
 
-const INDICA_EFFECTS = [
-  { emoji: "\uD83D\uDECB\uFE0F", label: "Couch Lock" },
-  { emoji: "\uD83D\uDE0C", label: "Relax" },
-  { emoji: "\uD83C\uDF19", label: "Sleepy" },
-];
-
-const SATIVA_EFFECTS = [
-  { emoji: "\u26A1", label: "Energize" },
-  { emoji: "\uD83C\uDFA8", label: "Creative" },
-  { emoji: "\uD83C\uDFAF", label: "Focus" },
-];
-
-const HYBRID_EFFECTS = [
-  { emoji: "\u2696\uFE0F", label: "Balanced" },
-  { emoji: "\uD83D\uDE04", label: "Uplifting" },
-  { emoji: "\uD83C\uDF3F", label: "Calm" },
+const MENU_NOTES = [
+  { emoji: "*", label: "Menu Listed" },
+  { emoji: "+", label: "Compare Tier" },
+  { emoji: "i", label: "Ask Staff" },
 ];
 
 const TIER_DESCRIPTIONS: Record<string, string> = {
-  EXOTIC: "ultra-rare, top-shelf exotic",
-  PREMIUM: "premium connoisseur-grade",
-  "AAA+": "heavy-hitting AAA+",
-  AA: "quality daily-driver AA",
-  BUDGET: "value-packed budget",
+  EXOTIC: "Exotic flower",
+  PREMIUM: "Premium flower",
+  "AAA+": "AAA+ flower",
+  AA: "AA flower",
+  BUDGET: "Budget flower",
 };
 
 export function getStrainData(
@@ -40,35 +26,12 @@ export function getStrainData(
 ): StrainEffects {
   const typeLabel =
     type === "indica" ? "Indica" : type === "sativa" ? "Sativa" : "Hybrid";
-  const tierDesc = TIER_DESCRIPTIONS[tier] || tier.toLowerCase();
-  const effects =
-    type === "indica"
-      ? INDICA_EFFECTS
-      : type === "sativa"
-      ? SATIVA_EFFECTS
-      : HYBRID_EFFECTS;
+  const tierDesc = TIER_DESCRIPTIONS[tier] || tier;
+  const thcLine = thc ? ` with posted THC noted as ${thc}` : "";
 
-  const description = `${name} is a ${tierDesc} ${typeLabel} strain${
-    thc ? ` testing at ${thc} THC` : ""
-  }. Known for its ${effects
-    .map((e) => e.label.toLowerCase())
-    .join(", ")} effects, this ${typeLabel.toLowerCase()} delivers ${
-    type === "indica"
-      ? "deep body relaxation and a heavy, sedating high perfect for unwinding after a long day"
-      : type === "sativa"
-      ? "an uplifting cerebral buzz and creative energy ideal for daytime use"
-      : "a balanced experience combining physical relaxation with mental clarity"
-  }. Available in-store at Brampton Smoke Cannabis, Brampton.`;
+  const description = `${name} is listed as ${tierDesc} in the ${typeLabel} lane at Brampton Smoke Cannabis${thcLine}. Compare the current product page, menu notes, weight, and posted price before choosing.`;
 
-  const metaDescription = `${name} - ${tierDesc} ${typeLabel}${
-    thc ? ` at ${thc} THC` : ""
-  }. ${
-    type === "indica"
-      ? "Relaxing body high."
-      : type === "sativa"
-      ? "Uplifting cerebral buzz."
-      : "Balanced hybrid effects."
-  } Walk-in welcome at Brampton Smoke Cannabis Brampton. Real-time stock.`;
+  const metaDescription = `${name} at Brampton Smoke Cannabis in Brampton. Compare the current ${tierDesc} listing, product notes, and staff guidance before visiting.`;
 
-  return { effects, description, metaDescription };
+  return { effects: MENU_NOTES, description, metaDescription };
 }
