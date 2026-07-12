@@ -15,8 +15,8 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Brampton Smoke Cannabis located?", a: "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
+      { q: "Where is Brampton Smoke Cannabis located?", a: "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the store page and resources for directions, hours, and menu paths before visiting." },
+      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page and menu before visiting if timing or one exact item matters." },
       { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],
   },
@@ -41,7 +41,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Does Brampton Smoke Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights. Confirm current options through the menu or staff." },
       { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and availability through the menu or staff." },
-      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
+      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, listed hours, and local visit details." },
     ],
   },
 ];
@@ -71,6 +71,13 @@ export default function FAQPage() {
       <main className={styles.main}>
         <Navbar />
         <div className={styles.content}>
+          <div className={styles.bannerFrame}>
+            <img
+              src="/banners/bsc-real/page-faq.webp"
+              alt="Brampton Smoke Cannabis FAQ"
+              className={styles.bannerImg}
+            />
+          </div>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
             Straight answers for shopping Brampton Smoke Cannabis: store page first, menu category second, staff when the current detail matters.
@@ -91,7 +98,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+19052267966">(905) 226-7966</a> or use the store page before visiting.
+              Use the BSC resources, current menu, and store page before visiting.
             </p>
           </div>
         </div>

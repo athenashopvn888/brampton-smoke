@@ -14,55 +14,55 @@ const BENTO_TIERS = [
     name: "EXOTICS",
     slug: "exotic",
     price: "$10-$12/g",
-    banner: "/banners/exotics_banner.webp",
+    banner: "/banners/bsc-real/tile-exotic.webp",
     className: styles.bentoExotic,
   },
   {
     name: "PREMIUM",
     slug: "premium",
     price: "$7-$10/g",
-    banner: "/banners/premium_banner.webp",
+    banner: "/banners/bsc-real/tile-premium.webp",
     className: styles.bentoPremium,
   },
   {
     name: "AAA+",
     slug: "aaa",
     price: "$5-$6/g",
-    banner: "/banners/aaa_plus_banner.webp",
+    banner: "/banners/bsc-real/tile-aaa.webp",
     className: styles.bentoTile,
   },
   {
     name: "AA",
     slug: "aa",
     price: "$4/g",
-    banner: "/banners/aa_banner.webp",
+    banner: "/banners/bsc-real/tile-aa.webp",
     className: styles.bentoTile,
   },
   {
     name: "BUDGET",
     slug: "budget",
     price: "$3/g",
-    banner: "/banners/budget_banner.webp",
+    banner: "/banners/bsc-real/tile-budget.webp",
     className: styles.bentoTile,
   },
   {
     name: "EDIBLES • PREROLLS • MORE",
     slug: "items/edibles",
     price: "Shop Tiers",
-    banner: "/banners/edibles_prerolls_more_banner.webp",
+    banner: "/banners/bsc-real/tile-menu-plus.webp",
     className: styles.bentoEdibles,
   },
 ];
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
-  { name: "Vape Pens", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
-  { name: "Nic Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
-  { name: "Concentrates", slug: "items/concentrates", banner: "/banners/03_Concentrates.webp", icon: "💎" },
-  { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/04_Pre_Rolls.webp", icon: "🚬" },
-  { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
-  { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/06_Cigarettes.webp", icon: "🏷️" },
-  { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
+  { name: "THC Vapes", slug: "items/vapes", banner: "/banners/bsc-real/tile-thc-vape.webp" },
+  { name: "Nic Vapes", slug: "items/vape-disposables", banner: "/banners/bsc-real/tile-nic-vape.webp" },
+  { name: "Concentrates", slug: "items/concentrates", banner: "/banners/bsc-real/tile-concentrates.webp" },
+  { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/bsc-real/tile-prerolls.webp" },
+  { name: "Accessories", slug: "items/add-ons", banner: "/banners/bsc-real/tile-accessories.webp" },
+  { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/bsc-real/tile-cigarettes.webp" },
+  { name: "Magic Stuff", slug: "items/magic", banner: "/banners/bsc-real/tile-magic.webp" },
 ];
 
 /* ── Local FAQs for Jane St ── */
@@ -77,7 +77,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is Brampton Smoke Cannabis located?",
-    a: "We are located at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Visit us in person or call us at (905) 226-7966. Free evening street parking is available.",
+    a: "We are located at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the current menu and resources before visiting. Parking is available on-site in the retail plaza lot.",
   },
   {
     q: "What is the cheapest weed at Brampton Smoke Cannabis?",
@@ -203,7 +203,7 @@ export default function HomePage() {
       <section className={styles.welcomeBannerSection}>
         <div className={styles.welcomeBannerContainer}>
           <img
-            src="/banners/welcome_banner.webp"
+            src="/banners/bsc-real/welcome-real.webp"
             alt="Welcome to Brampton Smoke Cannabis — Premium Brampton Cannabis Dispensary"
             className={styles.welcomeBannerImg}
           />
@@ -233,10 +233,14 @@ export default function HomePage() {
                 href={`/${tier.slug}`}
                 className={`${styles.bentoTile} ${tier.className}`}
               >
-                <div
-                  className={styles.bentoTileBg}
-                  style={{ backgroundImage: `url('${tier.banner}')` }}
-                />
+                <div className={styles.bentoArt}>
+                  <img
+                    src={tier.banner}
+                    alt={`${tier.name} Brampton Smoke Cannabis banner`}
+                    className={styles.bentoArtImg}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={styles.bentoTileOverlay} />
                 <div className={styles.bentoTileContent}>
                   <span className={styles.bentoLabel}>{tier.name}</span>
@@ -265,14 +269,18 @@ export default function HomePage() {
                 href={`/${cat.slug}`}
                 className={styles.categoryCard}
               >
-                <div
-                  className={styles.categoryCardBg}
-                  style={{ backgroundImage: `url('${cat.banner}')` }}
-                />
+                <div className={styles.categoryCardArt}>
+                  <img
+                    src={cat.banner}
+                    alt={`${cat.name} Brampton Smoke Cannabis banner`}
+                    className={styles.categoryCardImg}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={styles.categoryCardOverlay} />
                 <div className={styles.categoryCardContent}>
                   <h3 className={styles.categoryCardName}>
-                    {cat.icon} {cat.name} <span className={styles.categoryCardArrow}>→</span>
+                    {cat.name} <span className={styles.categoryCardArrow}>→</span>
                   </h3>
                 </div>
               </Link>
@@ -315,6 +323,26 @@ export default function HomePage() {
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names, prices, and availability before you make the trip.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.resourceBand} aria-label="Brampton Smoke Cannabis resources">
+        <div className={styles.container}>
+          <div className={styles.resourceBandInner}>
+            <div>
+              <p className={styles.resourceKicker}>Falby Road Resource Hub</p>
+              <h2>BSC guides for the 24-hour Brampton stop.</h2>
+              <p>
+                Use BSC resources for Falby Road visit planning, flower tier shopping,
+                value lanes, pre-rolls, and Native smokes before you compare the current menu.
+              </p>
+            </div>
+            <div className={styles.resourceActions}>
+              <Link href="/resources/falby-road-24-hour-visit-guide">24-Hour Visit Guide</Link>
+              <Link href="/resources/menu-guide">Menu Guide</Link>
+              <Link href="/resources/native-smokes">Native Smokes</Link>
+            </div>
           </div>
         </div>
       </section>

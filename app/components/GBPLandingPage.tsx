@@ -96,9 +96,9 @@ export function GBPLandingPage() {
         <a href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
           View Menu
         </a>
-        <a href={`tel:${gbpLocation.phoneIntl}`} className={`${styles.btn} ${styles.btnSecondary}`}>
-          Call Store
-        </a>
+        <Link href="/resources" className={`${styles.btn} ${styles.btnSecondary}`}>
+          Open Resources
+        </Link>
       </div>
 
       {/* Intro Section */}
@@ -130,14 +130,14 @@ export function GBPLandingPage() {
       <section className={styles.section}>
         <h2 className={styles.h2}>Plan a Visit Near {gbpLocation.neighborhood}</h2>
         <p className={styles.infoText}>
-          Planning a visit to {gbpLocation.storeName} is easier when the local details are in one place. This page brings together the store address, hours, phone number, nearby areas like {nearbyAreaList}, and helpful category links for adults 19+ comparing general menu sections before visiting.
+          Planning a visit to {gbpLocation.storeName} is easier when the local details are in one place. This page brings together the store address, hours, nearby areas like {nearbyAreaList}, and helpful category links for adults 19+ comparing general menu sections before visiting.
         </p>
         <p className={styles.infoText}>
           If you are coming from {landmarkList}, use the visit details below to confirm the location and review the main site categories without relying on live inventory, pricing, or promotional claims.
         </p>
         <p className={styles.infoText}>
           For a fuller local overview, read the{" "}
-          <Link href="/blog/brampton-smoke-cannabis-brampton-store-guide">Brampton Smoke store guide</Link>.
+          <Link href="/resources">Resources</Link>.
         </p>
         <div className={styles.btnRow}>
           <Link href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
@@ -163,7 +163,7 @@ export function GBPLandingPage() {
             </div>
             <div className={styles.napItem}>
               <span className={styles.napLabel}>Phone</span>
-              <span><a href={`tel:${gbpLocation.phoneIntl}`} style={{ color: "inherit" }}>{gbpLocation.phone}</a></span>
+              <span>{gbpLocation.phone}</span>
             </div>
             <div className={styles.napItem}>
               <span className={styles.napLabel}>Website</span>

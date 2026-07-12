@@ -98,7 +98,7 @@ export const TIER_CONFIG: Record<
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
     tagline: "Ultra-rare, top-shelf genetics \u00B7 THC 35-39%",
-    banner: "/banners/exotics_banner.webp",
+    banner: "/banners/bsc-real/tier-exotic.webp",
     unitPrice: 20,
     deal3g: { label: "3g bundle", total: "3G", price: 40 },
     deal6g: { label: "6g bundle", total: "6G", price: 60 },
@@ -109,7 +109,7 @@ export const TIER_CONFIG: Record<
     color: "#a78bfa",
     icon: "\uD83D\uDC8E",
     tagline: "Hand-picked connoisseur grade \u00B7 THC 32-34%",
-    banner: "/banners/premium_banner.webp",
+    banner: "/banners/bsc-real/tier-premium.webp",
     unitPrice: 15,
     deal3g: { label: "3g bundle", total: "3G", price: 30 },
     deal6g: { label: "6g bundle", total: "6G", price: 45 },
@@ -120,7 +120,7 @@ export const TIER_CONFIG: Record<
     color: "#22d3ee",
     icon: "\u26A1",
     tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
-    banner: "/banners/aaa_plus_banner.webp",
+    banner: "/banners/bsc-real/tier-aaa.webp",
     unitPrice: 10,
     deal3g: { label: "3g bundle", total: "3G", price: 20 },
     deal6g: { label: "6g bundle", total: "6G", price: 30 },
@@ -131,7 +131,7 @@ export const TIER_CONFIG: Record<
     color: "#34d399",
     icon: "\u2726",
     tagline: "Quality daily drivers \u00B7 THC 27-29%",
-    banner: "/banners/aa_banner.webp",
+    banner: "/banners/bsc-real/tier-aa.webp",
     unitPrice: 4,
     deal3g: null,
     deal6g: null,
@@ -142,7 +142,7 @@ export const TIER_CONFIG: Record<
     color: "#94a3b8",
     icon: "\uD83D\uDCB0",
     tagline: "Shreds & value OZs \u00B7 From $40/oz",
-    banner: "/banners/budget_banner.webp",
+    banner: "/banners/bsc-real/tier-budget.webp",
     unitPrice: 3,
     deal3g: { label: "$10 / 3g Special", total: "3G", price: 10 },
     deal6g: null,
@@ -158,7 +158,7 @@ export interface CategoryInfo {
 
 export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
-    banner: "/banners/edibles_prerolls_more_banner.webp",
+    banner: "/banners/bsc-real/category-edibles.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "ED",
     seoTitle: "Cannabis Edibles Brampton | Brampton Smoke Cannabis",
     seoIntro: "Browse edible options at Brampton Smoke Cannabis. Compare product names, package details, posted notes, and current menu information before choosing.",
@@ -169,7 +169,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE PENS": {
-    banner: "/banners/01_Vape_Pens.webp",
+    banner: "/banners/bsc-real/category-thc-vape.webp",
     name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "VP",
     seoTitle: "Vapes Brampton | Brampton Smoke Cannabis",
     seoIntro: "Compare vape listings at Brampton Smoke Cannabis by product name, format, posted notes, and current menu details.",
@@ -180,7 +180,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE DISPOSABLE": {
-    banner: "/banners/02_Vape_Disposable.webp",
+    banner: "/banners/bsc-real/category-nic-vape.webp",
     name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "VD",
     seoTitle: "Disposable Vapes Brampton | Brampton Smoke Cannabis",
     seoIntro: "Use the disposable vape category at Brampton Smoke Cannabis for current product names, formats, and menu notes.",
@@ -191,7 +191,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CONCENTRATES: {
-    banner: "/banners/03_Concentrates.webp",
+    banner: "/banners/bsc-real/category-concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "CN",
     seoTitle: "Concentrates Brampton | Brampton Smoke Cannabis",
     seoIntro: "Compare concentrates at Brampton Smoke Cannabis by product type, name, posted notes, and current menu details.",
@@ -202,7 +202,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   PREROLLS: {
-    banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "PR",
+    banner: "/banners/bsc-real/category-prerolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "PR",
     seoTitle: "Pre-Rolls Brampton | Brampton Smoke Cannabis",
     seoIntro: "Shop pre-rolls at Brampton Smoke Cannabis by comparing the current product name, format, package details, and posted notes.",
     seoDescription: "Pre-rolls should be compared inside the pre-roll category instead of mixed into flower, edibles, vapes, or concentrates. Use the current menu for details that change.",
@@ -212,7 +212,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "ADD ONS": {
-    banner: "/banners/05_Accessories.webp",
+    banner: "/banners/bsc-real/category-accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "+",
     seoTitle: "Cannabis Accessories Brampton | Brampton Smoke Cannabis",
     seoIntro: "Browse accessories at Brampton Smoke Cannabis and compare the current menu notes before visiting.",
@@ -222,6 +222,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "MAGIC & OTHERS": {
+    banner: "/banners/bsc-real/category-magic.webp",
     name: "Magic Stuff", slug: "magic", color: "#64748b", icon: "*",
     seoTitle: "Specialty Items | Brampton Smoke Cannabis",
     seoIntro: "Browse specialty items only where they are listed on the current Brampton Smoke Cannabis menu.",
@@ -232,7 +233,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CIGARETTES: {
-    banner: "/banners/06_Cigarettes.webp",
+    banner: "/banners/bsc-real/category-cigarettes.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "CG",
     seoTitle: "Native Cigarettes Brampton | Brampton Smoke Cannabis",
     seoIntro: "Native smokes at Brampton Smoke Cannabis in Brampton. The cigarette menu may show $25 carton-style listings and brands such as Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights.",

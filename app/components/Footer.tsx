@@ -17,12 +17,9 @@ export default function Footer() {
               Open 24 Hours.
             </p>
             <div className={styles.buttons}>
-              <a
-                href="tel:+19052267966"
-                className={styles.btnPrimary}
-              >
-                Call Now
-              </a>
+              <Link href="/resources" className={styles.btnPrimary}>
+                Open Resources
+              </Link>
             </div>
           </div>
 
@@ -37,7 +34,7 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+19052267966" style={{color: "inherit"}}>(905) 226-7966</a></span>
+              <span>(905) 226-7966</span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
@@ -57,10 +54,8 @@ export default function Footer() {
               <Link href="/budget">Budget Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
-              <Link href="/items/vapes">Vape Pens</Link>
-              <Link href="/blog">Blog</Link>
+              <Link href="/items/vapes">THC Vape</Link>
               <Link href="/resources">Resources</Link>
-              <Link href="/blog/brampton-smoke-cannabis-local-visit-guide-2026">Local Visit Guide</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
               <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>

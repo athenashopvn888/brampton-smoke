@@ -2,6 +2,40 @@
 
 .hero { padding: 80px 24px 20px; text-align: center; position: relative; }
 
+.bannerSection {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 92px;
+  padding: 20px 20px 24px;
+  background:
+    radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--cat-color) 32%, transparent), transparent 30%),
+    radial-gradient(circle at 88% 12%, rgba(114, 45, 172, 0.28), transparent 34%),
+    linear-gradient(180deg, #05060b 0%, #07100b 100%);
+  border-bottom: 1px solid rgba(129, 225, 79, 0.18);
+}
+
+.bannerFrame {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 18px;
+  border: 1px solid rgba(129, 225, 79, 0.3);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 253, 243, 0.9)),
+    radial-gradient(circle at 12% 50%, color-mix(in srgb, var(--cat-color) 12%, transparent), transparent 34%);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.44),
+    0 0 0 4px rgba(82, 26, 132, 0.18);
+}
+
+.bannerImg {
+  width: 100%;
+  height: clamp(180px, 28vw, 390px);
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .heroBannerWrap {
   max-width: 1440px;
   margin: 0 auto 20px;
@@ -16,14 +50,63 @@
   display: block;
 }
 
-.heroContent { max-width: 600px; margin: 0 auto; animation: fadeInUp 0.6s ease both; }
+.heroContent {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cat-color) 72%, #08100a), #241035);
+  color: #fff;
+  animation: fadeInUp 0.6s ease both;
+}
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .heroIcon { font-size: 48px; display: block; margin-bottom: 12px; }
 .heroTitle { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--text-primary); margin-bottom: 8px; }
 .heroSub { font-size: 15px; color: var(--text-secondary); }
+.heroContent .heroTitle,
+.heroContent .heroSub {
+  color: #fff;
+}
 
-.products { padding: 20px 0 80px; }
+.categoryIntro {
+  padding: 30px 24px 24px;
+  background: linear-gradient(180deg, #07100b 0%, var(--bg-primary) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.categoryIntro .container {
+  max-width: 1040px;
+}
+
+.categoryKicker {
+  margin: 0 0 8px;
+  color: color-mix(in srgb, var(--cat-color) 70%, #1b4332);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.categoryIntro h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.categoryIntro p {
+  margin: 12px 0 0;
+  max-width: 760px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.products { padding: 34px 0 80px; }
 .container { width: min(100% - 2rem, 1440px); margin-inline: auto; }
 
 .grid {
@@ -34,6 +117,16 @@
 @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 @media (min-width: 900px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
 @media (min-width: 1200px) { .grid { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+
+@media (max-width: 600px) {
+  .bannerSection {
+    padding: 14px 12px 18px;
+  }
+
+  .bannerImg {
+    height: 160px;
+  }
+}
 
 .card {
   background: var(--bg-card);

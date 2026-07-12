@@ -17,6 +17,13 @@ export default function ResourceView({ page }: ResourceViewProps) {
           <p className={styles.eyebrow}>{page.eyebrow}</p>
           <h1>{page.title}</h1>
           <p className={styles.intro}>{page.intro}</p>
+          <div className={styles.bannerFrame}>
+            <img
+              src="/banners/bsc-real/page-resources.webp"
+              alt={`${page.title} Brampton Smoke Cannabis resources`}
+              className={styles.bannerImg}
+            />
+          </div>
         </div>
       </section>
 

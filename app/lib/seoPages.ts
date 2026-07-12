@@ -18,6 +18,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Brampton Smoke Cannabis Weed Dispensary in Brampton",
     "icon": "*",
     "heroTagline": "Menu shopping around Brampton",
+    "banner": "/banners/bsc-real/page-brampton.webp",
     "sections": [
       {
         "heading": "Shop Brampton Smoke Cannabis With A Plan",
@@ -29,13 +30,13 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+        "body": "Confirm the store page, directions, local visit details, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
       }
     ],
     "faqs": [
       {
         "q": "Is Brampton Smoke Cannabis a cannabis dispensary in Brampton?",
-        "a": "Yes. Brampton Smoke Cannabis serves shoppers looking for a cannabis dispensary in Brampton. Use the store page for directions, contact options, and listed hours."
+        "a": "Yes. Brampton Smoke Cannabis serves shoppers looking for a cannabis dispensary in Brampton. Use the store page for directions, local visit details, and listed hours."
       },
       {
         "q": "What should I check before visiting Brampton Smoke Cannabis?",
@@ -54,6 +55,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Brampton Smoke Cannabis Cheap Weed and Budget Weed Guide",
     "icon": "$",
     "heroTagline": "Value shopping without the guesswork",
+    "banner": "/banners/bsc-real/page-budget.webp",
     "sections": [
       {
         "heading": "Start With Budget And AA",
@@ -90,6 +92,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Brampton Smoke Cannabis Native Cigarettes Resource",
     "icon": "#",
     "heroTagline": "$25 carton notes and brand names where listed",
+    "banner": "/banners/bsc-real/page-cigarettes.webp",
     "sections": [
       {
         "heading": "Start With The Cigarette Category",
@@ -115,7 +118,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Where should shoppers start?",
-        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
+        "a": "Open the cigarette category, then use the store page for directions, local visit details, and listed hours."
       }
     ]
   },
@@ -126,10 +129,11 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Weed Store Near Brampton",
     "icon": ">",
     "heroTagline": "Local visit notes for Brampton",
+    "banner": "/banners/bsc-real/page-near-me.webp",
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Brampton, open the Brampton Smoke Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+        "body": "When you search for a weed store near Brampton, open the Brampton Smoke Cannabis store page first. Confirm directions, local visit details, listed hours, and the menu path before visiting."
       },
       {
         "heading": "Choose The Product Lane",
@@ -162,6 +166,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Cannabis Dispensary Near Me in Brampton",
     "icon": "o",
     "heroTagline": "Store page first, menu category second",
+    "banner": "/banners/bsc-real/page-near-me.webp",
     "sections": [
       {
         "heading": "Make The Search Useful",

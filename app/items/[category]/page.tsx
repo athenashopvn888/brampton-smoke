@@ -61,22 +61,40 @@ export default async function ItemsCategoryPage({
       <Navbar />
 
       {/* Hero Banner */}
-      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
+      <section
+        className={styles.bannerSection}
+        style={{ "--cat-color": config.color } as React.CSSProperties}
+      >
         {config.banner ? (
-          <img
-            src={config.banner}
-            alt={config.name}
-            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-          />
+          <div className={styles.bannerFrame}>
+            <img
+              src={config.banner}
+              alt={`${config.name} at Brampton Smoke Cannabis`}
+              className={styles.bannerImg}
+            />
+          </div>
         ) : (
-          <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
+          <div className={styles.heroContent}>
             <span className={styles.heroIcon}>{config.icon}</span>
-            <h1 className={styles.heroTitle}>
-              <span style={{ color: "#fff" }}>{config.name}</span>
-            </h1>
-            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
+            <div className={styles.heroTitle}>
+              <span>{config.name}</span>
+            </div>
+            <p className={styles.heroSub}>{items.length} products available</p>
           </div>
         )}
+      </section>
+
+      <section
+        className={styles.categoryIntro}
+        style={{ "--cat-color": config.color } as React.CSSProperties}
+      >
+        <div className={styles.container}>
+          <p className={styles.categoryKicker}>Brampton Smoke Cannabis</p>
+          <h1>{config.name}</h1>
+          <p>
+            {items.length} current menu listings. Compare product names, formats, prices, and item notes before choosing.
+          </p>
+        </div>
       </section>
 
       {/* Product Grid */}
@@ -84,8 +102,8 @@ export default async function ItemsCategoryPage({
         <div className={styles.container}>
           {items.length > 0 ? (
             <div className={styles.grid}>
-              {items.map((item) => (
-                <ItemCard key={item.sku} item={item} catColor={config.color} />
+              {items.map((item, index) => (
+                <ItemCard key={`${item.sku}-${item.slug}-${index}`} item={item} catColor={config.color} />
               ))}
             </div>
           ) : (

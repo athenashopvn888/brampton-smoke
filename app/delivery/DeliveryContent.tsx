@@ -101,7 +101,7 @@ export default function DeliveryContent() {
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at <strong>132 Falby Rd Unit B, Brampton</strong> —
-            open <strong>24 hours</strong>. Call <strong>(905) 226-7966</strong>.
+            open <strong>24 hours</strong>. Use the current menu and resources before visiting.
           </p>
         </div>
       </div>

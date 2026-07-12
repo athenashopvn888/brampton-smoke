@@ -9,6 +9,27 @@
   padding: 120px 24px 80px;
 }
 
+.bannerFrame {
+  margin: 0 0 34px;
+  padding: 8px;
+  border-radius: 18px;
+  border: 1px solid rgba(129, 225, 79, 0.34);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 253, 244, 0.92)),
+    radial-gradient(circle at 16% 50%, rgba(112, 43, 173, 0.12), transparent 34%);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.18),
+    0 0 0 4px rgba(82, 26, 132, 0.08);
+}
+
+.bannerImg {
+  width: 100%;
+  height: clamp(160px, 26vw, 320px);
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .pageTitle {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
@@ -130,4 +151,14 @@
   background: var(--green-mid);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 108px 14px 70px;
+  }
+
+  .bannerImg {
+    height: 142px;
+  }
 }

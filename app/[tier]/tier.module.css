@@ -10,19 +10,36 @@
   width: 100%;
   overflow: hidden;
   margin-top: 92px;
+  padding: 20px 20px 24px;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(112, 43, 173, 0.36), transparent 30%),
+    radial-gradient(circle at 88% 15%, rgba(76, 194, 58, 0.25), transparent 34%),
+    linear-gradient(180deg, #05060b 0%, #07100b 100%);
+  border-bottom: 1px solid rgba(129, 225, 79, 0.18);
 }
 
 .bannerImg {
-  width: 100%;
-  height: auto;
+  width: min(100%, 1280px);
+  height: clamp(190px, 30vw, 430px);
   display: block;
+  margin: 0 auto;
   object-fit: contain;
+  border: 2px solid rgba(129, 225, 79, 0.54);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 253, 244, 0.92)),
+    radial-gradient(circle at 15% 50%, color-mix(in srgb, var(--tier-color) 12%, transparent), transparent 34%);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.45),
+    0 0 0 4px rgba(82, 26, 132, 0.18),
+    inset 0 0 28px rgba(73, 170, 57, 0.14);
 }
 
 /* ── Hero Info BELOW Banner ── */
 .heroInfo {
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-subtle);
+  background:
+    linear-gradient(180deg, #07100b 0%, #0a0a0c 100%);
+  border-bottom: 1px solid rgba(129, 225, 79, 0.16);
   padding: 32px 24px;
 }
 
@@ -56,13 +73,13 @@
   font-weight: 900;
   margin: 0;
   line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+  letter-spacing: 0;
+  color: #fff;
 }
 
 .heroTagline {
   font-size: 15px;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   margin: 8px 0 12px;
 }
 
@@ -74,11 +91,11 @@
 
 .stat {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #cbd5e1;
 }
 
 .stat strong {
-  color: var(--text-primary);
+  color: #fff;
   font-weight: 800;
 }
 
@@ -116,7 +133,7 @@
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -124,7 +141,7 @@
 .unitPriceValue {
   font-size: 36px;
   font-weight: 900;
-  color: var(--green-dark);
+  color: var(--tier-color);
   line-height: 1.1;
 }
 
@@ -136,8 +153,8 @@
 }
 
 .dealBox {
-  background: rgba(45, 106, 79, 0.06);
-  border: 1px solid rgba(45, 106, 79, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid color-mix(in srgb, var(--tier-color) 32%, transparent);
   border-radius: var(--radius-md);
   padding: 10px 16px;
   min-width: 180px;
@@ -146,19 +163,19 @@
 .dealLabel {
   font-size: 12px;
   font-weight: 700;
-  color: #2D6A4F;
+  color: #d8f6d0;
 }
 
 .dealPrice {
   font-size: 14px;
-  color: var(--text-primary);
+  color: #f8fafc;
   margin-top: 2px;
 }
 
 .dealPrice strong {
   font-size: 18px;
   font-weight: 900;
-  color: var(--green-dark);
+  color: var(--tier-color);
 }
 
 /* ── Product grid ── */
@@ -305,6 +322,12 @@
 
   .bannerSection {
     max-height: none;
+    padding: 14px 12px 18px;
+  }
+
+  .bannerImg {
+    height: 170px;
+    border-radius: 14px;
   }
 
   .grid {

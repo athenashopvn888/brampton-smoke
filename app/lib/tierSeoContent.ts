@@ -20,7 +20,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "heading": "Local Brampton Menu Tip",
-        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Exotic page open while you compare. Use the store page for directions, contact options, and listed hours."
+        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Exotic page open while you compare. Use the store page for directions, local visit details, and listed hours."
       }
     ],
     "faqs": [
@@ -34,7 +34,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "q": "Where should shoppers go after this Exotic guide?",
-        "a": "Use the Exotic tier page first, then the store page when you are ready for directions or contact options."
+        "a": "Use the Exotic tier page first, then the store page when you are ready for directions or local visit details."
       }
     ]
   },
@@ -52,7 +52,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "heading": "Local Brampton Menu Tip",
-        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Premium page open while you compare. Use the store page for directions, contact options, and listed hours."
+        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Premium page open while you compare. Use the store page for directions, local visit details, and listed hours."
       }
     ],
     "faqs": [
@@ -66,7 +66,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "q": "Where should shoppers go after this Premium guide?",
-        "a": "Use the Premium tier page first, then the store page when you are ready for directions or contact options."
+        "a": "Use the Premium tier page first, then the store page when you are ready for directions or local visit details."
       }
     ]
   },
@@ -84,7 +84,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "heading": "Local Brampton Menu Tip",
-        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the AAA+ page open while you compare. Use the store page for directions, contact options, and listed hours."
+        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the AAA+ page open while you compare. Use the store page for directions, local visit details, and listed hours."
       }
     ],
     "faqs": [
@@ -98,7 +98,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "q": "Where should shoppers go after this AAA+ guide?",
-        "a": "Use the AAA+ tier page first, then the store page when you are ready for directions or contact options."
+        "a": "Use the AAA+ tier page first, then the store page when you are ready for directions or local visit details."
       }
     ]
   },
@@ -116,7 +116,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "heading": "Local Brampton Menu Tip",
-        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the AA page open while you compare. Use the store page for directions, contact options, and listed hours."
+        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the AA page open while you compare. Use the store page for directions, local visit details, and listed hours."
       }
     ],
     "faqs": [
@@ -130,7 +130,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "q": "Where should shoppers go after this AA guide?",
-        "a": "Use the AA tier page first, then the store page when you are ready for directions or contact options."
+        "a": "Use the AA tier page first, then the store page when you are ready for directions or local visit details."
       }
     ]
   },
@@ -148,7 +148,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "heading": "Local Brampton Menu Tip",
-        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Budget page open while you compare. Use the store page for directions, contact options, and listed hours."
+        "body": "If you searched for a weed dispensary in Brampton or a cannabis dispensary in Brampton, keep the Budget page open while you compare. Use the store page for directions, local visit details, and listed hours."
       }
     ],
     "faqs": [
@@ -162,7 +162,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         "q": "Where should shoppers go after this Budget guide?",
-        "a": "Use the Budget tier page first, then the store page when you are ready for directions or contact options."
+        "a": "Use the Budget tier page first, then the store page when you are ready for directions or local visit details."
       }
     ]
   }
