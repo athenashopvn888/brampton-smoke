@@ -22,7 +22,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Brampton Smoke Cannabis With A Plan",
-        "body": "Brampton Smoke Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Brampton Smoke Cannabis helps adults compare the menu without overcomplicating the visit. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
         "heading": "Local Menu Notes For Brampton",
@@ -67,7 +67,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier choice starts with the category, then the current product details."
       }
     ],
     "faqs": [
@@ -136,7 +136,7 @@ export const SEO_PAGES: SeoPageData[] = [
         "body": "When you search for a weed store near Brampton, open the Brampton Smoke Cannabis store page first. Confirm directions, local visit details, listed hours, and the menu path before visiting."
       },
       {
-        "heading": "Choose The Product Lane",
+        "heading": "Choose The Product Category",
         "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
       },
       {
