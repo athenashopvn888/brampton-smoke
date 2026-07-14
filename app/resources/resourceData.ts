@@ -50,7 +50,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Brampton Smoke Cannabis resources for Falby Road shoppers, 24-hour visit planning, flower tiers, value shopping, pre-rolls, and Native smokes.",
     eyebrow: "Falby Road Resource Hub",
     intro:
-      "This is the Brampton Smoke Cannabis resource hub for adult 19+ shoppers who want the Falby Road stop to feel easy. Use it to plan a 24-hour visit, choose the right menu lane, compare flower tiers, and keep cigarettes or Native smokes separate from cannabis shopping.",
+      "This is the Brampton Smoke Cannabis resource hub for adult 19+ shoppers who want the Falby Road stop to feel easy. Use it to plan a 24-hour visit, choose the right menu category, compare flower tiers, and keep cigarettes or Native smokes separate from cannabis shopping.",
     cards: [
       {
         title: "Falby Road 24-Hour Visit Guide",
@@ -87,7 +87,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Make The Falby Road Stop Simple",
         body:
-          "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu lanes, and adult shopping notes in one place without pretending every product detail is frozen.",
+          "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu categories, and adult shopping notes in one place without pretending every product detail is frozen.",
         bullets: [
           "Use the current menu for products, prices, formats, and availability.",
           "Use the GBP landing page for locked store address, hours, and local visit context.",
@@ -106,7 +106,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     title: "Falby Road 24-Hour Visit Guide",
     seoTitle: "Falby Road 24-Hour Visit Guide | Brampton Smoke Cannabis",
     description:
-      "A Brampton Smoke Cannabis visit guide for 132 Falby Rd Unit B, Open 24 Hours, with menu lane and local planning notes.",
+      "A Brampton Smoke Cannabis visit guide for 132 Falby Rd Unit B, Open 24 Hours, with menu category and local planning notes.",
     eyebrow: "24-Hour Visit Guide",
     intro:
       "Brampton Smoke Cannabis is the Falby Road stop in Pod 2: 132 Falby Rd Unit B, Brampton, Open 24 Hours. Use this guide to keep the visit practical before you start comparing products.",
@@ -119,7 +119,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Pick the product lane before comparing individual listings.",
+        text: "Choose the product category before comparing individual listings.",
       },
       {
         title: "Late-Night Brampton Guide",
@@ -394,7 +394,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Choose the product lane before visiting.",
+        text: "Choose the product category before visiting.",
       },
     ],
     sections: [
@@ -418,7 +418,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The Brampton Smoke Cannabis resource centre now gives BSC-specific guides for Falby Road, 24-hour visits, flower, value, pre-rolls, and Native smokes.",
     eyebrow: "Resource Update",
     intro:
-      "The BSC resource centre is now shaped around the store's actual role in Pod 2: Falby Road, 24-hour Brampton coverage, simple menu lanes, and cigarette/native-smokes notes.",
+      "The BSC resource centre is now shaped around the store's actual role in Pod 2: Falby Road, 24-hour Brampton coverage, simple menu categories, and cigarette/native-smokes notes.",
     cards: [
       {
         title: "Falby Road 24-Hour Visit Guide",
@@ -433,7 +433,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         title: "Flower Guide",
         href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget without guessing.",
+        text: "Compare Exotic, Premium, AAA+, AA, and Budget with clearer category notes.",
       },
       {
         title: "Native Smokes",
