@@ -87,7 +87,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Make The Falby Road Stop Simple",
         body:
-          "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu categories, and adult shopping notes in one place without pretending every product detail is frozen.",
+          "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu categories, and adult shopping notes in one place.",
         bullets: [
           "Use the current menu for listed products, prices, formats, and package details.",
           "Use the store page for address, hours, and local visit information.",
@@ -95,9 +95,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         ],
       },
       {
-        heading: "Pod 2 Role: Brampton Coverage",
+        heading: "Falby Road and Brampton Coverage",
         body:
-          "Inside Pod 2, BSC should own the Falby Road and 24-hour Brampton planning angle. That keeps it distinct from the other Brampton-area stores in the same cluster while still supporting the map coverage plan.",
+          "This guide focuses on the Falby Road location, its 24-hour schedule, and practical Brampton visit details for nearby shoppers.",
       },
     ],
   },
@@ -109,7 +109,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A Brampton Smoke Cannabis visit guide for 132 Falby Rd Unit B, Open 24 Hours, with menu category and local planning notes.",
     eyebrow: "24-Hour Visit Guide",
     intro:
-      "Brampton Smoke Cannabis is the Falby Road stop in Pod 2: 132 Falby Rd Unit B, Brampton, Open 24 Hours. Use this guide to keep the visit practical before you start comparing products.",
+      "Brampton Smoke Cannabis is located at 132 Falby Rd Unit B in Brampton and is open 24 hours. Use this guide to keep the visit practical before you start comparing products.",
     cards: [
       {
         title: "Store Landing Page",
@@ -418,7 +418,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The Brampton Smoke Cannabis resource section now gives BSC-specific guides for Falby Road, 24-hour visits, flower, value, pre-rolls, and Native smokes.",
     eyebrow: "Resource Update",
     intro:
-      "The BSC resource centre is now shaped around the store's actual role in Pod 2: Falby Road, 24-hour Brampton coverage, simple menu categories, and cigarette/native-smokes notes.",
+      "The BSC resource centre is shaped around the Falby Road location, 24-hour Brampton access, simple menu categories, and cigarette and Native-smokes guides.",
     cards: [
       {
         title: "Falby Road 24-Hour Visit Guide",
