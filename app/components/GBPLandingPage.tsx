@@ -205,7 +205,7 @@ export function GBPLandingPage() {
       <section className={styles.section}>
         <h2 className={styles.h2}>Helpful Category Links Before You Visit</h2>
         <p className={styles.infoText}>
-          These internal links are provided as planning shortcuts for adults 19+ who want to understand the main menu sections before visiting {gbpLocation.storeName}. They do not confirm live product availability, pricing, or checkout details.
+          These category links help adults 19+ browse the main menu sections before visiting {gbpLocation.storeName}. Check the current menu for listed item details and prices.
         </p>
         <div className={styles.productGrid}>
           {categoryGuideLinks.map((item) => (

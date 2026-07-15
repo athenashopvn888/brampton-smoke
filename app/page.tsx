@@ -332,7 +332,7 @@ export default function HomePage() {
               If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
             </p>
             <p className={styles.seoPanelText}>
-              Menus change, so use the current menu and staff for product names, prices, and availability before you make the trip.
+              Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
             </p>
           </div>
         </div>

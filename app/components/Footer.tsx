@@ -71,7 +71,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             © {new Date().getFullYear()} Brampton Smoke Cannabis. Must be 19+ to
-            enter. Please consume responsibly.
+            enter. Adults 19+ only.
           </p>
         </div>
       </div>

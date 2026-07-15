@@ -89,7 +89,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         body:
           "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu categories, and adult shopping notes in one place without pretending every product detail is frozen.",
         bullets: [
-          "Use the current menu for products, prices, formats, and availability.",
+          "Use the current menu for listed products, prices, formats, and package details.",
           "Use the store page for address, hours, and local visit information.",
           "Use staff for details that need today's answer.",
         ],
@@ -146,7 +146,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Keep Product Decisions Current",
         body:
-          "Use this page for the visit plan, then use the current menu for product names, formats, prices, and availability. If the choice depends on one exact item, ask staff before choosing.",
+          "Use this page for the visit plan, then use the current menu for listed product names, formats, prices, and package details. If the choice depends on one exact item, ask staff before choosing.",
       },
     ],
   },
@@ -196,7 +196,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Use The Menu For What Changes",
         body:
-          "Resources explain how to shop. The current menu carries the moving details: product names, prices, weights, package sizes, and availability. That split keeps BSC useful without stale claims.",
+          "Resources explain how to shop. The current menu carries the moving details: listed product names, prices, weights, and package sizes. That split keeps BSC useful without stale claims.",
       },
     ],
   },
@@ -289,7 +289,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Do Not Guess From Old Prices",
         body:
-          "Use the current BSC menu for today's prices and availability. A resource page can teach the shopping method, but the shelf is the final answer.",
+          "Use the current BSC menu for today's listed prices and item details. A resource page can teach the shopping method, but the current menu is the reference.",
       },
     ],
   },

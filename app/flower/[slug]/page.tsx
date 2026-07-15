@@ -62,7 +62,6 @@ function getJsonLd(flower: FlowerProduct) {
     "@type": "Offer",
     url: `https://www.bramptonsmokecannabis.com/flower/${flower.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Brampton Smoke Cannabis" },
     hasMerchantReturnPolicy: {
@@ -236,7 +235,7 @@ export default async function FlowerPage({
                 </div>
               </div>
 
-              {/* Effects */}
+              {/* Product details */}
               <div className={styles.effectsRow}>
                 {strainData.effects.map((e) => (
                   <span key={e.label} className={styles.effectPill}>
