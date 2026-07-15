@@ -15,7 +15,7 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Brampton Smoke Cannabis located?", a: "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the store page and resources for directions, hours, and menu paths before visiting." },
+      { q: "Where is Brampton Smoke Cannabis located?", a: "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Use the store page and resources for directions, hours, and menu choices before visiting." },
       { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page and menu before visiting if timing or one exact item matters." },
       { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],

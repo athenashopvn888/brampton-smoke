@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
@@ -211,6 +211,17 @@ export default function HomePage() {
       </section>
 
       {/* ── BENTO MOSAIC HERO ── */}
+      <section className={styles.hiringCallout} aria-label="Hiring at Brampton Smoke Cannabis" style={{ "--hire-accent": "#facc15", "--hire-accent-soft": "rgba(250, 204, 21, 0.14)", "--hire-accent-border": "rgba(250, 204, 21, 0.32)" } as CSSProperties}>
+        <div className={styles.hiringCalloutInner}>
+          <div>
+            <span className={styles.hiringEyebrow}>Budtenders / Managers Wanted</span>
+            <h2>Join Brampton Smoke</h2>
+            <p>Falby Road needs friendly, determined people who can handle busy customer flow, stay reliable, and bring positive counter energy. Online applications only. Please do not call the store about hiring.</p>
+          </div>
+          <Link href="/careers/budtender" className={styles.hiringButton}>Apply Online</Link>
+        </div>
+      </section>
+
       <section className={styles.hero}>
         <div className={styles.heroBg} />
         <div className={styles.heroOverlay} />

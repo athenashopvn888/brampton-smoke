@@ -19,6 +19,7 @@ const ALL_LINKS = [
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/careers/budtender", label: "Join Team", featured: true },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];
@@ -60,7 +61,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${styles.pill} ${isActive ? styles.pillActive : ""}`}
+                className={`${styles.pill} ${link.featured ? styles.pillHiring : ""} ${isActive ? styles.pillActive : ""}`}
               >
                 {link.label}
               </Link>

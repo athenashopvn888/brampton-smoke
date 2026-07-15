@@ -44,7 +44,7 @@ export function getItemData(category: string, name: string): ItemEffects {
   if (cat === "PREROLLS") {
     return {
       effects: menuNotes,
-      description: `${name} is listed in the pre-roll category at Brampton Smoke Cannabis. Compare the format, pack details, product notes, and current price before choosing.`,
+      description: `${name} is listed in the pre-roll category at Brampton Smoke Cannabis. Compare the format, pack details, product details, and current price before choosing.`,
       metaDescription: `Shop ${name} pre-rolls in Brampton at Brampton Smoke Cannabis. Use the current menu for product details before visiting.`,
       consume: "Use as directed on the package. Ask staff if the format or pack detail is unclear.",
     };

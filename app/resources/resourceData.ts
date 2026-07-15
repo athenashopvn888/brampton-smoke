@@ -90,7 +90,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
           "Brampton Smoke Cannabis is listed at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. The resource pages keep the store identity, location, 24-hour schedule, menu categories, and adult shopping notes in one place without pretending every product detail is frozen.",
         bullets: [
           "Use the current menu for products, prices, formats, and availability.",
-          "Use the GBP landing page for locked store address, hours, and local visit context.",
+          "Use the visit guide for locked store address, hours, and local visit context.",
           "Use staff for details that need today's answer.",
         ],
       },
@@ -114,7 +114,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         title: "Store Landing Page",
         href: "/weed-dispensary-brampton",
-        text: "Use the protected GBP landing page for address, hours, and local Brampton context.",
+        text: "Use the visit guide for address, hours, and local Brampton context.",
       },
       {
         title: "Menu Guide",
@@ -136,7 +136,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Start With The Practical Stuff",
         body:
-          "For BSC, the useful local signal is not a fake lifestyle story. It is the Falby Road address, Open 24 Hours schedule, and clear menu path. Confirm the right page, then choose the lane that matches the visit.",
+          "For BSC, the useful local signal is not a generic store story. It is the Falby Road address, Open 24 Hours schedule, and clear menu choice. Confirm the right page, then choose the lane that matches the visit.",
         bullets: [
           "Address: 132 Falby Rd Unit B, Brampton, ON L6P 4L9.",
           "Hours: Open 24 Hours.",
@@ -158,7 +158,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A BSC-specific guide to shopping the Brampton Smoke Cannabis menu by category, from flower tiers to pre-rolls, vapes, edibles, concentrates, accessories, and cigarettes.",
     eyebrow: "Menu Guide",
     intro:
-      "BSC's menu gets easier when you choose the lane first. Start with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes, then compare the details inside that lane.",
+      "BSC's menu gets easier when you choose one category first. Start with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes, then compare the details inside that lane.",
     cards: [
       {
         title: "Flower Guide",
@@ -183,7 +183,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Pick One Lane First",
+        heading: "Pick One Category First",
         body:
           "Do not make every category fight for the same decision. Flower shoppers should compare flower tiers. Pre-roll shoppers should open pre-rolls. Vape, edible, concentrate, accessory, and cigarette shoppers should stay inside those categories until the choice is clear.",
         bullets: [
@@ -284,7 +284,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Start Low, Then Step Up",
         body:
-          "Budget and AA are the cleanest value lanes. If those do not fit the visit, step up to AAA+ or Premium and compare what changes: format, size, product notes, and posted price.",
+          "Budget and AA are the cleanest value lanes. If those do not fit the visit, step up to AAA+ or Premium and compare what changes: format, size, product details, and posted price.",
       },
       {
         heading: "Do Not Guess From Old Prices",
@@ -362,7 +362,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Know The Mission Before You Browse",
         body:
-          "Late-night shopping gets sloppy when every category is open at once. Decide whether the stop is flower, pre-rolls, edibles, vapes, concentrates, accessories, or cigarettes, then stay in that lane first.",
+          "Late-night shopping gets harder when every category is open at once. Decide whether the stop is flower, pre-rolls, edibles, vapes, concentrates, accessories, or cigarettes, then stay with that category first.",
       },
       {
         heading: "Use Staff For Final Details",
@@ -384,7 +384,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         title: "Store Landing Page",
         href: "/weed-dispensary-brampton",
-        text: "Use the protected local landing page for official address and NAP details.",
+        text: "Use the visit guide for official address and contact details.",
       },
       {
         title: "Falby Road 24-Hour Visit Guide",
@@ -415,7 +415,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     title: "Brampton Smoke Cannabis Resource Centre Launch",
     seoTitle: "Brampton Smoke Cannabis Resource Centre Launch | BSC Falby Road",
     description:
-      "The Brampton Smoke Cannabis resource centre now gives BSC-specific guides for Falby Road, 24-hour visits, flower, value, pre-rolls, and Native smokes.",
+      "The Brampton Smoke Cannabis resource section now gives BSC-specific guides for Falby Road, 24-hour visits, flower, value, pre-rolls, and Native smokes.",
     eyebrow: "Resource Update",
     intro:
       "The BSC resource centre is now shaped around the store's actual role in Pod 2: Falby Road, 24-hour Brampton coverage, simple menu categories, and cigarette/native-smokes notes.",

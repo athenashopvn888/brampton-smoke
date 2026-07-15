@@ -31,7 +31,7 @@ export function getStrainData(
 
   const description = `${name} is listed as ${tierDesc} in the ${typeLabel} lane at Brampton Smoke Cannabis${thcLine}. Compare the current product page, menu notes, weight, and posted price before choosing.`;
 
-  const metaDescription = `${name} at Brampton Smoke Cannabis in Brampton. Compare the current ${tierDesc} listing, product notes, and staff guidance before visiting.`;
+  const metaDescription = `${name} at Brampton Smoke Cannabis in Brampton. Compare the current ${tierDesc} listing, product details, and staff guidance before visiting.`;
 
   return { effects: MENU_NOTES, description, metaDescription };
 }
