@@ -672,7 +672,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
    ============================================================ */
 const TICKER_SLIDES = [
   "🔥 Brampton Smoke Cannabis — 132 Falby Rd Unit B, Brampton",
-  "200+ Strains In Stock",
+  "Flower Tiers and Menu Categories",
   "Open 24 Hours",
   "ALL SALES ARE FINAL",
 ];

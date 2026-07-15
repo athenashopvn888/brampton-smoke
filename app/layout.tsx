@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bramptonsmokecannabis.com"),
+  metadataBase: new URL("https://www.bramptonsmokecannabis.com"),
   title: {
     default: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
     template: "%s | Brampton Smoke Cannabis",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://bramptonsmokecannabis.com",
+    url: "https://www.bramptonsmokecannabis.com",
     siteName: "Brampton Smoke Cannabis",
     title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
     description:
       "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
-        url: "https://bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "Brampton Smoke Cannabis — Premium Cannabis Dispensary Brampton",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
     description: "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-    images: ["https://bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
+    images: ["https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://bramptonsmokecannabis.com",
+    canonical: "https://www.bramptonsmokecannabis.com",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -73,12 +73,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://bramptonsmokecannabis.com",
+  "@id": "https://www.bramptonsmokecannabis.com",
   name: "Brampton Smoke Cannabis",
   description: "Cannabis dispensary at 132 Falby Rd Unit B in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://bramptonsmokecannabis.com",
+  url: "https://www.bramptonsmokecannabis.com",
   telephone: "+19052267966",
-  image: "https://bramptonsmokecannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",

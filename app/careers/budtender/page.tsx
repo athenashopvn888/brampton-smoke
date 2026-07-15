@@ -6,11 +6,11 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application | Brampton Smoke Cannabis",
+  title: { absolute: "Budtender Or Manager Application | Brampton Smoke Cannabis" },
   description:
     "Apply for budtender or manager opportunities at Brampton Smoke Cannabis in Brampton. Submit availability, retail experience, motivation, determination, and customer-service answers.",
   alternates: {
-    canonical: "https://bramptonsmokecannabis.com/careers/budtender",
+    canonical: "https://www.bramptonsmokecannabis.com/careers/budtender",
   },
 };
 

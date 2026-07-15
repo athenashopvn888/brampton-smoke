@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://bramptonsmokecannabis.com/info/${slug}`,
+      canonical: `https://www.bramptonsmokecannabis.com/info/${slug}`,
     },
   };
 }

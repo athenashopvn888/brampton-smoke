@@ -97,7 +97,7 @@ export const TIER_CONFIG: Record<
     slug: "exotic",
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
-    tagline: "Ultra-rare, top-shelf genetics \u00B7 THC 35-39%",
+    tagline: "Browse the Exotic flower section",
     banner: "/banners/bsc-real/tier-exotic.webp",
     unitPrice: 20,
     deal3g: { label: "3g bundle", total: "3G", price: 40 },

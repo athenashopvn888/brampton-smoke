@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Brampton Smoke Cannabis Brampton`,
     description: strainData.metaDescription,
     alternates: {
-      canonical: `https://bramptonsmokecannabis.com/flower/${slug}`,
+      canonical: `https://www.bramptonsmokecannabis.com/flower/${slug}`,
     },
     openGraph: {
       title: `${flower.name} | Brampton Smoke Cannabis`,
@@ -60,7 +60,7 @@ function getJsonLd(flower: FlowerProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://bramptonsmokecannabis.com/flower/${flower.slug}`,
+    url: `https://www.bramptonsmokecannabis.com/flower/${flower.slug}`,
     priceCurrency: "CAD",
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
@@ -80,7 +80,7 @@ function getJsonLd(flower: FlowerProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: flower.name,
-    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://bramptonsmokecannabis.com${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
+    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://www.bramptonsmokecannabis.com${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
     description: strainData.description,
     brand: { "@type": "Brand", name: "Brampton Smoke Cannabis" },
     sku: cleanSku(flower.sku || flower.slug),
@@ -101,19 +101,19 @@ function getBreadcrumbJsonLd(flower: FlowerProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://bramptonsmokecannabis.com"
+        "item": "https://www.bramptonsmokecannabis.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": tierName,
-        "item": `https://bramptonsmokecannabis.com/${tierSlug}`
+        "item": `https://www.bramptonsmokecannabis.com/${tierSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": flower.name,
-        "item": `https://bramptonsmokecannabis.com/flower/${flower.slug}`
+        "item": `https://www.bramptonsmokecannabis.com/flower/${flower.slug}`
       }
     ]
   };

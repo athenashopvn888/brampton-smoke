@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${item.name} | ${item.category} | Brampton Smoke Cannabis Brampton`,
     description: itemData.metaDescription,
     alternates: {
-      canonical: `https://bramptonsmokecannabis.com/item/${slug}`,
+      canonical: `https://www.bramptonsmokecannabis.com/item/${slug}`,
     },
     openGraph: {
       title: `${item.name} | Brampton Smoke Cannabis`,
@@ -54,7 +54,7 @@ function getJsonLd(item: ItemProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://bramptonsmokecannabis.com/item/${item.slug}`,
+    url: `https://www.bramptonsmokecannabis.com/item/${item.slug}`,
     priceCurrency: "CAD",
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
@@ -74,7 +74,7 @@ function getJsonLd(item: ItemProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: item.name,
-    image: item.image ? [item.image.startsWith('http') ? item.image : `https://bramptonsmokecannabis.com${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
+    image: item.image ? [item.image.startsWith('http') ? item.image : `https://www.bramptonsmokecannabis.com${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
     description: itemData.description,
     brand: { "@type": "Brand", name: "Brampton Smoke Cannabis" },
     sku: cleanSku(item.sku || item.slug),
@@ -93,19 +93,19 @@ function getBreadcrumbJsonLd(item: ItemProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://bramptonsmokecannabis.com"
+        "item": "https://www.bramptonsmokecannabis.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": item.category,
-        "item": `https://bramptonsmokecannabis.com/items/${catSlug}`
+        "item": `https://www.bramptonsmokecannabis.com/items/${catSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": item.name,
-        "item": `https://bramptonsmokecannabis.com/item/${item.slug}`
+        "item": `https://www.bramptonsmokecannabis.com/item/${item.slug}`
       }
     ]
   };

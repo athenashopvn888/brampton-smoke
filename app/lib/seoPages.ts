@@ -44,7 +44,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Does Brampton Smoke Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu choices for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+        "a": "The site has menu categories for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
       }
     ]
   },
@@ -133,7 +133,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Brampton, open the Brampton Smoke Cannabis store page first. Confirm directions, local visit details, listed hours, and the menu choice before visiting."
+        "body": "Open the Brampton Smoke Cannabis store page first. Confirm directions, local visit details, listed hours, and the menu category before visiting."
       },
       {
         "heading": "Choose The Product Category",
@@ -155,7 +155,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What categories can shoppers compare?",
-        "a": "Use the menu choices for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+        "a": "Use the menu categories for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
       }
     ]
   },
@@ -170,7 +170,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Brampton Smoke Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+        "body": "Start with the Brampton Smoke Cannabis store page for visit information, then move into the menu category or resource that matches the trip."
       },
       {
         "heading": "Compare Categories Naturally",

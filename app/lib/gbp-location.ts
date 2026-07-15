@@ -1,7 +1,7 @@
 // Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "Brampton Smoke Cannabis",
-  domain: "bramptonsmokecannabis.com",
+  domain: "www.bramptonsmokecannabis.com",
   city: "Brampton",
   province: "ON",
   country: "CA",

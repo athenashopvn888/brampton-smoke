@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Open 24 hours, 7 days a week. Walk-ins welcome.",
   alternates: {
-    canonical: "https://bramptonsmokecannabis.com/contact",
+    canonical: "https://www.bramptonsmokecannabis.com/contact",
   },
   openGraph: {
     title: "Contact Brampton Smoke Cannabis — Brampton Dispensary",
@@ -99,16 +99,16 @@ export default function ContactPage() {
                 <br />
                 Just walk in and our staff will
                 <br />
-                help you find the perfect strain.
+                help you compare menu categories and item details.
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  200+ strains in stock
+                  Flower tiers and menu categories
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  Lab-tested &amp; safe
+                  Clear product and category details
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
