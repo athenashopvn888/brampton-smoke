@@ -133,7 +133,7 @@ export function GBPLandingPage() {
           Planning a visit to {gbpLocation.storeName} is easier when the local details are in one place. This page brings together the store address, hours, nearby areas like {nearbyAreaList}, and helpful category links for adults 19+ comparing general menu sections before visiting.
         </p>
         <p className={styles.infoText}>
-          If you are coming from {landmarkList}, use the visit details below to confirm the location and review the main site categories without relying on live inventory, pricing, or promotional claims.
+          If you are coming from {landmarkList}, use the visit details below to confirm the location, then explore the main site categories and current menu before you head over.
         </p>
         <p className={styles.infoText}>
           For a fuller local overview, read the{" "}

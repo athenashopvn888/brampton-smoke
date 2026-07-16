@@ -367,7 +367,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Use Staff For Final Details",
         body:
-          "If timing is tight or one product matters, use the current menu and staff for the freshest answer. That is more reliable than stretching old content into a live inventory claim.",
+          "If timing is tight or one product matters, start with the current menu, then ask staff for the freshest in-store details.",
       },
     ],
   },
