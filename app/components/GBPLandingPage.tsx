@@ -163,7 +163,7 @@ export function GBPLandingPage() {
             </div>
             <div className={styles.napItem}>
               <span className={styles.napLabel}>Phone</span>
-              <span>{gbpLocation.phone}</span>
+              <span><a href={`tel:${gbpLocation.phoneIntl}`} style={{ color: "inherit" }}>{gbpLocation.phone}</a></span>
             </div>
             <div className={styles.napItem}>
               <span className={styles.napLabel}>Website</span>

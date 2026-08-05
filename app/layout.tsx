@@ -77,7 +77,7 @@ const jsonLd = {
   name: "Brampton Smoke Cannabis",
   description: "Cannabis dispensary at 132 Falby Rd Unit B in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.bramptonsmokecannabis.com",
-  telephone: "+19052267966",
+  telephone: "+12898195009",
   image: "https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {

@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span>(905) 226-7966</span>
+              <span><a href="tel:+12898195009" style={{ color: "inherit" }}>+1 (289) 819-5009</a></span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>

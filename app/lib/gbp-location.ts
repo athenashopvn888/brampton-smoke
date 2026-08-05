@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "132 Falby Rd Unit B, Brampton, ON L6P 4L9",
   streetAddress: "132 Falby Rd Unit B",
   postalCode: "L6P 4L9",
-  phone: "(905) 226-7966",
-  phoneIntl: "+19052267966",
+  phone: "+1 (289) 819-5009",
+  phoneIntl: "+12898195009",
   neighborhood: "Brampton",
   nearbyAreas: ["Brampton", "Queen Street", "Kennedy Road", "Bramalea", "Downtown Brampton", "Peel Region", "Brampton Transit", "Local Brampton neighborhoods"],
   products: [
