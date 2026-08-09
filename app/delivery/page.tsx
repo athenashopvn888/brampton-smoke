@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import DeliveryContent from "./DeliveryContent";
+import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Delivery Coming Soon — Brampton Smoke Cannabis | Brampton",
-  description: "Get notified when Brampton Smoke Cannabis launches same-day weed delivery across Brampton and surrounding areas.",
-  alternates: {
-    canonical: "https://bramptonsmokecannabis.com/delivery",
-  },
+  title: "Delivery Menu | Brampton Smoke Cannabis",
+  description: "Browse the Brampton Smoke Cannabis delivery product catalog and compare flower tiers and prices.",
+  alternates: { canonical: "https://www.bramptonsmokecannabis.com/delivery" },
 };
 
 export default function DeliveryPage() {
-  return <DeliveryContent />;
+  const structuredData = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Brampton Smoke Cannabis Delivery Menu", url: "https://www.bramptonsmokecannabis.com/delivery", mainEntity: { "@type": "ItemList", numberOfItems: menu.products.length, itemListElement: menu.products.map((product, index) => ({ "@type": "ListItem", position: index + 1, name: product.name })) } };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><DeliveryContent /></>;
 }
