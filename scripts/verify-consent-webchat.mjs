@@ -14,6 +14,13 @@ for (const expected of [
   '/api/web-chat/session',
   '/api/web-chat/messages',
   '/api/web-chat/id-review',
+  '/api/web-chat/phone',
+  'phoneConfirmation: replacementPhoneConfirmation',
+  'phoneVersion: conversation.phoneVersion',
+  'START ANOTHER ORDER',
+  '/api/web-chat/order-cycle',
+  'requestId: crypto.randomUUID()',
+  'securely retained for future identity and address verification',
   'NEW_CUSTOMER',
   'RETURNING_CUSTOMER',
 ]) assert.ok(chat.includes(expected), `Missing Web Chat contract: ${expected}`);
