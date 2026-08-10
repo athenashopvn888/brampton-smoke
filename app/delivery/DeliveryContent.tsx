@@ -110,7 +110,6 @@ export default function DeliveryContent() {
     </section>
     <section className={styles.deliveryDetails} aria-label="Brampton Smoke Cannabis delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
-      <a href="sms:+13656440655"><span>DELIVERY TEXT NUMBER</span> +1 (365) 644-0655</a>
     </section>
     <section className={styles.loyalty} aria-labelledby="loyalty-title">
       <div><p>SAVE ON A LATER ORDER</p><h2 id="loyalty-title">Member Loyalty Savings</h2></div>
