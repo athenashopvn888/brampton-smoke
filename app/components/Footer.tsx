@@ -54,13 +54,14 @@ export default function Footer() {
               <Link href="/budget">Budget Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
-              <Link href="/items/vapes">Nic Vape</Link>
+<Link href="/items/vapes">Nicotine Vapes</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
               <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-brampton">Cheap Weed Brampton</Link>
-              <Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>
+<Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>
+              <Link href="/info/nicotine-vapes-brampton">Nicotine Vapes Brampton</Link>
               <Link href="/info/weed-store-near-brampton">Weed Store Near Brampton</Link>
               <Link href="/weed-dispensary-brampton/">Brampton Smoke Cannabis Weed Dispensary in Brampton</Link>
               <Link href="/contact">Contact Us</Link>
