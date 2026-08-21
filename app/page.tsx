@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
+import SmokePilotSpotlight from "./components/SmokePilotSpotlight";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
 
@@ -57,12 +58,11 @@ const BENTO_TIERS = [
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
-  { name: "THC Vapes", slug: "items/vapes", banner: "/banners/bsc-real/tile-thc-vape.webp" },
-  { name: "Nic Vapes", slug: "items/vape-disposables", banner: "/banners/bsc-real/tile-nic-vape.webp" },
+  { name: "Nicotine Vapes", slug: "items/vapes", banner: "/banners/bsc-real/tile-nic-vape.webp" },
+  { name: "THC Vapes", slug: "items/vape-disposables", banner: "/banners/bsc-real/tile-thc-vape.webp" },
   { name: "Concentrates", slug: "items/concentrates", banner: "/banners/bsc-real/tile-concentrates.webp" },
   { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/bsc-real/tile-prerolls.webp" },
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/bsc-real/tile-accessories.webp" },
-  { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/bsc-real/tile-cigarettes.webp" },
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/bsc-real/tile-magic.webp" },
 ];
 
@@ -257,7 +257,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Pick the category that matches the visit, then compare the current menu details.
+              Compare flower, pre-rolls, edibles, vapes, concentrates, accessories and cigarettes from the current Brampton selection.
             </p>
           </div>
 
@@ -288,13 +288,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SmokePilotSpotlight
+        storeName="Brampton Smoke Cannabis"
+        locationLabel="Brampton"
+        cigaretteHref="/info/native-cigarettes-brampton"
+        nicotineHref="/info/nicotine-vapes-brampton"
+      />
+
       {/* ── FEATURED PRODUCTS ── */}
       <section className={styles.featuredSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              A quick look at flower options from the store menu. Open the item page for current details before choosing.
+              A quick look at current flower options, including strain names, tier labels, weights and prices.
             </p>
           </div>
 
@@ -314,10 +321,10 @@ export default function HomePage() {
           <div className={styles.seoPanel}>
             <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
+              Compare flower, pre-rolls, edibles, THC vapes, concentrates, accessories and cigarettes from the listed store selection.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
+              Budget and AA flower offer lower-priced choices, while Premium and Exotic flower sit at the upper tiers. Compare the listed strains, weights and prices.
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.

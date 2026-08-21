@@ -22,7 +22,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Brampton Smoke Cannabis With A Plan",
-        "body": "Brampton Smoke Cannabis helps adults compare the menu without overcomplicating the visit. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Brampton Smoke Cannabis lists flower, pre-rolls, edibles, THC vapes, concentrates, accessories and cigarettes with current product and price details."
       },
       {
         "heading": "Local Menu Notes For Brampton",
@@ -30,7 +30,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, local visit details, listed hours, and menu category first. For current product names, prices, and package details, use the menu or ask staff before leaving."
+        "body": "Confirm the address, directions and listed hours before visiting. Current listings provide product names, prices and package details, and staff can help with questions."
       }
     ],
     "faqs": [
@@ -40,7 +40,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What should I check before visiting Brampton Smoke Cannabis?",
-        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+        "a": "Check the current product names, formats, prices and package details, then confirm directions and listed hours."
       },
       {
         "q": "Does Brampton Smoke Cannabis carry flower and pre-rolls?",
@@ -95,7 +95,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "banner": "/banners/bsc-real/page-cigarettes.webp",
     "sections": [
       {
-        "heading": "Start With The Cigarette Category",
+        "heading": "Native Cigarette Brands And Prices",
         "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Rolled Gold Full, Rolled Gold Lights, BB Full Carton, BB Lights Carton, Canadian Classics Original, Canadian Classics Silver, Canadian Full, Canadian Goose Full, Canadian Goose Lights, Canadian Lights, Canadian Menthol, Nexus Full, Nexus Lights, Playfare Ultra Lights, Putters, Time Full, and Time Lights. Check the current menu or ask staff before making the trip."
       },
       {
@@ -114,11 +114,11 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Are $25 cartons guaranteed?",
-        "a": "This page points shoppers toward menu listings where $25 carton-style options are shown. Check the current listed price and package details before choosing."
+        "a": "$25 carton-style options include the listed price and package details when they are part of the current selection."
       },
       {
         "q": "Where should shoppers start?",
-        "a": "Open the cigarette category, then use the store page for directions, local visit details, and listed hours."
+        "a": "Brampton Smoke Cannabis is at 132 Falby Rd Unit B, with directions and listed hours available on the store site."
       }
     ]
   },
@@ -136,8 +136,8 @@ export const SEO_PAGES: SeoPageData[] = [
         "body": "Open the Brampton Smoke Cannabis store page first. Confirm directions, local visit details, listed hours, and the menu category before visiting."
       },
       {
-        "heading": "Choose The Product Category",
-        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+        "heading": "Flower, Vapes, Edibles And More",
+        "body": "Compare current flower, pre-roll, edible, THC vape, concentrate and accessory details before visiting."
       },
       {
         "heading": "Use Staff For The Close Call",
@@ -147,7 +147,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "faqs": [
       {
         "q": "What is the best first step for a Brampton visit?",
-        "a": "Open the Brampton Smoke Cannabis store page, then use the current menu category that matches the visit."
+        "a": "Check the current selection, address, directions and listed hours before visiting Brampton Smoke Cannabis."
       },
       {
         "q": "Should shoppers rely on old blog prices?",
@@ -193,6 +193,42 @@ export const SEO_PAGES: SeoPageData[] = [
       {
         "q": "What should shoppers avoid?",
         "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+      }
+    ]
+  },
+  {
+    "slug": "nicotine-vapes-brampton",
+    "title": "Nicotine Vapes Brampton | Brampton Smoke Cannabis",
+    "metaDescription": "Browse nicotine vape devices, flavours, formats and listed prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B. Open 24 Hours.",
+    "h1": "Nicotine Vapes Brampton",
+    "icon": "NV",
+    "heroTagline": "Nicotine vape devices, flavours and prices from Brampton Smoke Cannabis",
+    "sections": [
+      {
+        "heading": "Nicotine Vape Selection",
+        "body": "Brampton Smoke Cannabis lists nicotine vape devices, flavours, formats, puff counts and prices."
+      },
+      {
+        "heading": "Nicotine Vapes on Falby Road",
+        "body": "Compare listed formats, flavours, puff counts and prices before a Brampton visit."
+      },
+      {
+        "heading": "Open 24 Hours",
+        "body": "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B for cigarettes, nicotine vapes and other smoke-shop essentials."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does Brampton Smoke Cannabis list nicotine vapes?",
+        "a": "Yes. The nicotine vape selection includes listed devices, flavours, formats, puff counts and prices."
+      },
+      {
+        "q": "Can I compare nicotine vape prices online?",
+        "a": "Yes. Current listings include product details and posted prices."
+      },
+      {
+        "q": "Where is Brampton Smoke Cannabis?",
+        "a": "Brampton Smoke Cannabis is at 132 Falby Rd Unit B."
       }
     ]
   }
