@@ -30,8 +30,8 @@ export default function NativeCigarettesPage() {
         crossLink={{ href: "/info/nicotine-vapes-brampton", eyebrow: "Also at Brampton Smoke Cannabis", title: "Prefer a nicotine vape?", body: "Shop nicotine vape devices with brand, flavour, puff-count and listed price details from Brampton Smoke Cannabis.", label: "Shop nicotine vapes" }}
         sections={[
           { heading: "Native Cigarettes on Falby Road", body: "Brampton Smoke Cannabis carries Native cigarettes and smoke-shop essentials at 132 Falby Rd Unit B in Brampton." },
-          { heading: "Full, Light and Menthol Styles", body: "Compare Canadian, Canadian Goose, Canadian Classics, Nexus, Time and Putters across full, light and menthol styles in the listed selection." },
-          { heading: "Backwoods, Grabba and Nicotine Pouches", body: "The smoke-shop selection also includes Backwoods, grabba, grabba shakers and nicotine pouches where listed." },
+          { heading: "Canadian Brands on Falby Road", body: "Compare listed Canadian, Canadian Goose, Canadian Classics, Nexus, Time and Putters options, including full, light and menthol styles." },
+          { heading: "Grabba and Backwoods in Brampton", body: "Brampton Smoke Cannabis also lists grabba, grabba shakers, Backwoods and nicotine pouches with its smoke-shop selection." },
         ]}
         faqs={[
           { q: "Does Brampton Smoke Cannabis sell Native cigarettes?", a: "Yes. Brampton Smoke Cannabis lists Native cigarette brands and related smoke-shop products at 132 Falby Rd Unit B, Brampton." },

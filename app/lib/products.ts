@@ -176,10 +176,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     icon: "NV",
     seoTitle: "Nicotine Vape Menu Brampton",
     seoIntro: "Browse nicotine vape devices, formats, flavours, puff counts and listed prices at Brampton Smoke Cannabis.",
-    seoDescription: "The nicotine vape menu at Brampton Smoke Cannabis lists devices, formats and prices for Brampton shoppers. THC vapes have a separate category. Visit 132 Falby Rd Unit B.",
+    seoDescription: "Compare nicotine vape devices, formats, flavours, puff counts and listed prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B.",
     faqs: [
       { q: "Is this the nicotine vape menu?", a: "Yes. This category lists nicotine vape devices and prices from Brampton Smoke Cannabis." },
-      { q: "Where are THC vapes?", a: "THC vapes are listed in a separate THC vape category." },
+      { q: "Can I compare nicotine vape prices online?", a: "Yes. Current listings show available product details and posted prices for Brampton shoppers." },
     ],
   },
   "VAPE DISPOSABLE": {
@@ -190,10 +190,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     icon: "V",
     seoTitle: "THC Vape Menu Brampton",
     seoIntro: "Browse THC vape products and listed prices at Brampton Smoke Cannabis.",
-    seoDescription: "The THC vape category at Brampton Smoke Cannabis lists cannabis vape products and prices for Brampton shoppers. Nicotine vapes have a separate category. Visit 132 Falby Rd Unit B.",
+    seoDescription: "Compare listed THC vape products, formats and prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B in Brampton.",
     faqs: [
       { q: "Is this the THC vape menu?", a: "Yes. This category lists THC vape products and prices from Brampton Smoke Cannabis." },
-      { q: "Where are nicotine vapes?", a: "Nicotine vapes are listed in a separate nicotine vape category." },
+      { q: "Can I compare THC vape prices online?", a: "Yes. Current listings show available product details and posted prices for Brampton shoppers." },
     ],
   },
   CONCENTRATES: {

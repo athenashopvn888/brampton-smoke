@@ -22,7 +22,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Brampton Smoke Cannabis With A Plan",
-        "body": "Brampton Smoke Cannabis helps adults compare the menu without overcomplicating the visit. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Brampton Smoke Cannabis lists flower, pre-rolls, edibles, THC vapes, concentrates, accessories and cigarettes with current product and price details."
       },
       {
         "heading": "Local Menu Notes For Brampton",
@@ -30,7 +30,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, local visit details, listed hours, and menu category first. For current product names, prices, and package details, use the menu or ask staff before leaving."
+        "body": "Confirm the address, directions and listed hours before visiting. Current listings provide product names, prices and package details, and staff can help with questions."
       }
     ],
     "faqs": [
@@ -40,7 +40,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What should I check before visiting Brampton Smoke Cannabis?",
-        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+        "a": "Check the current product names, formats, prices and package details, then confirm directions and listed hours."
       },
       {
         "q": "Does Brampton Smoke Cannabis carry flower and pre-rolls?",
@@ -137,7 +137,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Flower, Vapes, Edibles And More",
-        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+        "body": "Compare current flower, pre-roll, edible, THC vape, concentrate and accessory details before visiting."
       },
       {
         "heading": "Use Staff For The Close Call",
@@ -147,7 +147,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "faqs": [
       {
         "q": "What is the best first step for a Brampton visit?",
-        "a": "Open the Brampton Smoke Cannabis store page, then use the current menu category that matches the visit."
+        "a": "Check the current selection, address, directions and listed hours before visiting Brampton Smoke Cannabis."
       },
       {
         "q": "Should shoppers rely on old blog prices?",
@@ -209,8 +209,8 @@ export const SEO_PAGES: SeoPageData[] = [
         "body": "Brampton Smoke Cannabis lists nicotine vape devices, flavours, formats, puff counts and prices."
       },
       {
-        "heading": "Separate From THC Vapes",
-        "body": "Nicotine vapes and THC vapes have separate selections so each product group is clear."
+        "heading": "Nicotine Vapes on Falby Road",
+        "body": "Compare listed formats, flavours, puff counts and prices before a Brampton visit."
       },
       {
         "heading": "Open 24 Hours",
@@ -223,8 +223,8 @@ export const SEO_PAGES: SeoPageData[] = [
         "a": "Yes. The nicotine vape selection includes listed devices, flavours, formats, puff counts and prices."
       },
       {
-        "q": "Where are THC vapes?",
-        "a": "THC vapes have a separate category."
+        "q": "Can I compare nicotine vape prices online?",
+        "a": "Yes. Current listings include product details and posted prices."
       },
       {
         "q": "Where is Brampton Smoke Cannabis?",

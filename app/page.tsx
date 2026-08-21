@@ -257,7 +257,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Pick the category that matches the visit, then compare the current menu details.
+              Compare flower, pre-rolls, edibles, vapes, concentrates, accessories and cigarettes from the current Brampton selection.
             </p>
           </div>
 
@@ -324,7 +324,7 @@ export default function HomePage() {
               Compare flower, pre-rolls, edibles, THC vapes, concentrates, accessories and cigarettes from the listed store selection.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
+              Budget and AA flower offer lower-priced choices, while Premium and Exotic flower sit at the upper tiers. Compare the listed strains, weights and prices.
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
