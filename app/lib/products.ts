@@ -178,7 +178,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoIntro: "Browse nicotine vape devices, formats, flavours, puff counts and listed prices at Brampton Smoke Cannabis.",
     seoDescription: "Compare nicotine vape devices, formats, flavours, puff counts and listed prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B.",
     faqs: [
-      { q: "Is this the nicotine vape menu?", a: "Yes. This category lists nicotine vape devices and prices from Brampton Smoke Cannabis." },
+      { q: "What nicotine vape details are available?", a: "Compare listed device formats, flavours, puff counts and prices before visiting Brampton Smoke Cannabis." },
       { q: "Can I compare nicotine vape prices online?", a: "Yes. Current listings show available product details and posted prices for Brampton shoppers." },
     ],
   },
@@ -192,7 +192,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoIntro: "Browse THC vape products and listed prices at Brampton Smoke Cannabis.",
     seoDescription: "Compare listed THC vape products, formats and prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B in Brampton.",
     faqs: [
-      { q: "Is this the THC vape menu?", a: "Yes. This category lists THC vape products and prices from Brampton Smoke Cannabis." },
+      { q: "What THC vape details are available?", a: "Compare listed product names, formats and prices before visiting Brampton Smoke Cannabis." },
       { q: "Can I compare THC vape prices online?", a: "Yes. Current listings show available product details and posted prices for Brampton shoppers." },
     ],
   },
@@ -248,7 +248,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoIntro: "Browse Native cigarette brands, pack styles and listed prices at Brampton Smoke Cannabis.",
     seoDescription: "The cigarette menu at Brampton Smoke Cannabis lists cigarette brands, styles and prices for Brampton shoppers. Visit 132 Falby Rd Unit B. Open 24 Hours.",
     faqs: [
-      { q: "Does Brampton Smoke Cannabis list Native cigarettes?", a: "Yes. This category lists Native cigarette brands, styles and prices from Brampton Smoke Cannabis." },
+      { q: "Does Brampton Smoke Cannabis list Native cigarettes?", a: "Yes. Compare listed Native cigarette brands, styles and prices from Brampton Smoke Cannabis." },
       { q: "What cigarette styles are listed?", a: "The selection includes full, light and menthol styles across several listed brands." },
       { q: "Where is Brampton Smoke Cannabis?", a: "Brampton Smoke Cannabis is at 132 Falby Rd Unit B." },
     ],

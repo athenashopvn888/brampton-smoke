@@ -301,7 +301,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              A quick look at flower options from the store menu. Open the item page for current details before choosing.
+              A quick look at current flower options, including strain names, tier labels, weights and prices.
             </p>
           </div>
 
