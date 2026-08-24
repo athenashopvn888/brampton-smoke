@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.bramptonsmokecannabis.com/info/native-cigarettes-brampton" },
 };
 
+const HERO_ITEMS = [
+  { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
+  { name: "BB Full", image: "/products/1003-BB-FULL-CARTON.webp" },
+  { name: "Canadian Lights", image: "/products/1005-CANADIAN-LIGHTS.webp" },
+  { name: "Canadian Full", image: "/products/1006-CANADIAN-FULL.webp" },
+  { name: "Canadian Classics Silver", image: "/products/1015-CANADIAN-CLASSICS-SILVER.webp" },
+  { name: "Canadian Menthol", image: "/products/1013-CANADIAN-MENTHOL.webp" },
+] as const;
+
 export default function NativeCigarettesPage() {
   const items = getItemsByCategory("CIGARETTES");
   return (
@@ -41,6 +50,8 @@ export default function NativeCigarettesPage() {
         address="132 Falby Rd Unit B, Brampton"
         hours="Open 24 Hours"
         theme="cigarettes"
+        heroItems={HERO_ITEMS}
+        heroDisclosure="Brand preview only. Selection varies by store; check the current cigarette menu before visiting."
       />
       <Footer />
     </>
