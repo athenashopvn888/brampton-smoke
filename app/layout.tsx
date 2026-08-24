@@ -118,8 +118,8 @@ export default function RootLayout({
       <head>
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="Brampton" />
-        <meta name="geo.position" content="43.7915;-79.6432" />
-        <meta name="ICBM" content="43.7915, -79.6432" />
+        <meta name="geo.position" content="43.7724674;-79.6563479" />
+        <meta name="ICBM" content="43.7724674, -79.6563479" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
