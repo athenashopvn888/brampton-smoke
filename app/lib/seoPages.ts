@@ -1,13 +1,39 @@
+const NICOTINE_VAPE_HERO_PRODUCTS = [
+  { name: "Geek Promax 5% — 30K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg", sourceSlug: "geek-promax-5-30k-puffs" },
+  { name: "Geek Universe — 25K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp", sourceSlug: "geek-universe-25k-puffs" },
+  { name: "Level X G2 Pod", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1086-Level-X-G2-pod.webp", sourceSlug: "level-x-g2-pod" },
+  { name: "NEXA PIX — 30K Puffs — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/nexa_showcase_600x600.webp", sourceSlug: "nexa-pix-30k-puffs-many-flavors" },
+  { name: "OVNS 10000 5% — 10K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1081OVNS10000.jpg", sourceSlug: "ovns-10000-5-10k-puffs" },
+  { name: "OVNS Disposable 5% — 8 mL — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/OVNS500x500HQ.webp", sourceSlug: "ovns-disposable-5-8ml-many-flavors" },
+] as const;
+
 export interface SeoPageData {
   slug: string;
   title: string;
+  absoluteTitle?: boolean;
   metaDescription: string;
   h1: string;
   icon: string;
   heroTagline: string;
+  publicationStatus?: "draft" | "approved";
+  heroPreview?: {
+    eyebrow: string;
+    intro: string;
+    products: readonly { name: string; image: string; sourceSlug?: string }[];
+    disclosure: string;
+    menuHref: string;
+    primaryLabel: string;
+    secondaryLabel: string;
+    secondaryHref?: string;
+    theme: "nicotine";
+    identityStrip?: string;
+    featuredHeading?: string;
+    featuredIntro?: string;
+  };
   banner?: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
+  warning?: string;
 }
 
 export const SEO_PAGES: SeoPageData[] = [
@@ -197,40 +223,40 @@ export const SEO_PAGES: SeoPageData[] = [
     ]
   },
   {
-    "slug": "nicotine-vapes-brampton",
-    "title": "Nicotine Vapes Brampton | Brampton Smoke Cannabis",
-    "metaDescription": "Browse nicotine vape devices, flavours, formats and listed prices at Brampton Smoke Cannabis, 132 Falby Rd Unit B. Open 24 Hours.",
-    "h1": "Nicotine Vapes Brampton",
-    "icon": "NV",
-    "heroTagline": "Nicotine vape devices, flavours and prices from Brampton Smoke Cannabis",
-    "sections": [
-      {
-        "heading": "Nicotine Vape Selection",
-        "body": "Brampton Smoke Cannabis lists nicotine vape devices, flavours, formats, puff counts and prices."
-      },
-      {
-        "heading": "Nicotine Vapes on Falby Road",
-        "body": "Compare listed formats, flavours, puff counts and prices before a Brampton visit."
-      },
-      {
-        "heading": "Open 24 Hours",
-        "body": "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B for cigarettes, nicotine vapes and other smoke-shop essentials."
-      }
+    slug: "nicotine-vapes-brampton",
+    title: "Brampton Nicotine Vapes | Brampton Smoke Cannabis",
+    absoluteTitle: true,
+    metaDescription: "Adults 19+: review six verified nicotine vape product pages from Brampton Smoke Cannabis, then check /items/vapes for the current selection. Nicotine is addictive.",
+    h1: "A Brampton Guide to Nicotine Vapes",
+    icon: "NV",
+    heroTagline: "Adults 19+ · Nicotine is addictive.",
+    publicationStatus: "approved",
+    heroPreview: {
+      eyebrow: "BRAMPTON SMOKE CANNABIS • BRAMPTON • ADULTS 19+",
+      intro: "Brampton Smoke Cannabis has six verified VAPE PENS product pages for this adult-only Brampton guide. If you are searching for nicotine vapes near me, use the featured cards to compare exact product details, then open /items/vapes for the current nicotine vape selection. Product information can change. Nicotine is addictive.",
+      products: NICOTINE_VAPE_HERO_PRODUCTS,
+      disclosure: "These cards do not guarantee current price, stock or availability.",
+      menuHref: "/items/vapes",
+      primaryLabel: "Browse Nicotine Vapes",
+      secondaryLabel: "Compare the Six Featured Items",
+      secondaryHref: "#featured-vapes",
+      theme: "nicotine",
+      identityStrip: "Brampton Smoke Cannabis | Brampton | Adults 19+ | Nicotine is addictive.",
+      featuredHeading: "Six Verified Cards, One Current Category",
+      featuredIntro: "The featured set combines Geek and NEXA product pages with a Level X G2 Pod and two OVNS listings, including an explicitly identified OVNS disposable. Use /items/vapes as the current source if the selection changes. These cards do not guarantee current price, stock or availability.",
+    },
+    sections: [
+      { heading: "A Format Mix Worth Reading Carefully", body: "One verified page identifies a Level X G2 Pod, while another explicitly identifies an OVNS disposable format. Keep those descriptions attached to their respective products. Do not apply the pod or disposable label to another featured item unless its current product page verifies that format." },
+      { heading: "Puff Counts Identify Listings, Not Results", body: "Several verified product names include puff counts. Those numbers can help adults distinguish one listing from another, but this page does not present them as guarantees of lifespan, performance or superiority. Check the individual product page for its exact supported details." },
+      { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "Brampton Smoke Cannabis’s nicotine vape shop guide uses products from the VAPE PENS category under /items/vapes. The separate /items/vape-disposables route is for THC or cannabis vape products and must not be included on this nicotine page." },
+      { heading: "Visit Brampton Smoke Cannabis in Brampton", body: "Before visiting Brampton Smoke Cannabis in Brampton, confirm the storefront’s current details and browse /items/vapes for the latest nicotine vape shop listing. No unverified address, hours, prices or guaranteed-availability statement is included here." },
     ],
-    "faqs": [
-      {
-        "q": "Does Brampton Smoke Cannabis list nicotine vapes?",
-        "a": "Yes. The nicotine vape selection includes listed devices, flavours, formats, puff counts and prices."
-      },
-      {
-        "q": "Can I compare nicotine vape prices online?",
-        "a": "Yes. Current listings include product details and posted prices."
-      },
-      {
-        "q": "Where is Brampton Smoke Cannabis?",
-        "a": "Brampton Smoke Cannabis is at 132 Falby Rd Unit B."
-      }
-    ]
+    faqs: [
+      { q: "Where can I check Brampton Smoke Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points, while the current category listing should control selection information." },
+      { q: "Is a disposable nicotine vape represented in the featured cards?", a: "Yes. The supplied evidence explicitly identifies OVNS Disposable 5% — 8 mL — Many Flavors. Check its current product page for any updated details." },
+      { q: "Does this page include cannabis vapes?", a: "No. It covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded." },
+    ],
+    warning: "Adults 19+. Nicotine is addictive.",
   }
 ];
 
