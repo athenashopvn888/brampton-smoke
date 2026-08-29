@@ -1,5 +1,6 @@
 // Auto-generated Google Business Profile Local SEO Landing Page Component
 import Link from "next/link";
+import PreferredSourceButton from "./PreferredSourceButton";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
 
@@ -103,15 +104,20 @@ export function GBPLandingPage() {
 
       {/* Intro Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Your Trusted Local Weed Dispensary</h2>
-        <p className={styles.introText}>{gbpLocation.introVariant}</p>
+        <h2 className={styles.h2}>Local Weed Dispensary in Brampton</h2>
+        <p className={styles.introText}>
+          {gbpLocation.introVariant.replace(
+            "We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories.",
+            "We serve adults 19+ who want to browse cannabis categories such as flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories."
+          )}
+        </p>
       </section>
 
       {/* Product Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Weed and Cannabis Products Available</h2>
+        <h2 className={styles.h2}>Cannabis Menu Categories</h2>
         <p className={styles.infoText}>
-          At {gbpLocation.storeName}, we offer a curated selection of weed and cannabis products for adults 19+ in {gbpLocation.city}. Enjoy some of Ontario&apos;s finest quality and value in the following categories:
+          Adults 19+ can browse the existing cannabis menu categories for {gbpLocation.storeName}, including:
         </p>
         <div className={styles.productGrid}>
           {gbpLocation.products.map((p) => {
@@ -219,7 +225,7 @@ export function GBPLandingPage() {
       <section className={styles.section}>
         <h2 className={styles.h2}>{gbpLocation.sectionTitle}</h2>
         <p className={styles.infoText}>
-          {gbpLocation.neighborhoodDescription} {gbpLocation.transitNote}. We proudly welcome customers from:
+          Brampton Smoke Cannabis is a local cannabis store in Brampton. This page includes general local context for surrounding Peel Region communities. {gbpLocation.transitNote}. We proudly welcome customers from:
         </p>
         <div className={styles.areaList}>
           {gbpLocation.nearbyAreas.map((area) => (
@@ -241,13 +247,13 @@ export function GBPLandingPage() {
           <div className={styles.faqItem}>
             <h3 className={styles.faqQuestion}>Is {gbpLocation.storeName} a weed dispensary in {gbpLocation.city}?</h3>
             <p className={styles.faqAnswer}>
-              Yes, {gbpLocation.storeName} is a fully licensed local weed dispensary in {gbpLocation.city} serving cannabis customers aged 19 and older with valid identification.
+              Yes. {gbpLocation.storeName} is a local weed dispensary in {gbpLocation.city} for adults aged 19 and older.
             </p>
           </div>
           <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>What products does {gbpLocation.storeName} carry?</h3>
+            <h3 className={styles.faqQuestion}>What menu categories can I browse on the Brampton Smoke Cannabis website?</h3>
             <p className={styles.faqAnswer}>
-              We carry a complete line of weed products including premium flower, pre-rolls, THC edibles, concentrates, shatter, THC vape cartridges, CBD oils, and accessories.
+              The website links to menu categories for flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories.
             </p>
           </div>
           <div className={styles.faqItem}>
@@ -269,14 +275,15 @@ export function GBPLandingPage() {
           </div>
           {gbpLocation.neighborhood && (
             <div className={styles.faqItem}>
-              <h3 className={styles.faqQuestion}>Is {gbpLocation.storeName} near {gbpLocation.neighborhood}?</h3>
+              <h3 className={styles.faqQuestion}>What areas does this page provide local context for?</h3>
               <p className={styles.faqAnswer}>
-                Yes, {gbpLocation.storeName} is located near {gbpLocation.neighborhood} and serves customers from nearby landmarks like {gbpLocation.localLandmarks.join(", ")}.
+                This page provides general local context for Brampton and nearby areas and corridors including Queen Street, Kennedy Road, Bramalea, Downtown Brampton, and Peel Region.
               </p>
             </div>
           )}
         </div>
       </section>
+      <PreferredSourceButton />
     </div>
   );
 }

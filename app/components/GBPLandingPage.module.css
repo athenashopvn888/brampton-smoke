@@ -231,3 +231,31 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+.preferredSources {
+  text-align: center;
+}
+
+.preferredSources .h2 {
+  display: inline-block;
+}
+
+.preferredSourcesControl {
+  display: flex;
+  min-height: 40px;
+  margin: 20px 0 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.preferredSourcesFallback {
+  color: var(--green-deep, #0B2D1B);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 390px) {
+  .preferredSources {
+    padding: 24px 18px;
+  }
+}
