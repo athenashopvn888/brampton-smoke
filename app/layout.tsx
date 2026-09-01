@@ -143,7 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Link className="deliveryAnnouncement" href="/delivery">
+        <Link className="deliveryAnnouncement" href="/weed-delivery-brampton">
           NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
@@ -152,3 +152,4 @@ export default function RootLayout({
     </html>
   );
 }
+
