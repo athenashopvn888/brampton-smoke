@@ -6,6 +6,8 @@
  * If the fetch fails, the existing JSON files are kept as fallback.
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 const fs = require('fs');
 const path = require('path');
 

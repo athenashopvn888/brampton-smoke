@@ -183,11 +183,10 @@ export default function TV2Page() {
   const [items, setItems] = useState<Item[]>([]);
   const [highlights, setHighlights] = useState<Record<string,number>>({});
   const [lastUpdate, setLastUpdate] = useState("");
-  const [daytime, setDaytime] = useState(false);
+  const [daytime, setDaytime] = useState(isDaytime);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setDaytime(isDaytime());
     const iv = setInterval(() => setDaytime(isDaytime()), 60_000);
     return () => clearInterval(iv);
   }, []);
@@ -214,10 +213,10 @@ export default function TV2Page() {
   }, []);
 
   useEffect(() => {
-    loadData(); fitToScreen();
+    const initial = window.setTimeout(() => { void loadData(); fitToScreen(); }, 0);
     window.addEventListener("resize", fitToScreen);
     const refresh = setInterval(loadData, 5*60*1000);
-    return () => { window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
+    return () => { window.clearTimeout(initial); window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
   }, [loadData, fitToScreen]);
 
   useEffect(() => {

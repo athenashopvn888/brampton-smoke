@@ -28,7 +28,9 @@ export async function generateMetadata({
   const strainData = getStrainData(flower.name, flower.type, flower.tier, flower.thc);
 
   return {
-    title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Brampton Smoke Cannabis Brampton`,
+    title: {
+      absolute: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Brampton Smoke Cannabis Brampton`,
+    },
     description: strainData.metaDescription,
     alternates: {
       canonical: `https://www.bramptonsmokecannabis.com/flower/${slug}`,
@@ -58,7 +60,7 @@ function getJsonLd(flower: FlowerProduct) {
 
   const strainData = getStrainData(flower.name, flower.type, flower.tier, flower.thc);
 
-  const offers: any = {
+  const offers: Record<string, unknown> = {
     "@type": "Offer",
     url: `https://www.bramptonsmokecannabis.com/flower/${flower.slug}`,
     priceCurrency: "CAD",
@@ -293,10 +295,18 @@ export default async function FlowerPage({
               <div className={styles.descSection}>
                 <h2 className={styles.descTitle}>About {flower.name}</h2>
                 <p className={styles.descText}>{strainData.description}</p>
+                <p className={styles.descText}>
+                  {flower.name} is listed in the {tierName} weed and cannabis flower section at Brampton Smoke Cannabis.
+                </p>
+                <p className={styles.descText}>
+                  <Link href={`/${tierConfig?.slug || "exotic"}`}>Explore {tierName} Weed &amp; Flower</Link>
+                  {" · "}
+                  <Link href="/weed-dispensary-brampton/">Brampton Weed &amp; Cannabis Guide</Link>
+                </p>
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Listed on the Brampton Smoke Cannabis menu</p>
               </div>
             </div>
           </div>

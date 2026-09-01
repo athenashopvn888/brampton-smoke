@@ -34,11 +34,11 @@ export const bscWeedOwner: WeedOwnerConfig = {
   hoursLabel: "Open 24 Hours",
   ownerPath: "/weed-dispensary-brampton/",
   flowerTiers: [
-    { label: "Budget Flower", description: "A starting point for shoppers interested in the Budget flower selection.", href: "/budget" },
-    { label: "AA Flower", description: "Explore the AA flower selection.", href: "/aa" },
-    { label: "AAA+ Flower", description: "Explore the AAA+ flower selection.", href: "/aaa" },
-    { label: "Premium Flower", description: "Explore the Premium flower selection.", href: "/premium" },
-    { label: "Exotic Flower", description: "Explore the Exotic flower selection.", href: "/exotic" },
+    { label: "Budget Weed & Flower", description: "Explore the Budget cannabis flower tier.", href: "/budget" },
+    { label: "AA Weed & Flower", description: "Explore the AA cannabis flower tier.", href: "/aa" },
+    { label: "AAA+ Weed & Flower", description: "Explore the AAA+ cannabis flower tier.", href: "/aaa" },
+    { label: "Premium Weed & Flower", description: "Explore the Premium cannabis flower tier.", href: "/premium" },
+    { label: "Exotic Weed & Flower", description: "Explore the Exotic cannabis flower tier.", href: "/exotic" },
   ],
   categories: [
     { label: "Pre-Rolls", description: "Cannabis already rolled and ready in pre-roll format.", href: "/items/prerolls" },

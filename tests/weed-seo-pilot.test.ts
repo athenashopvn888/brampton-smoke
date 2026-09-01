@@ -73,3 +73,49 @@ test("changed Weed copy avoids internal page-mechanics language", () => {
     assert.ok(!sources.includes(blocked), `Blocked shopper-copy phrase: ${blocked}`);
   }
 });
+
+test("tier pages use absolute route-specific metadata and one natural Weed signal", () => {
+  const page = read("app/[tier]/page.tsx");
+  const content = read("app/lib/tierSeoContent.ts");
+
+  assert.match(page, /title: \{ absolute: seo\.seoTitle \}/);
+  assert.match(page, /twitter:/);
+  assert.match(page, /canonical: `https:\/\/www\.bramptonsmokecannabis\.com\/\$\{tierSlug\}`/);
+  assert.match(page, /Compare Weed &amp; Flower Tiers/);
+  assert.match(page, /href="\/weed-dispensary-brampton\/"/);
+
+  for (const tier of ["Exotic", "Premium", "AAA+", "AA", "Budget"]) {
+    assert.ok(content.includes(`${tier} Weed & Flower Brampton | Brampton Smoke Cannabis`));
+    assert.ok(content.includes(`${tier} Weed & Cannabis Flower in Brampton`));
+    assert.ok(content.includes(`Explore ${tier} Weed Strains`));
+  }
+});
+
+test("Weed owner cards preserve broad-owner and tier-owner separation", () => {
+  const discovery = read("app/lib/weedDiscovery.ts");
+
+  for (const tier of ["Budget", "AA", "AAA+", "Premium", "Exotic"]) {
+    assert.ok(discovery.includes(`${tier} Weed & Flower`));
+    assert.ok(discovery.includes(`Explore the ${tier} cannabis flower tier.`));
+  }
+  assert.match(discovery, /ownerPath: "\/weed-dispensary-brampton\/"/);
+});
+
+test("flower details avoid false live availability and link to tier context", () => {
+  const page = read("app/flower/[slug]/page.tsx");
+
+  assert.doesNotMatch(page, /Available in-store/i);
+  assert.doesNotMatch(page, /In stock|Available now|Currently available/i);
+  assert.match(page, /title: \{\s*absolute:/s);
+  assert.match(page, /Listed on the Brampton Smoke Cannabis menu/);
+  assert.match(page, /Explore \{tierName\} Weed &amp; Flower/);
+  assert.match(page, /href="\/weed-dispensary-brampton\/"/);
+});
+
+test("homepage describes five flower tiers without calling every tier premium", () => {
+  const page = read("app/page.tsx");
+
+  assert.doesNotMatch(page, /five tiers of premium flower/i);
+  assert.match(page, /five flower tiers/);
+  assert.match(page, /comparing Weed and cannabis flower in Brampton/);
+});

@@ -244,6 +244,61 @@
   margin: 0;
 }
 
+.compareSection {
+  margin-top: 36px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.compareTitle {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.compareCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.compareCard:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-2px);
+}
+
+.compareCard span {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ownerLink {
+  margin: 18px 0 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.ownerLink a {
+  color: var(--green-mid);
+  font-weight: 700;
+}
+
 /* ── FAQ Accordion ── */
 .faqSection {
   margin-top: 32px;
