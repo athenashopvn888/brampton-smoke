@@ -19,7 +19,7 @@ const ALL_LINKS = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/weed-delivery-brampton", label: "🚗 Weed Delivery" },
   { href: "/careers/budtender", label: "Join Team", featured: true },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
@@ -81,3 +81,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
