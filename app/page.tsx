@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import SmokePilotSpotlight from "./components/SmokePilotSpotlight";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
-import { allFlowers } from "./lib/products";
+import { allFlowers, type FlowerProduct } from "./lib/products";
 import Papa from "papaparse";
 
 /* ── Bento Mosaic Config ── */
@@ -75,7 +75,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
+    a: "We carry five flower tiers: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
   },
   {
     q: "Where is Brampton Smoke Cannabis located?",
@@ -98,8 +98,27 @@ interface ReviewStats {
   avg: number;
 }
 
+function pickFeaturedStrains(): FlowerProduct[] {
+  const pool = [...allFlowers].filter((flower) => flower.image);
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+
+  const picked: FlowerProduct[] = [];
+  const tierCounts: Record<string, number> = {};
+  for (const flower of pool) {
+    if (picked.length >= 8) break;
+    const tierCount = tierCounts[flower.tier] || 0;
+    if (tierCount >= 2 || picked.some((item) => item.name === flower.name)) continue;
+    picked.push(flower);
+    tierCounts[flower.tier] = tierCount + 1;
+  }
+  return picked;
+}
+
 export default function HomePage() {
-  const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
+  const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(true);
@@ -161,26 +180,8 @@ export default function HomePage() {
 
   /* ── 2. Build Featured Strains ── */
   useEffect(() => {
-    const pool = [...allFlowers].filter((f) => f.image);
-    // Shuffle pool securely
-    for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
-    }
-
-    const picked: typeof pool = [];
-    const tierCounts: Record<string, number> = {};
-
-    for (const f of pool) {
-      if (picked.length >= 8) break;
-      const tc = tierCounts[f.tier] || 0;
-      if (tc >= 2) continue; // max 2 per tier
-      if (picked.some((p) => p.name === f.name)) continue; // avoid exact duplicates
-      picked.push(f);
-      tierCounts[f.tier] = tc + 1;
-    }
-
-    setFeaturedStrains(picked);
+    const timer = window.setTimeout(() => setFeaturedStrains(pickFeaturedStrains()), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
@@ -327,7 +328,7 @@ export default function HomePage() {
               Compare flower, pre-rolls, edibles, THC vapes, concentrates, accessories and cigarettes from the listed store selection.
             </p>
             <p className={styles.seoPanelText}>
-              Budget and AA flower offer lower-priced choices, while Premium and Exotic flower sit at the upper tiers. Compare the listed strains, weights and prices.
+              Explore five flower tiers — Exotic, Premium, AAA+, AA and Budget — with dedicated sections for shoppers comparing Weed and cannabis flower in Brampton.
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.

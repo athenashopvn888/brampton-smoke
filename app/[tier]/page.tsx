@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
@@ -25,18 +26,23 @@ export async function generateMetadata({
   const { tier: tierSlug } = await params;
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) return {};
-  const flowers = getFlowersByTier(tierInfo.key);
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
-    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Brampton Smoke Cannabis.`,
+    title: { absolute: seo.seoTitle },
+    description: seo.metaDescription,
     alternates: {
       canonical: `https://www.bramptonsmokecannabis.com/${tierSlug}`,
     },
     openGraph: {
-      title: `${tierInfo.config.name} Flower | Brampton Smoke Cannabis`,
-      description: `${flowers.length} ${tierInfo.config.name.toLowerCase()} flower menu listings. Browse names, weights, and posted details.`,
+      title: seo.socialTitle,
+      description: seo.socialDescription,
+      url: `https://www.bramptonsmokecannabis.com/${tierSlug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.socialTitle,
+      description: seo.socialDescription,
     },
   };
 }
@@ -67,7 +73,7 @@ export default async function TierPage({
       <section className={styles.bannerSection}>
         <img
           src={config.banner}
-          alt={`${config.name} Cannabis Flower — ${config.tagline}`}
+          alt={seo.imageAlt}
           className={styles.bannerImg}
         />
       </section>
@@ -82,7 +88,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{config.name}</span>
+                <span style={{ color: config.color }}>{seo.h1}</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>
@@ -113,7 +119,7 @@ export default async function TierPage({
             <div className={styles.dealRow}>
               {config.deal3g && (
               <div className={styles.dealBox}>
-                <div className={styles.dealLabel}>🎁 {config.deal3g.label}</div>
+                <div className={styles.dealLabel}>🎁 {config.deal3g.total.toLowerCase()} {config.name} Weed Bundle</div>
                 <div className={styles.dealPrice}>
                   = <strong>${config.deal3g.price}</strong> / {config.deal3g.total}
                 </div>
@@ -121,7 +127,7 @@ export default async function TierPage({
               )}
               {config.deal6g && (
                 <div className={styles.dealBox}>
-                  <div className={styles.dealLabel}>🎁 {config.deal6g.label}</div>
+                  <div className={styles.dealLabel}>🎁 {config.deal6g.total.toLowerCase()} {config.name} Weed Bundle</div>
                   <div className={styles.dealPrice}>
                     = <strong>${config.deal6g.price}</strong> / {config.deal6g.total}
                   </div>
@@ -154,9 +160,7 @@ export default async function TierPage({
           )}
 
           <h2 className={styles.sectionTitle}>
-            All{" "}
-            <span style={{ color: config.color }}>{config.name}</span>{" "}
-            Strains
+            <span style={{ color: config.color }}>{seo.strainHeading}</span>
           </h2>
           <div className={styles.grid}>
             {regularFlowers.map((f) => (
@@ -174,7 +178,7 @@ export default async function TierPage({
       {seo && (
         <section className={styles.seoSection}>
           <div className={styles.container}>
-            <h2 className={styles.seoMainTitle}>{seo.seoTitle}</h2>
+            <h2 className={styles.seoMainTitle}>About the {config.name} Flower Tier</h2>
             <p className={styles.seoIntro}>{seo.seoIntro}</p>
 
             {seo.sections.map((s, i) => (
@@ -183,6 +187,33 @@ export default async function TierPage({
                 <p className={styles.seoBody}>{s.body}</p>
               </div>
             ))}
+
+            <div className={styles.compareSection}>
+              <h3 className={styles.compareTitle}>Compare Weed &amp; Flower Tiers</h3>
+              <p className={styles.seoBody}>
+                Brampton Smoke Cannabis organizes cannabis flower into five tiers. Compare the current listings in each section and move directly to the flower tier you want to explore next.
+              </p>
+              <div className={styles.compareGrid}>
+                {[
+                  ["Exotic Weed & Flower", "/exotic", "Explore the Exotic flower tier."],
+                  ["Premium Weed & Flower", "/premium", "Explore the Premium flower tier."],
+                  ["AAA+ Weed & Flower", "/aaa", "Explore the AAA+ flower tier."],
+                  ["AA Weed & Flower", "/aa", "Explore the AA flower tier."],
+                  ["Budget Weed & Flower", "/budget", "Explore the Budget flower tier."],
+                ].map(([label, href, description]) => (
+                  <Link key={href} href={href} className={styles.compareCard}>
+                    <strong>{label}</strong>
+                    <span>{description}</span>
+                  </Link>
+                ))}
+              </div>
+              <p className={styles.ownerLink}>
+                Looking for the broader Weed dispensary guide?{" "}
+                <Link href="/weed-dispensary-brampton/">
+                  Explore Brampton Smoke Cannabis&apos;s Weed and Cannabis store information.
+                </Link>
+              </p>
+            </div>
 
             {/* FAQ Accordion */}
             {seo.faqs.length > 0 && (
