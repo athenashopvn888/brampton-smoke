@@ -13,7 +13,7 @@ const ALL_LINKS = [
   { href: "/budget", label: "Budget" },
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
-  { href: "/items/vapes", label: "Nic Vape" },
+  { href: "/items/vapes", label: "Nicotine Vape" },
   { href: "/items/vape-disposables", label: "THC Vape" },
   { href: "/items/concentrates", label: "Concentrates" },
   { href: "/items/magic", label: "Magic Stuff" },

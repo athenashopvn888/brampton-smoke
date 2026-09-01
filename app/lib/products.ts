@@ -170,7 +170,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   "VAPE PENS": {
     banner: "/banners/bsc-real/category-nic-vape.webp",
-    name: "Nic Vape",
+    name: "Nicotine Vape",
     slug: "vapes",
     color: "#8b5cf6",
     icon: "NV",
@@ -304,3 +304,4 @@ export function formatPrice(p: PricePoint | null): string {
   if (p.sale !== null) return `$${p.sale}`;
   return `$${p.regular}`;
 }
+

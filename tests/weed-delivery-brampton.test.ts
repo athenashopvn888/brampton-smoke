@@ -52,3 +52,8 @@ test("all primary internal delivery references point to the canonical route", ()
   }
 });
 
+test("announcement names the Weed delivery menu", () => {
+  const layout = read("app/layout.tsx");
+  assert.match(layout, /NEW WEED DELIVERY MENU IS HERE — CLICK TO EXPLORE/);
+});
+

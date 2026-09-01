@@ -144,7 +144,7 @@ export default function RootLayout({
       </head>
       <body>
         <Link className="deliveryAnnouncement" href="/weed-delivery-brampton">
-          NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
+          NEW WEED DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
         <AgeGate />
