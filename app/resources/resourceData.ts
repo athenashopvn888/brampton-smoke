@@ -379,7 +379,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Local visit planning notes for Brampton Smoke Cannabis at 132 Falby Rd Unit B, including Brampton Transit, nearby roads, and plaza parking context.",
     eyebrow: "Visit Notes",
     intro:
-      "This page keeps the BSC visit grounded in real local context: Falby Road, Brampton, nearby Steeles Avenue routes, and plaza-style parking notes already used on the store page.",
+      "Brampton Smoke Cannabis is located at 132 Falby Rd Unit B in Brampton and is open 24 hours for adults 19+.",
     cards: [
       {
         title: "Store Landing Page",

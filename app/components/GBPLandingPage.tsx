@@ -1,289 +1,172 @@
-// Auto-generated Google Business Profile Local SEO Landing Page Component
 import Link from "next/link";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 import PreferredSourceButton from "./PreferredSourceButton";
 import styles from "./GBPLandingPage.module.css";
-import { gbpLocation } from "../lib/gbp-location";
+import { bscWeedOwner as store } from "../lib/weedDiscovery";
 
-// Dictionary mapping category names to their respective paths
-const categoryLinks: { [key: string]: string } = {
-  "Flower": "/",
-  "Pre-rolls": "/items/prerolls",
-  "Edibles": "/items/edibles",
-  "THC vapes": "/items/vape-disposables",
-  "Concentrates": "/items/concentrates",
-  "Shatter": "/items/concentrates",
-  "CBD oils": "/items/concentrates",
-  "Accessories": "/items/add-ons"
-};
+const faqItems = [
+  {
+    question: "Where is Brampton Smoke Cannabis?",
+    answer: <>Brampton Smoke Cannabis is located at <strong>{store.address}</strong>.</>,
+  },
+  {
+    question: "Is Brampton Smoke Cannabis open 24 hours?",
+    answer: <>Yes. Brampton Smoke Cannabis is <strong>open 24 hours a day, seven days a week</strong>.</>,
+  },
+  {
+    question: "What cannabis categories can I explore?",
+    answer: <>Adults 19+ can explore flower tiers, pre-rolls, edibles, THC vapes, concentrates and accessories.</>,
+  },
+  {
+    question: "What is the difference between weed and cannabis?",
+    answer: <><strong>Weed</strong> is common everyday language for cannabis. <strong>Cannabis</strong> is the broader term and can include flower, pre-rolls, edibles, THC vapes, concentrates and other cannabis formats.</>,
+  },
+  {
+    question: "What is the difference between bud and flower?",
+    answer: <><strong>Flower</strong> is the category term for dried cannabis flower. <strong>Bud</strong> is a common informal word people use for flower.</>,
+  },
+  {
+    question: "How can I check on a specific product before visiting?",
+    answer: <>Call Brampton Smoke Cannabis at <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> if you are looking for a specific product before making a special trip.</>,
+  },
+  {
+    question: "Do I need to be 19+?",
+    answer: <>Yes. Brampton Smoke Cannabis is for <strong>adults 19+</strong>.</>,
+  },
+];
 
-type StoreSchemaMarkup = {
-  "@context": "https://schema.org";
-  "@type": "Store";
-  name: string;
-  url: string;
-  telephone: string;
+const storeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "@id": "https://www.bramptonsmokecannabis.com/weed-dispensary-brampton/",
+  name: store.storeName,
+  url: "https://www.bramptonsmokecannabis.com/weed-dispensary-brampton/",
+  telephone: store.phoneIntl,
   address: {
-    "@type": "PostalAddress";
-    streetAddress: string;
-    addressLocality: string;
-    addressRegion: string;
-    postalCode: string;
-    addressCountry: string;
-  };
-  priceRange: string;
-  openingHours?: string[];
-  geo?: {
-    "@type": "GeoCoordinates";
-    latitude: number;
-    longitude: number;
-  };
+    "@type": "PostalAddress",
+    streetAddress: store.streetAddress,
+    addressLocality: store.city,
+    addressRegion: store.province,
+    postalCode: store.postalCode,
+    addressCountry: "CA",
+  },
+  openingHours: "Mo-Su 00:00-23:59",
 };
 
 export function GBPLandingPage() {
-  const landmarkList = gbpLocation.localLandmarks.join(", ");
-  const nearbyAreaList = gbpLocation.nearbyAreas.slice(0, 4).join(", ");
-  const categoryGuideLinks = gbpLocation.products.slice(0, 6).map((product) => ({
-    label: product,
-    href: categoryLinks[product] || "/"
-  }));
-
-  // Generate schema.org markup dynamically
-  const schemaMarkup: StoreSchemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "name": gbpLocation.storeName,
-    "url": `https://${gbpLocation.domain}/${gbpLocation.slug}/`,
-    "telephone": gbpLocation.phone,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": gbpLocation.streetAddress,
-      "addressLocality": gbpLocation.city,
-      "addressRegion": gbpLocation.province,
-      "postalCode": gbpLocation.postalCode,
-      "addressCountry": gbpLocation.country
-    },
-    "priceRange": "$$"
-  };
-
-  // Inject real opening hours and coordinates if they exist
-  if (gbpLocation.hours && gbpLocation.hours.length > 0) {
-    schemaMarkup.openingHours = gbpLocation.hours;
-  }
-
-  if (gbpLocation.latitude && gbpLocation.longitude) {
-    schemaMarkup.geo = {
-      "@type": "GeoCoordinates",
-      "latitude": Number(gbpLocation.latitude),
-      "longitude": Number(gbpLocation.longitude)
-    };
-  }
-
   return (
-    <div className={styles.container}>
-      {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
+    <>
+      <Navbar />
+      <main className={styles.main}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(storeSchema) }}
+        />
 
-      {/* Hero Header */}
-      <header className={styles.hero}>
-        <h1 className={styles.h1}>{gbpLocation.storeName} — Weed Dispensary in {gbpLocation.city}</h1>
-        <p className={styles.heroTagline}>Serving {gbpLocation.city} & Nearby Neighborhoods</p>
-      </header>
+        <section className={styles.hero}>
+          <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
+          <h1>Brampton Smoke Cannabis — Weed Dispensary in Brampton</h1>
+          <p className={styles.heroAddress}>{store.address}</p>
+          <div className={styles.actions}>
+            <Link href="#find-your-weed" className={styles.primaryAction}>Explore Cannabis Categories</Link>
+            <Link href="#visit" className={styles.secondaryAction}>Plan Your Visit</Link>
+          </div>
+        </section>
 
-      {/* Call to Actions */}
-      <div className={styles.btnRow}>
-        <a href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
-          View Menu
-        </a>
-        <Link href="/resources" className={`${styles.btn} ${styles.btnSecondary}`}>
-          Open Resources
-        </Link>
-      </div>
+        <section className={styles.section}>
+          <h2>Weed and Cannabis in Brampton, Open 24 Hours</h2>
+          <p>Brampton Smoke Cannabis is a <strong>24-hour cannabis dispensary in Brampton</strong> at <strong>{store.streetAddress}</strong>.</p>
+          <p>Whether you usually call it <strong>weed</strong>, <strong>cannabis</strong>, <strong>flower</strong> or <strong>bud</strong>, start with the product format you are interested in and narrow your choices from there.</p>
+          <p>Flower is available to explore by tier, while other cannabis categories include pre-rolls, edibles, THC vapes, concentrates and accessories.</p>
+          <p>For a particular product, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
+        </section>
 
-      {/* Intro Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Local Weed Dispensary in Brampton</h2>
-        <p className={styles.introText}>
-          {gbpLocation.introVariant.replace(
-            "We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories.",
-            "We serve adults 19+ who want to browse cannabis categories such as flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories."
-          )}
-        </p>
-      </section>
-
-      {/* Product Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Cannabis Menu Categories</h2>
-        <p className={styles.infoText}>
-          Adults 19+ can browse the existing cannabis menu categories for {gbpLocation.storeName}, including:
-        </p>
-        <div className={styles.productGrid}>
-          {gbpLocation.products.map((p) => {
-            const href = categoryLinks[p] || "/";
-            return (
-              <Link key={p} href={href} className={styles.productCard}>
-                {p}
+        <section className={styles.section} id="find-your-weed">
+          <p className={styles.kicker}>Find Your Weed</p>
+          <h2>Shop Flower by Tier</h2>
+          <div className={styles.cardGrid}>
+            {store.flowerTiers.map((item) => (
+              <Link href={item.href} className={styles.card} key={item.href}>
+                <span>{item.label}</span>
+                <small>{item.description}</small>
               </Link>
-            );
-          })}
-        </div>
-      </section>
+            ))}
+          </div>
+          <div className={styles.inlineGuide}>
+            <span>Want help understanding the flower tiers?</span>
+            <Link href="/resources/flower-guide">Read the Flower Guide</Link>
+          </div>
 
+          <h3 className={styles.subheading}>Explore More Cannabis Categories</h3>
+          <div className={styles.cardGrid}>
+            {store.categories.map((item) => (
+              <Link href={item.href} className={styles.card} key={item.href}>
+                <span>{item.label}</span>
+                <small>{item.description}</small>
+              </Link>
+            ))}
+          </div>
+          <p className={styles.note}>Individual products can change. If you are coming in for something specific, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
+        </section>
 
-      {/* Visit Planning Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Plan a Visit Near {gbpLocation.neighborhood}</h2>
-        <p className={styles.infoText}>
-          Planning a visit to {gbpLocation.storeName} is easier when the local details are in one place. This page brings together the store address, hours, nearby areas like {nearbyAreaList}, and helpful category links for adults 19+ comparing general menu sections before visiting.
-        </p>
-        <p className={styles.infoText}>
-          If you are coming from {landmarkList}, use the visit details below to confirm the location, then explore the main site categories and current menu before you head over.
-        </p>
-        <p className={styles.infoText}>
-          For a fuller local overview, read the{" "}
-          <Link href="/resources">Resources</Link>.
-        </p>
-        <div className={styles.btnRow}>
-          <Link href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
-            Start With Menu Categories
-          </Link>
-          <Link href="#faq" className={`${styles.btn} ${styles.btnSecondary}`}>
-            Read Visit FAQs
-          </Link>
-        </div>
-      </section>
-      {/* Location & NAP Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Visit {gbpLocation.storeName} in {gbpLocation.city}</h2>
-        <div className={styles.napGrid}>
-          <div className={styles.napDetails}>
-            <div className={styles.napItem}>
-              <span className={styles.napLabel}>Store Name</span>
-              <strong>{gbpLocation.storeName}</strong>
-            </div>
-            <div className={styles.napItem}>
-              <span className={styles.napLabel}>Address</span>
-              <span>{gbpLocation.address}</span>
-            </div>
-            <div className={styles.napItem}>
-              <span className={styles.napLabel}>Phone</span>
-              <span><a href={`tel:${gbpLocation.phoneIntl}`} style={{ color: "inherit" }}>{gbpLocation.phone}</a></span>
-            </div>
-            <div className={styles.napItem}>
-              <span className={styles.napLabel}>Website</span>
-              <span><a href={`https://${gbpLocation.domain}/`} style={{ color: "inherit" }}>https://{gbpLocation.domain}/</a></span>
-            </div>
-            {gbpLocation.hours && gbpLocation.hours.length > 0 && (
-              <div className={styles.napItem}>
-                <span className={styles.napLabel}>Store Hours</span>
-                {gbpLocation.hours.map((line) => (
-                  <span key={line} style={{ fontSize: "0.95rem" }}>{line}</span>
-                ))}
-              </div>
-            )}
-            <div className={styles.napItem} style={{ marginTop: "10px" }}>
-              <p className={styles.infoBlock} style={{ fontSize: "0.9rem", fontStyle: "italic", margin: 0 }}>
-                * {gbpLocation.parkingNote}.
-              </p>
-            </div>
+        <section className={styles.section}>
+          <h2>Weed, Cannabis, Flower and Bud</h2>
+          <p>Different shoppers use different words for cannabis. These common terms can help narrow down what you are shopping for.</p>
+          <div className={styles.termGrid}>
+            <article><h3>Weed</h3><p><strong>Weed</strong> is the everyday word many people use for cannabis. It may refer to flower, pre-rolls, edibles, THC vapes, concentrates or another cannabis format.</p></article>
+            <article><h3>Cannabis</h3><p><strong>Cannabis</strong> is the broader term. It includes flower and other cannabis categories available at Brampton Smoke Cannabis.</p></article>
+            <article><h3>Flower</h3><p><strong>Flower</strong> refers to dried cannabis flower. Brampton Smoke Cannabis offers Budget, AA, AAA+, Premium and Exotic flower tiers.</p></article>
+            <article><h3>Bud</h3><p><strong>Bud</strong> is a common informal name for cannabis flower.</p></article>
           </div>
-          <div className={styles.mapWrapper}>
-            {gbpLocation.mapEmbedUrl ? (
-              <iframe
-                title={`Map of ${gbpLocation.storeName}`}
-                src={gbpLocation.mapEmbedUrl}
-                className={styles.mapIframe}
-                allowFullScreen={true}
-                loading="lazy"
-              />
-            ) : (
-              <div style={{ padding: "40px", textAlign: "center", color: "var(--text-muted)" }}>
-                Map preview not available.
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+          <p>Whatever term you prefer, focus on the cannabis format and flower tier that fit what you are shopping for.</p>
+        </section>
 
-      {/* Category Link Context Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Helpful Category Links Before You Visit</h2>
-        <p className={styles.infoText}>
-          These category links help adults 19+ browse the main menu sections before visiting {gbpLocation.storeName}. Check the current menu for listed item details and prices.
-        </p>
-        <div className={styles.productGrid}>
-          {categoryGuideLinks.map((item) => (
-            <Link key={`${item.label}-${item.href}`} href={item.href} className={styles.productCard} aria-label={`Review ${item.label} category information at ${gbpLocation.storeName}`}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </section>
-      {/* Nearby Areas Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>{gbpLocation.sectionTitle}</h2>
-        <p className={styles.infoText}>
-          Brampton Smoke Cannabis is a local cannabis store in Brampton. This page includes general local context for surrounding Peel Region communities. {gbpLocation.transitNote}. We proudly welcome customers from:
-        </p>
-        <div className={styles.areaList}>
-          {gbpLocation.nearbyAreas.map((area) => (
-            <span key={area} className={styles.areaTag}>
-              {area}
-            </span>
-          ))}
-        </div>
-      </section>
+        <section className={styles.visitSection} id="visit">
+          <div>
+            <p className={styles.kicker}>Open 24 Hours on Falby Road</p>
+            <h2>{store.storeName}</h2>
+            <address>
+              {store.streetAddress}<br />
+              {store.city}, {store.province} {store.postalCode}
+            </address>
+          </div>
+          <div className={styles.visitFacts}>
+            <strong>Open 24 Hours · 7 Days a Week</strong>
+            <a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a>
+            <span>Adults 19+</span>
+          </div>
+          <p>The 24-hour schedule gives adults 19+ the flexibility to visit Brampton Smoke Cannabis at the time that works for them. Call ahead when you need to confirm a particular product before making a special trip.</p>
+        </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className={styles.section}>
-        <h2 className={styles.h2}>Frequently Asked Questions</h2>
-        <div className={styles.faqList}>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Where is {gbpLocation.storeName} located?</h3>
-            <p className={styles.faqAnswer}>{gbpLocation.storeName} is located at {gbpLocation.address}.</p>
+        <section className={styles.section}>
+          <h2>Helpful Guides</h2>
+          <div className={styles.guideGrid}>
+            {store.guides.map((guide) => (
+              <article className={styles.guideCard} key={guide.href}>
+                <h3>{guide.label}</h3>
+                <p>{guide.description}</p>
+                <Link href={guide.href}>Read {guide.label}</Link>
+              </article>
+            ))}
           </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Is {gbpLocation.storeName} a weed dispensary in {gbpLocation.city}?</h3>
-            <p className={styles.faqAnswer}>
-              Yes. {gbpLocation.storeName} is a local weed dispensary in {gbpLocation.city} for adults aged 19 and older.
-            </p>
+        </section>
+
+        <section className={styles.section} id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className={styles.faqList}>
+            {faqItems.map((item) => (
+              <article className={styles.faqItem} key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
           </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>What menu categories can I browse on the Brampton Smoke Cannabis website?</h3>
-            <p className={styles.faqAnswer}>
-              The website links to menu categories for flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>How should I plan a visit to {gbpLocation.storeName}?</h3>
-            <p className={styles.faqAnswer}>
-              Start by confirming the address, store hours, and nearby area details on this page. Then use the category links for general browsing context before visiting the store in person.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Can I use this page to compare menu categories?</h3>
-            <p className={styles.faqAnswer}>
-              Yes. The category links point to existing pages for flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. They are informational links for planning a visit and browsing the main site sections.
-            </p>
-          </div>          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Do I need to be 19+ to shop at {gbpLocation.storeName}?</h3>
-            <p className={styles.faqAnswer}>
-              Yes, to visit our cannabis store or order from our menu, you must be at least 19 years of age. Valid government-issued photo ID is required for verification.
-            </p>
-          </div>
-          {gbpLocation.neighborhood && (
-            <div className={styles.faqItem}>
-              <h3 className={styles.faqQuestion}>What areas does this page provide local context for?</h3>
-              <p className={styles.faqAnswer}>
-                This page provides general local context for Brampton and nearby areas and corridors including Queen Street, Kennedy Road, Bramalea, Downtown Brampton, and Peel Region.
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-      <PreferredSourceButton />
-    </div>
+        </section>
+
+        <PreferredSourceButton />
+      </main>
+      <Footer />
+    </>
   );
 }
