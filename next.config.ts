@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/delivery", destination: "/weed-delivery-brampton", statusCode: 301 },
       { source: "/blog", destination: "/resources", permanent: true },
       { source: "/blog/:path*", destination: "/resources", permanent: true },
       { source: "/edibles", destination: "/items/edibles", permanent: true },
@@ -32,3 +33,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
