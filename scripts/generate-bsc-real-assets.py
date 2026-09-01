@@ -441,7 +441,7 @@ TIER_ASSETS = [
 CATEGORY_ASSETS = [
     ("edibles", "EDIBLES", "Gummies, chocolates and drinks", ["Gummies", "Chocolate", "Menu"], (255, 128, 42), records_for_category("EDIBLES")),
     ("thc-vape", "THC VAPE", "Vape menu categories", ["Carts", "Pens", "Menu"], PURPLE_LIGHT, records_for_category("VAPE PENS")),
-    ("nic-vape", "NIC VAPE", "Disposable vape browsing", ["Disposable", "Flavours", "Menu"], (146, 104, 255), records_for_category("VAPE DISPOSABLE")),
+    ("nic-vape", "NICOTINE VAPE", "Disposable vape browsing", ["Disposable", "Flavours", "Menu"], (146, 104, 255), records_for_category("VAPE DISPOSABLE")),
     ("concentrates", "CONCENTRATES", "Hash, resin and extracts", ["Hash", "Resin", "Extracts"], GOLD, records_for_category("CONCENTRATES")),
     ("prerolls", "PRE-ROLLS", "Ready-to-go pre-roll picks", ["Singles", "Packs", "Pre-rolls"], GREEN, records_for_category("PREROLLS")),
     ("accessories", "ACCESSORIES", "Smoke-shop essentials", ["Papers", "Tools", "Add-ons"], (85, 230, 205), records_for_category("ACCESSORIES")),
@@ -491,3 +491,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

@@ -13,13 +13,13 @@ const ALL_LINKS = [
   { href: "/budget", label: "Budget" },
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
-  { href: "/items/vapes", label: "Nic Vape" },
+  { href: "/items/vapes", label: "Nicotine Vape" },
   { href: "/items/vape-disposables", label: "THC Vape" },
   { href: "/items/concentrates", label: "Concentrates" },
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/weed-delivery-brampton", label: "🚗 Weed Delivery" },
   { href: "/careers/budtender", label: "Join Team", featured: true },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
@@ -81,3 +81,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

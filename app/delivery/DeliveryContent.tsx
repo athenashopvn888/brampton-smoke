@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -17,6 +18,13 @@ type Filter = "ALL" | Tier;
 const fallbackProducts = menu.products as Product[];
 const filters: Filter[] = ["ALL", "Exotics", "CRAFTS", "BC Premium", "Budget", "SHREDS"];
 const tierOrder: Tier[] = ["Exotics", "CRAFTS", "BC Premium", "Budget", "SHREDS"];
+const tierDisplayLabels: Record<Tier, string> = {
+  Exotics: "Exotic Weed & Flower",
+  CRAFTS: "Craft Weed & Flower",
+  "BC Premium": "BC Premium Weed & Flower",
+  Budget: "Budget Weed & Flower",
+  SHREDS: "Shreds Weed & Flower",
+};
 
 function entryPrice(product: Product) {
   return Math.min(...product.priceOptions.map((option) => option.price));
@@ -106,7 +114,7 @@ export default function DeliveryContent() {
   return <main className={styles.main}>
     <Navbar />
     <section className={`${styles.hero} ${styles.heroPlain}`}>
-      <div><p>Brampton Smoke Cannabis</p><h1>Delivery Menu</h1><span>Browse the shared product catalog. The store confirms current availability and delivery details before an order is accepted.</span></div>
+      <div><p>Brampton Smoke Cannabis</p><h1>Weed Delivery in Brampton</h1><span>Browse the Brampton Smoke Cannabis weed and flower delivery menu. Compare listed products, weights and prices, then confirm current availability and delivery details with the dispatcher before an order is accepted.</span></div>
     </section>
     <section className={styles.deliveryDetails} aria-label="Brampton Smoke Cannabis delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
@@ -123,7 +131,7 @@ export default function DeliveryContent() {
       <aside><strong>Important conditions</strong><p>Complimentary items apply only to regular-price Craft or Exotic ounces—not BC Premium. Loyalty prices are firm and cannot be reduced with points. Loyalty-price orders do not include extra complimentary items. The dispatcher confirms current eligibility and any included item before checkout.</p></aside>
     </section>
     <section className={styles.howToOrder} aria-labelledby="how-to-order-title">
-      <div><p>HOW TO ORDER</p><h2 id="how-to-order-title">Order with the Brampton Smoke Cannabis dispatcher</h2><span>LIVE ORDER connects you with the Brampton Smoke Cannabis dispatcher.</span></div>
+      <div><p>HOW TO ORDER</p><h2 id="how-to-order-title">How to Order Weed Delivery in Brampton</h2><span>LIVE ORDER connects you with the Brampton Smoke Cannabis dispatcher.</span></div>
       <ol>
         <li><strong>Browse the delivery menu</strong><span>Note the product names and weights you want.</span></li>
         <li><strong>Select LIVE ORDER</strong><span>Open Web Chat at the bottom-right and send your choices.</span></li>
@@ -132,9 +140,9 @@ export default function DeliveryContent() {
       </ol>
     </section>
     <section className={styles.catalogShell}>
-      <aside className={styles.filters}><h2>Flower tiers</h2>{filters.map((tier) => <button type="button" key={tier} className={filter === tier ? styles.active : ""} onClick={() => setFilter(tier)}>{tier}<span>{tier === "ALL" ? products.length : products.filter((product) => product.tier === tier).length}</span></button>)}</aside>
+      <aside className={styles.filters}><h2>Weed &amp; Flower Delivery Tiers</h2>{filters.map((tier) => <button type="button" key={tier} className={filter === tier ? styles.active : ""} onClick={() => setFilter(tier)}>{tier}<span>{tier === "ALL" ? products.length : products.filter((product) => product.tier === tier).length}</span></button>)}</aside>
       <div className={styles.catalog}>
-        <header className={styles.tools}><div><p>DELIVERY CATALOG</p><h2>{filter === "ALL" ? "All products" : filter}</h2><span>{visible.length} products</span></div><label><span>Search products</span><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Product or strain" /></label></header>
+        <header className={styles.tools}><div><p>DELIVERY CATALOG</p><h2>{filter === "ALL" ? "All Weed & Flower Products" : tierDisplayLabels[filter]}</h2><span>{visible.length} products</span></div><label><span>Search products</span><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Product or strain" /></label></header>
         <div className={styles.mobileFilters}>{filters.map((tier) => <button type="button" key={tier} className={filter === tier ? styles.active : ""} onClick={() => setFilter(tier)}>{tier}</button>)}</div>
         <div className={styles.grid}>{visible.map((product) => <article className={styles.card} key={product.publicProductId}>
           <button type="button" className={styles.imageButton} onClick={() => setSelected(product)} aria-label={`View details for ${product.name}`}>
@@ -150,8 +158,10 @@ export default function DeliveryContent() {
       {emailStatus === "success" && <p role="status">You&apos;re on the delivery update list.</p>}
     </section>
     <div className={styles.ctaSection}><p>Visit us in-store at <strong>132 Falby Rd Unit B, Brampton</strong> — open <strong>24 hours</strong>. Use the current menu and resources before visiting.</p></div>
+    <div className={styles.ctaSection}><p>Looking for store information beyond delivery? Visit Brampton Smoke Cannabis for <Link href="/weed-dispensary-brampton/">Weed in Brampton</Link>.</p></div>
     {selected && <div className={styles.backdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className={styles.drawer} role="dialog" aria-modal="true" aria-labelledby="product-title"><header><strong>Product details</strong><button type="button" onClick={() => setSelected(null)} aria-label="Close product details">×</button></header><div className={styles.drawerContent}>{selected.images.map((src, index) => <div className={styles.drawerImage} key={src}><Image src={src} alt={`${selected.name}${index ? ` alternate ${index + 1}` : ""}`} fill sizes="(max-width: 720px) 100vw, 420px" unoptimized /></div>)}<h2 id="product-title">{selected.name}</h2><p>{selected.description || "Ask the store for current product details."}</p>{selected.effects.length > 0 && <div className={styles.effects}>{selected.effects.map((effect) => <span key={effect}>{effect}</span>)}</div>}<ProductPricing product={selected} /></div></section></div>}
     <BSCWebChat />
     <Footer />
   </main>;
 }
+
