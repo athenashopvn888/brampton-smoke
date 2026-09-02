@@ -85,9 +85,9 @@ test("tier pages use absolute route-specific metadata and one natural Weed signa
   assert.match(page, /href="\/weed-dispensary-brampton\/"/);
 
   for (const tier of ["Exotic", "Premium", "AAA+", "AA", "Budget"]) {
-    assert.ok(content.includes(`Weed ${tier} & Cannabis Flower Brampton | Brampton Smoke Cannabis`));
-    assert.ok(content.includes(`Weed ${tier} & Cannabis Flower in Brampton`));
-    assert.ok(content.includes(`Explore Weed ${tier} Strains`));
+    assert.ok(content.includes(`${tier} Weed & Cannabis Flower Brampton | Brampton Smoke Cannabis`));
+    assert.ok(content.includes(`${tier} Weed & Cannabis Flower in Brampton`));
+    assert.ok(content.includes(`Explore ${tier} Weed Strains`));
   }
 });
 
@@ -132,7 +132,7 @@ test("customer-facing tier names and links include Weed", () => {
     read("app/resources/resourceData.ts"),
   ].join("\n");
 
-  for (const tier of ["Weed Exotic", "Weed Premium", "Weed AAA+", "Weed AA", "Weed Budget"]) {
+  for (const tier of ["Exotic Weed", "Premium Weed", "AAA+ Weed", "AA Weed", "Budget Weed"]) {
     assert.ok(sources.includes(tier), `Missing Weed-inclusive customer tier name: ${tier}`);
   }
   for (const legacyHref of ["/exotic\"", "/premium\"", "/aaa\"", "/aa\"", "/budget\"", "/resources/flower-guide\""]) {
@@ -155,7 +155,7 @@ test("Weed owner cards preserve broad-owner and tier-owner separation", () => {
   const discovery = read("app/lib/weedDiscovery.ts");
 
   for (const tier of ["Budget", "AA", "AAA+", "Premium", "Exotic"]) {
-    assert.ok(discovery.includes(`Weed ${tier} & Flower`));
+    assert.ok(discovery.includes(`${tier} Weed & Flower`));
     assert.ok(discovery.includes(`Explore the ${tier} cannabis flower tier.`));
   }
   assert.match(discovery, /ownerPath: "\/weed-dispensary-brampton\/"/);

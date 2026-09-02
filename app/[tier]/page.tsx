@@ -195,11 +195,11 @@ export default async function TierPage({
               </p>
               <div className={styles.compareGrid}>
                 {[
-                  ["Weed Exotic & Flower", "/exotic-weed", "Explore the Exotic flower tier."],
-                  ["Weed Premium & Flower", "/premium-weed", "Explore the Premium flower tier."],
-                  ["Weed AAA+ & Flower", "/aaa-weed", "Explore the AAA+ flower tier."],
-                  ["Weed AA & Flower", "/aa-weed", "Explore the AA flower tier."],
-                  ["Weed Budget & Flower", "/budget-weed", "Explore the Budget flower tier."],
+                  ["Exotic Weed & Flower", "/exotic-weed", "Explore the Exotic flower tier."],
+                  ["Premium Weed & Flower", "/premium-weed", "Explore the Premium flower tier."],
+                  ["AAA+ Weed & Flower", "/aaa-weed", "Explore the AAA+ flower tier."],
+                  ["AA Weed & Flower", "/aa-weed", "Explore the AA flower tier."],
+                  ["Budget Weed & Flower", "/budget-weed", "Explore the Budget flower tier."],
                 ].map(([label, href, description]) => (
                   <Link key={href} href={href} className={styles.compareCard}>
                     <strong>{label}</strong>

@@ -14,35 +14,35 @@ import Papa from "papaparse";
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
   {
-    name: "WEED EXOTIC",
+    name: "EXOTIC WEED",
     slug: "exotic-weed",
     price: "$10-$12/g",
     banner: "/banners/bsc-real/tile-exotic.webp",
     className: styles.bentoExotic,
   },
   {
-    name: "WEED PREMIUM",
+    name: "PREMIUM WEED",
     slug: "premium-weed",
     price: "$7-$10/g",
     banner: "/banners/bsc-real/tile-premium.webp",
     className: styles.bentoPremium,
   },
   {
-    name: "WEED AAA+",
+    name: "AAA+ WEED",
     slug: "aaa-weed",
     price: "$5-$6/g",
     banner: "/banners/bsc-real/tile-aaa.webp",
     className: styles.bentoTile,
   },
   {
-    name: "WEED AA",
+    name: "AA WEED",
     slug: "aa-weed",
     price: "$4/g",
     banner: "/banners/bsc-real/tile-aa.webp",
     className: styles.bentoTile,
   },
   {
-    name: "WEED BUDGET",
+    name: "BUDGET WEED",
     slug: "budget-weed",
     price: "$3/g",
     banner: "/banners/bsc-real/tile-budget.webp",
