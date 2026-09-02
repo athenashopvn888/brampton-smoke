@@ -34,11 +34,11 @@ export const bscWeedOwner: WeedOwnerConfig = {
   hoursLabel: "Open 24 Hours",
   ownerPath: "/weed-dispensary-brampton/",
   flowerTiers: [
-    { label: "Budget Weed & Flower", description: "Explore the Budget cannabis flower tier.", href: "/budget" },
-    { label: "AA Weed & Flower", description: "Explore the AA cannabis flower tier.", href: "/aa" },
-    { label: "AAA+ Weed & Flower", description: "Explore the AAA+ cannabis flower tier.", href: "/aaa" },
-    { label: "Premium Weed & Flower", description: "Explore the Premium cannabis flower tier.", href: "/premium" },
-    { label: "Exotic Weed & Flower", description: "Explore the Exotic cannabis flower tier.", href: "/exotic" },
+    { label: "Weed Budget & Flower", description: "Explore the Budget cannabis flower tier.", href: "/budget-weed" },
+    { label: "Weed AA & Flower", description: "Explore the AA cannabis flower tier.", href: "/aa-weed" },
+    { label: "Weed AAA+ & Flower", description: "Explore the AAA+ cannabis flower tier.", href: "/aaa-weed" },
+    { label: "Weed Premium & Flower", description: "Explore the Premium cannabis flower tier.", href: "/premium-weed" },
+    { label: "Weed Exotic & Flower", description: "Explore the Exotic cannabis flower tier.", href: "/exotic-weed" },
   ],
   categories: [
     { label: "Pre-Rolls", description: "Cannabis already rolled and ready in pre-roll format.", href: "/items/prerolls" },
@@ -50,7 +50,7 @@ export const bscWeedOwner: WeedOwnerConfig = {
   guides: [
     { label: "Falby Road 24-Hour Visit Guide", description: "Useful information for planning a late-night or early-morning visit.", href: "/resources/falby-road-24-hour-visit-guide" },
     { label: "Cannabis Menu Guide", description: "A broader overview of flower, pre-rolls, edibles, vapes and concentrates.", href: "/resources/menu-guide" },
-    { label: "Flower Guide", description: "Learn more about the flower tiers before choosing where to start.", href: "/resources/flower-guide" },
+    { label: "Weed & Flower Guide", description: "Learn more about the flower tiers before choosing where to start.", href: "/resources/weed-flower-guide" },
     { label: "Pre-Roll Guide", description: "A focused introduction to the pre-roll format.", href: "/resources/pre-roll-guide" },
   ],
 };

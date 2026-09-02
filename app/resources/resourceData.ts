@@ -63,9 +63,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Choose flower, pre-rolls, edibles, vapes, concentrates, cigarettes, or accessories before comparing details.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Use Exotic, Premium, AAA+, AA, and Budget as clean shopping lanes.",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare Weed Exotic, Weed Premium, Weed AAA+, Weed AA and Weed Budget flower tiers.",
       },
       {
         title: "Value Guide",
@@ -161,9 +161,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "BSC's menu gets easier when you choose one category first. Start with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes, then compare the details inside that category.",
     cards: [
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Use the tier ladder before comparing individual flower listings.",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare the five Weed and flower tiers before exploring individual listings.",
       },
       {
         title: "Pre-Roll Guide",
@@ -201,51 +201,61 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
   },
   {
-    slug: "flower-guide",
-    title: "Brampton Smoke Cannabis Flower Guide",
-    seoTitle: "Brampton Smoke Cannabis Flower Guide | Exotic, Premium, AA, Budget",
+    slug: "weed-flower-guide",
+    title: "Weed & Flower Guide in Brampton",
+    seoTitle: "Weed & Flower Guide Brampton",
     description:
-      "BSC flower guide for Exotic, Premium, AAA+, AA, and Budget lanes at Brampton Smoke Cannabis on Falby Road.",
-    eyebrow: "Flower Guide",
+      "Explore Brampton Smoke Cannabis flower collections including Weed Exotic, Weed Premium, Weed AAA+, Weed AA and Weed Budget, with links to each dedicated collection.",
+    eyebrow: "Brampton Weed & Flower Guide",
     intro:
-      "BSC flower shopping works best as a tier ladder. Exotic and Premium sit higher; AAA+ gives a middle lane; AA and Budget keep the value side clean.",
+      "Brampton Smoke Cannabis brings together five Weed flower collections: Weed Exotic, Weed Premium, Weed AAA+, Weed AA and Weed Budget. Explore the collections that interest you, compare more than one, or start with the broader Brampton Weed selection before narrowing your browsing.",
     cards: [
       {
-        title: "Exotic Flower",
-        href: "/exotic",
-        text: "Start here for the higher shelf flower lane.",
+        title: "Weed Exotic",
+        href: "/exotic-weed",
+        text: "Explore the flower listings presented in the Weed Exotic collection.",
       },
       {
-        title: "Premium Flower",
-        href: "/premium",
-        text: "A strong lane for shoppers comparing quality and value.",
+        title: "Weed Premium",
+        href: "/premium-weed",
+        text: "Browse the flower listings presented in the Weed Premium collection.",
       },
       {
-        title: "AAA+ Flower",
-        href: "/aaa",
-        text: "A middle lane for shoppers who want more punch without jumping straight to Exotic.",
+        title: "Weed AAA+",
+        href: "/aaa-weed",
+        text: "Explore the flower listings presented in the Weed AAA+ collection.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
-        text: "A straightforward value-minded flower lane.",
+        title: "Weed AA",
+        href: "/aa-weed",
+        text: "Browse the flower listings presented in the Weed AA collection.",
       },
       {
-        title: "Budget Flower",
-        href: "/budget",
-        text: "Start here when cheap weed or affordable weed is the mission.",
+        title: "Weed Budget",
+        href: "/budget-weed",
+        text: "Explore the flower listings presented in the Weed Budget collection.",
+      },
+      {
+        title: "Explore Brampton Smoke Cannabis Weed in Brampton",
+        href: "/weed-dispensary-brampton/",
+        text: "Start with the broader Brampton Weed selection before choosing a flower collection.",
       },
     ],
     sections: [
       {
-        heading: "Use The Tier Before The Strain Name",
+        heading: "Explore Five Weed Flower Collections",
         body:
-          "A strain name by itself does not tell the whole story. Use the BSC tier first, then compare the current product name, format, price, and item notes inside that lane.",
+          "Start with whichever collection interests you and compare others as you browse. Each collection gives you a different part of the Brampton Smoke Cannabis flower selection to explore.",
       },
       {
-        heading: "Value Has Its Own Path",
+        heading: "Weed, Cannabis and Flower at Brampton Smoke Cannabis",
         body:
-          "If the stop is about keeping spend low, start with Budget and AA before looking higher. If the stop is about stronger shelf positioning, start with AAA+, Premium, or Exotic.",
+          "Weed, cannabis, bud and flower are common terms shoppers use while browsing dispensary selections. Brampton Smoke Cannabis uses those terms naturally while keeping the five flower collections easy to distinguish.",
+      },
+      {
+        heading: "Compare the Collections That Interest You",
+        body:
+          "You can move between Weed Exotic, Weed Premium, Weed AAA+, Weed AA and Weed Budget and explore the information presented within each collection before narrowing your browsing.",
       },
     ],
   },
@@ -260,13 +270,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "BSC value shopping should feel quick: start in Budget or AA, compare the current details, and only move up when the extra shelf makes sense for the visit.",
     cards: [
       {
-        title: "Budget Flower",
-        href: "/budget",
+        title: "Weed Budget & Flower",
+        href: "/budget-weed",
         text: "The first stop for affordable weed comparisons.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
+        title: "Weed AA & Flower",
+        href: "/aa-weed",
         text: "A simple value lane for flower shoppers.",
       },
       {
@@ -314,8 +324,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Use this if you are still choosing between categories.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
         text: "Switch here if the visit turns into loose flower instead.",
       },
     ],
@@ -431,9 +441,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Pick the category first, then compare the details that matter.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget with clearer category notes.",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare Weed Exotic, Weed Premium, Weed AAA+, Weed AA and Weed Budget flower tiers.",
       },
       {
         title: "Native Smokes",

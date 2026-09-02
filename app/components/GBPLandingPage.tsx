@@ -95,7 +95,7 @@ export function GBPLandingPage() {
           </div>
           <div className={styles.inlineGuide}>
             <span>Want help understanding the flower tiers?</span>
-            <Link href="/resources/flower-guide">Read the Flower Guide</Link>
+            <Link href="/resources/weed-flower-guide">Read the Weed &amp; Flower Guide</Link>
           </div>
 
           <h3 className={styles.subheading}>Explore More Cannabis Categories</h3>

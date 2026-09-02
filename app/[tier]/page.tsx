@@ -119,7 +119,7 @@ export default async function TierPage({
             <div className={styles.dealRow}>
               {config.deal3g && (
               <div className={styles.dealBox}>
-                <div className={styles.dealLabel}>🎁 {config.deal3g.total.toLowerCase()} {config.name} Weed Bundle</div>
+                <div className={styles.dealLabel}>🎁 {config.deal3g.total.toLowerCase()} {config.name} Bundle</div>
                 <div className={styles.dealPrice}>
                   = <strong>${config.deal3g.price}</strong> / {config.deal3g.total}
                 </div>
@@ -127,7 +127,7 @@ export default async function TierPage({
               )}
               {config.deal6g && (
                 <div className={styles.dealBox}>
-                  <div className={styles.dealLabel}>🎁 {config.deal6g.total.toLowerCase()} {config.name} Weed Bundle</div>
+                  <div className={styles.dealLabel}>🎁 {config.deal6g.total.toLowerCase()} {config.name} Bundle</div>
                   <div className={styles.dealPrice}>
                     = <strong>${config.deal6g.price}</strong> / {config.deal6g.total}
                   </div>
@@ -195,11 +195,11 @@ export default async function TierPage({
               </p>
               <div className={styles.compareGrid}>
                 {[
-                  ["Exotic Weed & Flower", "/exotic", "Explore the Exotic flower tier."],
-                  ["Premium Weed & Flower", "/premium", "Explore the Premium flower tier."],
-                  ["AAA+ Weed & Flower", "/aaa", "Explore the AAA+ flower tier."],
-                  ["AA Weed & Flower", "/aa", "Explore the AA flower tier."],
-                  ["Budget Weed & Flower", "/budget", "Explore the Budget flower tier."],
+                  ["Weed Exotic & Flower", "/exotic-weed", "Explore the Exotic flower tier."],
+                  ["Weed Premium & Flower", "/premium-weed", "Explore the Premium flower tier."],
+                  ["Weed AAA+ & Flower", "/aaa-weed", "Explore the AAA+ flower tier."],
+                  ["Weed AA & Flower", "/aa-weed", "Explore the AA flower tier."],
+                  ["Weed Budget & Flower", "/budget-weed", "Explore the Budget flower tier."],
                 ].map(([label, href, description]) => (
                   <Link key={href} href={href} className={styles.compareCard}>
                     <strong>{label}</strong>

@@ -93,8 +93,8 @@ export const TIER_CONFIG: Record<
   }
 > = {
   EXOTIC: {
-    name: "Exotic",
-    slug: "exotic",
+    name: "Weed Exotic",
+    slug: "exotic-weed",
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
     tagline: "Browse the Exotic flower section",
@@ -104,8 +104,8 @@ export const TIER_CONFIG: Record<
     deal6g: { label: "6g bundle", total: "6G", price: 60 },
   },
   PREMIUM: {
-    name: "Premium",
-    slug: "premium",
+    name: "Weed Premium",
+    slug: "premium-weed",
     color: "#a78bfa",
     icon: "\uD83D\uDC8E",
     tagline: "Hand-picked connoisseur grade \u00B7 THC 32-34%",
@@ -115,8 +115,8 @@ export const TIER_CONFIG: Record<
     deal6g: { label: "6g bundle", total: "6G", price: 45 },
   },
   "AAA+": {
-    name: "AAA+",
-    slug: "aaa",
+    name: "Weed AAA+",
+    slug: "aaa-weed",
     color: "#22d3ee",
     icon: "\u26A1",
     tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
@@ -126,8 +126,8 @@ export const TIER_CONFIG: Record<
     deal6g: { label: "6g bundle", total: "6G", price: 30 },
   },
   AA: {
-    name: "AA",
-    slug: "aa",
+    name: "Weed AA",
+    slug: "aa-weed",
     color: "#34d399",
     icon: "\u2726",
     tagline: "Quality daily drivers \u00B7 THC 27-29%",
@@ -137,8 +137,8 @@ export const TIER_CONFIG: Record<
     deal6g: null,
   },
   BUDGET: {
-    name: "Budget",
-    slug: "budget",
+    name: "Weed Budget",
+    slug: "budget-weed",
     color: "#94a3b8",
     icon: "\uD83D\uDCB0",
     tagline: "Shreds & value OZs \u00B7 From $40/oz",
@@ -304,4 +304,3 @@ export function formatPrice(p: PricePoint | null): string {
   if (p.sale !== null) return `$${p.sale}`;
   return `$${p.regular}`;
 }
-
