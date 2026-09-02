@@ -36,18 +36,18 @@ test("BSC Weed owner and homepage module keep approved static destinations", () 
   ].join("\n");
 
   for (const href of [
-    "/budget",
-    "/aa",
-    "/aaa",
-    "/premium",
-    "/exotic",
+    "/budget-weed",
+    "/aa-weed",
+    "/aaa-weed",
+    "/premium-weed",
+    "/exotic-weed",
     "/items/prerolls",
     "/items/edibles",
     "/items/vape-disposables",
     "/items/concentrates",
     "/items/add-ons",
     "/weed-dispensary-brampton/",
-    "/resources/flower-guide",
+    "/resources/weed-flower-guide",
   ]) {
     assert.ok(sources.includes(href), `Missing approved link: ${href}`);
   }
@@ -85,9 +85,69 @@ test("tier pages use absolute route-specific metadata and one natural Weed signa
   assert.match(page, /href="\/weed-dispensary-brampton\/"/);
 
   for (const tier of ["Exotic", "Premium", "AAA+", "AA", "Budget"]) {
-    assert.ok(content.includes(`${tier} Weed & Flower Brampton | Brampton Smoke Cannabis`));
-    assert.ok(content.includes(`${tier} Weed & Cannabis Flower in Brampton`));
-    assert.ok(content.includes(`Explore ${tier} Weed Strains`));
+    assert.ok(content.includes(`Weed ${tier} & Cannabis Flower Brampton | Brampton Smoke Cannabis`));
+    assert.ok(content.includes(`Weed ${tier} & Cannabis Flower in Brampton`));
+    assert.ok(content.includes(`Explore Weed ${tier} Strains`));
+  }
+});
+
+test("Weed campaign routes use one canonical and one-hop permanent legacy redirects", () => {
+  const config = read("next.config.ts");
+  const products = read("app/lib/products.ts");
+  const resources = read("app/resources/resourceData.ts");
+  const sitemap = read("app/sitemap.ts");
+
+  const migrations = [
+    ["/exotic", "/exotic-weed"],
+    ["/premium", "/premium-weed"],
+    ["/aaa", "/aaa-weed"],
+    ["/aa", "/aa-weed"],
+    ["/budget", "/budget-weed"],
+    ["/resources/flower-guide", "/resources/weed-flower-guide"],
+  ];
+
+  for (const [legacy, canonical] of migrations) {
+    assert.ok(
+      config.includes(`{ source: "${legacy}", destination: "${canonical}", statusCode: 301 }`),
+      `Missing direct permanent migration: ${legacy} -> ${canonical}`,
+    );
+  }
+
+  for (const slug of ["exotic-weed", "premium-weed", "aaa-weed", "aa-weed", "budget-weed"]) {
+    assert.ok(products.includes(`slug: "${slug}"`), `Missing canonical tier slug: ${slug}`);
+  }
+  assert.match(resources, /slug: "weed-flower-guide"/);
+  assert.doesNotMatch(resources, /slug: "flower-guide"/);
+  assert.match(sitemap, /url: `\$\{BASE\}\/\$\{t\.slug\}`/);
+  assert.match(sitemap, /url: page\.slug \? `\$\{BASE\}\/resources\/\$\{page\.slug\}`/);
+});
+
+test("customer-facing tier names and links include Weed", () => {
+  const sources = [
+    read("app/lib/products.ts"),
+    read("app/page.tsx"),
+    read("app/components/Navbar.tsx"),
+    read("app/components/Footer.tsx"),
+    read("app/lib/weedDiscovery.ts"),
+    read("app/resources/resourceData.ts"),
+  ].join("\n");
+
+  for (const tier of ["Weed Exotic", "Weed Premium", "Weed AAA+", "Weed AA", "Weed Budget"]) {
+    assert.ok(sources.includes(tier), `Missing Weed-inclusive customer tier name: ${tier}`);
+  }
+  for (const legacyHref of ["/exotic\"", "/premium\"", "/aaa\"", "/aa\"", "/budget\"", "/resources/flower-guide\""]) {
+    assert.ok(!sources.includes(legacyHref), `Legacy internal destination remains: ${legacyHref}`);
+  }
+});
+
+test("BSC Weed and Flower guide uses reviewed evergreen copy", () => {
+  const resources = read("app/resources/resourceData.ts");
+  const guide = resources.match(/slug: "weed-flower-guide"[\s\S]*?(?=\n  \{\n    slug: "value-guide")/)?.[0] || "";
+
+  assert.match(guide, /seoTitle: "Weed & Flower Guide Brampton"/);
+  assert.match(guide, /Explore Brampton Smoke Cannabis Weed in Brampton/);
+  for (const blocked of ["higher shelf", "stronger shelf positioning", "more punch", "cheap weed"]) {
+    assert.ok(!guide.toLowerCase().includes(blocked), `Blocked guide wording remains: ${blocked}`);
   }
 });
 
@@ -95,7 +155,7 @@ test("Weed owner cards preserve broad-owner and tier-owner separation", () => {
   const discovery = read("app/lib/weedDiscovery.ts");
 
   for (const tier of ["Budget", "AA", "AAA+", "Premium", "Exotic"]) {
-    assert.ok(discovery.includes(`${tier} Weed & Flower`));
+    assert.ok(discovery.includes(`Weed ${tier} & Flower`));
     assert.ok(discovery.includes(`Explore the ${tier} cannabis flower tier.`));
   }
   assert.match(discovery, /ownerPath: "\/weed-dispensary-brampton\/"/);
@@ -108,7 +168,7 @@ test("flower details avoid false live availability and link to tier context", ()
   assert.doesNotMatch(page, /In stock|Available now|Currently available/i);
   assert.match(page, /title: \{\s*absolute:/s);
   assert.match(page, /Listed on the Brampton Smoke Cannabis menu/);
-  assert.match(page, /Explore \{tierName\} Weed &amp; Flower/);
+  assert.match(page, /Explore \{tierName\} &amp; Flower/);
   assert.match(page, /href="\/weed-dispensary-brampton\/"/);
 });
 

@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/delivery", destination: "/weed-delivery-brampton", statusCode: 301 },
+      { source: "/exotic", destination: "/exotic-weed", statusCode: 301 },
+      { source: "/premium", destination: "/premium-weed", statusCode: 301 },
+      { source: "/aaa", destination: "/aaa-weed", statusCode: 301 },
+      { source: "/aa", destination: "/aa-weed", statusCode: 301 },
+      { source: "/budget", destination: "/budget-weed", statusCode: 301 },
+      { source: "/resources/flower-guide", destination: "/resources/weed-flower-guide", statusCode: 301 },
       { source: "/blog", destination: "/resources", permanent: true },
       { source: "/blog/:path*", destination: "/resources", permanent: true },
       { source: "/edibles", destination: "/items/edibles", permanent: true },
@@ -33,4 +39,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

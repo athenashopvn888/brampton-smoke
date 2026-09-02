@@ -13,7 +13,7 @@ export function WeedDiscoveryModule() {
         </p>
         <div className={styles.actions}>
           <Link href="/weed-dispensary-brampton/" className={styles.primary}>Explore Weed &amp; Cannabis</Link>
-          <Link href="/resources/flower-guide" className={styles.secondary}>Explore the Flower Guide</Link>
+          <Link href="/resources/weed-flower-guide" className={styles.secondary}>Explore the Weed &amp; Flower Guide</Link>
         </div>
       </div>
     </section>
