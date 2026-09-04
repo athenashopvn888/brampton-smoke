@@ -82,6 +82,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         href: "/resources/native-smokes",
         text: "Keep the cigarette lane separate with carton and brand-name notes from the store source.",
       },
+      {
+        title: "Cannabis Dispensary vs. Weed Dispensary",
+        href: "/resources/cannabis-dispensary-vs-weed-dispensary",
+        text: "Learn how dispensary, cannabis store, weed dispensary and common near-me searches relate.",
+      },
     ],
     sections: [
       {
@@ -98,6 +103,69 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         heading: "Falby Road and Brampton Coverage",
         body:
           "This guide focuses on the Falby Road location, its 24-hour schedule, and practical Brampton visit details for nearby shoppers.",
+      },
+    ],
+  },
+  {
+    slug: "cannabis-dispensary-vs-weed-dispensary",
+    title: "Cannabis Dispensary vs. Weed Dispensary in Brampton",
+    seoTitle: "Cannabis vs Weed Dispensary | Brampton Smoke Cannabis",
+    description:
+      "Cannabis dispensary, weed dispensary or dispensary near me? Learn how these local-search terms relate at Brampton Smoke Cannabis.",
+    eyebrow: "Dispensary Search Terminology",
+    intro:
+      "People searching for a cannabis business in Brampton use several different terms for essentially the same local-shopping goal. Some say cannabis dispensary. Others say weed dispensary. Some use cannabis store. And many simply search “dispensary near me.”",
+    cards: [
+      {
+        title: "Brampton Weed Dispensary",
+        href: "/info/brampton-weed-dispensary",
+        text: "Use this existing local page for Brampton store and visit information.",
+      },
+      {
+        title: "Weed Dispensary in Brampton",
+        href: "/weed-dispensary-brampton",
+        text: "Use the main Brampton Smoke Cannabis local page when planning an actual visit.",
+      },
+      {
+        title: "Brampton Smoke Cannabis Resources",
+        href: "/resources",
+        text: "Return to the resource hub for additional store and category guides.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Cannabis, Weed, Store and Dispensary",
+        body:
+          "Cannabis is the broader formal term. Weed is common everyday language. Dispensary identifies the type of local business being searched for. Cannabis store is another common description.",
+        bullets: [
+          "dispensary near me",
+          "cannabis dispensary near me",
+          "weed dispensary near me",
+          "cannabis store near me",
+          "cannabis near me",
+          "weed near me",
+        ],
+      },
+      {
+        heading: "Why Search Wording Changes",
+        body:
+          "The phrases are different, but the local intent can overlap strongly. People search using the vocabulary that feels natural to them. One customer may always say cannabis. Another may normally say weed. Someone trying to find the closest store quickly may skip both and type only “dispensary near me.” A useful local website should therefore clearly establish the actual business while using these terms naturally rather than repeating one exact keyword everywhere.",
+      },
+      {
+        heading: "Brampton Smoke Cannabis",
+        body:
+          "Brampton Smoke Cannabis is located at 132 Falby Rd Unit B in Brampton. The existing local pages remain the primary pages for customers planning an actual visit.",
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body:
+          "The terminology is different, but cannabis dispensary and weed dispensary commonly refer to the same type of cannabis retail business. “Dispensary near me” emphasizes local proximity, while cannabis store is another commonly used description.",
+        bullets: [
+          "Is a cannabis dispensary the same as a weed dispensary? The terminology is different, but the phrases commonly refer to the same type of cannabis retail business.",
+          "Why would someone search “dispensary near me”? The shorter phrase emphasizes local proximity. The searcher is generally trying to identify a nearby dispensary.",
+          "Is “cannabis store near me” related? Yes. Cannabis store is another commonly used way of describing the same type of local business.",
+          "Where is Brampton Smoke Cannabis? Brampton Smoke Cannabis is located at 132 Falby Rd Unit B in Brampton, Ontario.",
+        ],
       },
     ],
   },
