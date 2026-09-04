@@ -20,7 +20,10 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
   const page = getResourcePage(routeSlug(slug));
   if (!page) return {};
   return {
-    title: page.seoTitle,
+    title:
+      page.slug === "cannabis-dispensary-vs-weed-dispensary"
+        ? { absolute: page.seoTitle }
+        : page.seoTitle,
     description: page.description,
     alternates: { canonical: "https://www.bramptonsmokecannabis.com/resources/" + page.slug },
   };
