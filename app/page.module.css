@@ -893,6 +893,7 @@
 .storeSection {
   padding: 80px 0 20px;
   background-color: var(--green-deep, #020617);
+  scroll-margin-top: 150px;
 }
 
 .hubIntro {
