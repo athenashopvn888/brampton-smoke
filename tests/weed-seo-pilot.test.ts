@@ -19,6 +19,7 @@ test("BSC phone is consistent across the Weed release surfaces", () => {
   const sources = [
     read("app/lib/gbp-location.ts"),
     read("app/lib/weedDiscovery.ts"),
+    read("app/lib/storeSeo.ts"),
     read("app/layout.tsx"),
     read("app/components/Footer.tsx"),
     read("app/components/GBPLandingPage.tsx"),
@@ -126,6 +127,7 @@ test("customer-facing tier names and links include Weed", () => {
   const sources = [
     read("app/lib/products.ts"),
     read("app/page.tsx"),
+    read("app/components/HomePage.tsx"),
     read("app/components/Navbar.tsx"),
     read("app/components/Footer.tsx"),
     read("app/lib/weedDiscovery.ts"),
@@ -173,7 +175,7 @@ test("flower details avoid false live availability and link to tier context", ()
 });
 
 test("homepage describes five flower tiers without calling every tier premium", () => {
-  const page = read("app/page.tsx");
+  const page = [read("app/page.tsx"), read("app/components/HomePage.tsx")].join("\n");
 
   assert.doesNotMatch(page, /five tiers of premium flower/i);
   assert.match(page, /five flower tiers/);

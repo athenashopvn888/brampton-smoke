@@ -11,8 +11,8 @@ export const gbpLocation = {
   postalCode: "L6P 4L9",
   phone: "+1 (289) 819-5009",
   phoneIntl: "+12898195009",
-  neighborhood: "Brampton",
-  nearbyAreas: ["Brampton", "Queen Street", "Kennedy Road", "Bramalea", "Downtown Brampton", "Peel Region", "Brampton Transit", "Local Brampton neighborhoods"],
+  neighborhood: "East Brampton",
+  nearbyAreas: ["East Brampton", "Falby Road", "Steeles Avenue East", "Brampton Transit", "Local east Brampton neighbourhoods"],
   products: [
     "Flower",
     "Pre-rolls",
@@ -31,9 +31,9 @@ export const gbpLocation = {
   hours: ["Open 24 Hours"],
   seoTitle: "Weed Dispensary in Brampton | Brampton Smoke Cannabis",
   metaDescription: "Brampton Smoke Cannabis is open 24 hours at 132 Falby Rd Unit B in Brampton. Adults 19+ can explore flower, pre-rolls, edibles, THC vapes and concentrates.",
-  localLandmarks: ["Brampton", "Queen Street", "Kennedy Road"],
-  introVariant: "Brampton Smoke Cannabis is a local weed dispensary in Brampton, located at 132 Falby Rd Unit B. We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Whether you are searching for a weed dispensary near Brampton, a cannabis store in Brampton, or a local weed shop close to Queen Street, our friendly team is here to help you find the right product.",
-  neighborhoodDescription: "Located in the vibrant Brampton district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
+  localLandmarks: ["Falby Road", "Steeles Avenue East", "East Brampton"],
+  introVariant: "Brampton Smoke Cannabis is the east Brampton walk-in shop at 132 Falby Rd Unit B. Adults 19+ can compare weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Use Unit B on Falby Road, near Steeles Avenue East, when you set directions.",
+  neighborhoodDescription: "The shop sits on the Falby Road corridor in east Brampton, in a retail plaza with on-site parking and Brampton Transit access via nearby Steeles Avenue.",
   parkingNote: "Parking is available on-site in the retail plaza lot",
   transitNote: "Accessible via Brampton Transit routes serving nearby Steeles Avenue and local Brampton communities.",
   sectionTitle: "Serving Customers Near Brampton and Nearby Peel Communities"

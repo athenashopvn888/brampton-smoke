@@ -36,34 +36,13 @@ const faqItems = [
   },
 ];
 
-const storeSchema = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "@id": "https://www.bramptonsmokecannabis.com/weed-dispensary-brampton/",
-  name: store.storeName,
-  url: "https://www.bramptonsmokecannabis.com/weed-dispensary-brampton/",
-  telephone: store.phoneIntl,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: store.streetAddress,
-    addressLocality: store.city,
-    addressRegion: store.province,
-    postalCode: store.postalCode,
-    addressCountry: "CA",
-  },
-  openingHours: "Mo-Su 00:00-23:59",
-};
+// Canonical CannabisStore lives in layout via storeSeo. Do not emit a second store @id here.
 
 export function GBPLandingPage() {
   return (
     <>
       <Navbar />
       <main className={styles.main}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(storeSchema) }}
-        />
-
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
           <h1>Brampton Smoke Cannabis — Weed Dispensary in Brampton</h1>
@@ -137,6 +116,7 @@ export function GBPLandingPage() {
             <span>Adults 19+</span>
           </div>
           <p>The 24-hour schedule gives adults 19+ the flexibility to visit Brampton Smoke Cannabis at the time that works for them. Call ahead when you need to confirm a particular product before making a special trip.</p>
+          <p><Link href="/visit">Need the Unit B door and Falby corridor approach?</Link></p>
         </section>
 
         <section className={styles.section}>
