@@ -48,6 +48,7 @@ export const bscWeedOwner: WeedOwnerConfig = {
     { label: "Accessories", description: "Explore cannabis accessories.", href: "/items/add-ons" },
   ],
   guides: [
+    { label: "Visit Falby Unit B", description: "Unit B entrance, Falby / Steeles approach, parking, transit and 19+ ID.", href: "/visit" },
     { label: "Falby Road 24-Hour Visit Guide", description: "Useful information for planning a late-night or early-morning visit.", href: "/resources/falby-road-24-hour-visit-guide" },
     { label: "Cannabis Menu Guide", description: "A broader overview of flower, pre-rolls, edibles, vapes and concentrates.", href: "/resources/menu-guide" },
     { label: "Weed & Flower Guide", description: "Learn more about the flower tiers before choosing where to start.", href: "/resources/weed-flower-guide" },

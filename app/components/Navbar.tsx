@@ -21,6 +21,7 @@ const ALL_LINKS = [
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/weed-delivery-brampton", label: "🚗 Weed Delivery" },
   { href: "/careers/budtender", label: "Join Team", featured: true },
+  { href: "/visit", label: "Visit Falby Unit B" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];

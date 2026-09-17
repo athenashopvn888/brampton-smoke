@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import { cannabisStoreJsonLd } from "./lib/storeSeo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bramptonsmokecannabis.com"),
   title: {
-    default: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
+    default: "East Brampton Dispensary on Falby Rd Unit B | Brampton Smoke Cannabis",
     template: "%s | Brampton Smoke Cannabis",
   },
   description:
-    "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    "Brampton Smoke Cannabis is the east Brampton walk-in shop at 132 Falby Rd Unit B, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Brampton",
     "weed store Brampton",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.bramptonsmokecannabis.com",
     siteName: "Brampton Smoke Cannabis",
-    title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
+    title: "East Brampton Dispensary on Falby Rd Unit B | Brampton Smoke Cannabis",
     description:
-      "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+      "Brampton Smoke Cannabis is the east Brampton walk-in shop at 132 Falby Rd Unit B, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
         url: "https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -46,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "24 Hour Brampton Dispensary | Brampton Smoke Cannabis",
-    description: "Brampton Smoke Cannabis is a Brampton dispensary on Falby Rd with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    title: "East Brampton Dispensary on Falby Rd Unit B | Brampton Smoke Cannabis",
+    description: "Brampton Smoke Cannabis is the east Brampton walk-in shop at 132 Falby Rd Unit B, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: ["https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -69,44 +70,7 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.bramptonsmokecannabis.com",
-  name: "Brampton Smoke Cannabis",
-  description: "Cannabis dispensary at 132 Falby Rd Unit B in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://www.bramptonsmokecannabis.com",
-  telephone: "+12898195009",
-  image: "https://www.bramptonsmokecannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "132 Falby Rd Unit B",
-    addressLocality: "Brampton",
-    addressRegion: "ON",
-    postalCode: "L6P 4L9",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.7724674,
-    longitude: -79.6563479,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
-  areaServed: {
-    "@type": "City",
-    name: "Brampton",
-  },
-};
+/* CannabisStore JSON-LD is defined in storeSeo so homepage, /visit and layout share one entity. */
 
 export default function RootLayout({
   children,
@@ -128,7 +92,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cannabisStoreJsonLd) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JG1583SJ"></script>
         <script

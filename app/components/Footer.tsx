@@ -56,6 +56,7 @@ export default function Footer() {
               <Link href="/items/cigarettes">Cigarettes</Link>
 <Link href="/items/vapes">Nicotine Vapes</Link>
               <Link href="/resources">Resources</Link>
+              <Link href="/visit">Visit Falby Unit B</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/weed-delivery-brampton">Weed Delivery Brampton</Link>
               <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>
