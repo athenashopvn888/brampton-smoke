@@ -41,10 +41,7 @@ export default function VisitPage() {
           <p className={styles.kicker}>East Brampton · Falby · Unit B</p>
           <h1>Find Unit B at 132 Falby Road</h1>
           <p className={styles.lede}>
-            This is the how-to-reach guide for Brampton Smoke Cannabis. The homepage
-            remains the visit hub for the menu, NAP, hours and map. Use this page when
-            you need the Unit B door, the Falby corridor approach, parking, transit and
-            ID details before you walk in.
+            This is the how-to-reach guide for Brampton Smoke Cannabis. The homepage remains the visit hub for the menu, NAP, hours and map. Use this page when you need the Unit B door, the Falby corridor approach, parking, transit and ID details before you walk in.
           </p>
           <div className={styles.actions}>
             <a className={styles.primary} href={mapsDirectionsUrl}>
@@ -127,8 +124,8 @@ export default function VisitPage() {
             <li>{STORE.parkingNote} Stay in a marked stall and walk to the Unit B door.</li>
             <li>{STORE.transitNote} Check the current trip before you leave.</li>
             <li>
-              {STORE.ageNote} This is a walk-in shop for adults. No appointment is
-              required, and the listed hours are {STORE.hoursLabel}.
+              Adults 19+ must bring valid government photo ID. This is a walk-in shop.
+              No appointment is required, and the listed hours are {STORE.hoursLabel}.
             </li>
           </ul>
         </section>

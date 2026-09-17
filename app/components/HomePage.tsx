@@ -322,7 +322,7 @@ export default function HomePage() {
               Keep the Falby / Unit B facts together here: street address, postal code L6P 4L9, phone +1 (289) 819-5009, and 24-hour walk-in hours. Adults 19+ need valid government photo ID at the door. No appointment is required.
             </p>
             <p className={styles.seoPanelText}>
-              Around the menu, shop by the lane you came for. Flower is grouped into five flower tiers — Exotic, Premium, AAA+, AA and Budget — so you can compare Weed and cannabis flower in Brampton without mixing those shelves with pre-rolls, edibles, THC vapes, concentrates, accessories or cigarettes. Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
+              Around the menu, shop by the lane you came for. Flower is grouped into five flower tiers — Exotic, Premium, AAA+, AA and Budget — so shoppers comparing Weed and cannabis flower in Brampton can stay on those shelves instead of mixing them with pre-rolls, edibles, THC vapes, concentrates, accessories or cigarettes. Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
             </p>
             <p className={styles.seoPanelText}>
               Need a longer arrival guide for spotting Unit B, using the Falby and Steeles approach, parking, transit and ID? Open the visit page. The Google Business Profile website for this store stays on this homepage. The visit page is only a supporting how-to-reach guide for the east Brampton / Falby corridor.
