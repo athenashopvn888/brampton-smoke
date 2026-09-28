@@ -148,6 +148,7 @@ export default async function SeoLandingPage({
             </div>
           )}
           {page.warning && <p className={styles.nicotineWarning}>{page.warning}</p>}
+          {(slug === "native-cigarettes-brampton" || slug === "nicotine-vapes-brampton") && <div className={styles.section}><h2 className={styles.sectionTitle}>Falby Road category guide</h2><p className={styles.sectionBody}>Continue to the dedicated local pillar for exact Unit B details, directions, current-category access and adult ID information.</p><Link href={slug === "native-cigarettes-brampton" ? "/native-cigarettes-falby-road" : "/nicotine-vape-falby-road"} className={styles.productHeroPrimary}>Open the Falby Road guide</Link></div>}
         </div>
       </section>
 

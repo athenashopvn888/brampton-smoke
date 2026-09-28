@@ -10,6 +10,7 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import { STORE } from "../lib/storeSeo";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -29,7 +30,7 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: { absolute: seo.seoTitle },
+    title: { absolute: `${tierInfo.config.name} & Cannabis Flower | Falby Rd, East Brampton | Brampton Smoke Cannabis` },
     description: seo.metaDescription,
     alternates: {
       canonical: `https://www.bramptonsmokecannabis.com/${tierSlug}`,
@@ -64,9 +65,12 @@ export default async function TierPage({
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
+  const canonicalUrl = `${STORE.origin}/${tierSlug}`;
+  const schema = {"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":`${canonicalUrl}#webpage`,url:canonicalUrl,name:`${config.name} & Cannabis Flower | Falby Rd, East Brampton | Brampton Smoke Cannabis`,description:seo.metaDescription,isPartOf:{"@id":`${STORE.origin}/#website`},about:{"@id":STORE.id},breadcrumb:{"@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:STORE.origin},{"@type":"ListItem",position:2,name:config.name,item:canonicalUrl}]},mainEntity:{"@type":"ItemList",numberOfItems:flowers.length,itemListElement:flowers.map((flower,index)=>({"@type":"ListItem",position:index+1,name:flower.name,url:`${STORE.origin}/flower/${flower.slug}`}))}}]};
 
   return (
     <main className={styles.main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,"\\u003c")}} />
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
@@ -88,7 +92,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{seo.h1}</span>
+                <span style={{ color: config.color }}>{config.name} &amp; Cannabis Flower at Falby Road Unit B, East Brampton</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>

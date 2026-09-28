@@ -10,6 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
+    { url: `${BASE}/weed-dispensary-falby-road`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/24-hour-falby-road-dispensary`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/native-cigarettes-falby-road`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/nicotine-vape-falby-road`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/weed-dispensary-brampton/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
@@ -69,4 +73,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
 }
-
