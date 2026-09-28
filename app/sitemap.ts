@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/native-cigarettes-falby-road`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/nicotine-vape-falby-road`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE}/weed-dispensary-brampton/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/weed-dispensary-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/weed-delivery-brampton`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
