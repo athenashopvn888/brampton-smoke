@@ -1,0 +1,6 @@
+import test from"node:test";import assert from"node:assert/strict";import{readFileSync}from"node:fs";const read=p=>readFileSync(p,"utf8");const routes=["weed-dispensary-falby-road","24-hour-falby-road-dispensary","native-cigarettes-falby-road","nicotine-vape-falby-road"];
+test("approved pillars and canonicals",()=>{for(const r of routes)assert.ok(read(`app/${r}/page.tsx`).includes(`canonical:\"/${r}\"`))});
+test("six-card hub",()=>{const h=read("app/components/HomePage.tsx");for(const r of[...routes,"weed-delivery-brampton","visit"])assert.ok(h.includes(`/${r}`))});
+test("tier collections",()=>{const t=read("app/[tier]/page.tsx");assert.match(t,/CollectionPage/);assert.match(t,/ItemList/);assert.match(t,/flowers\.map/);assert.match(t,/Falby Rd, East Brampton/)});
+test("additive and local",()=>{const x=[read("app/sitemap.ts"),read("app/lib/authorityPages.ts"),read("app/components/AuthorityLanding.tsx")].join("\n");for(const r of routes)assert.ok(x.includes(`/${r}`));assert.doesNotMatch(x,/noindex|Ottawa|Gatineau|ByWard|sister store/i)});
+test("exact NAP and adult visit details",()=>{const c=read("app/components/AuthorityLanding.tsx"),s=read("app/lib/storeSeo.ts");assert.match(s,/132 Falby Rd Unit B/);assert.match(s,/289\) 819-5009/);assert.match(c,/Adults 19\+ with government photo ID/);assert.match(c,/mapsPlaceUrl/);assert.match(c,/href=\"\/visit\"/)});
