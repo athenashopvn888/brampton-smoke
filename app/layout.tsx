@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
+import { Inter, Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
 import { cannabisStoreJsonLd } from "./lib/storeSeo";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const montserrat = Montserrat({ subsets: ["latin"], display: "swap", variable: "--font-montserrat" });
+const outfit = Outfit({ subsets: ["latin"], display: "swap", variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bramptonsmokecannabis.com"),
@@ -84,36 +90,22 @@ export default function RootLayout({
         <meta name="geo.placename" content="Brampton" />
         <meta name="geo.position" content="43.7724674;-79.6563479" />
         <meta name="ICBM" content="43.7724674, -79.6563479" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(cannabisStoreJsonLd) }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JG1583SJ"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-K4JG1583SJ');
-            `
-          }}
-        />
       </head>
-      <body>
+      <body className={`${inter.variable} ${montserrat.variable} ${outfit.variable}`}>
         <Link className="deliveryAnnouncement" href="/weed-delivery-brampton">
           NEW WEED DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
         <AgeGate />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-K4JG1583SJ" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-K4JG1583SJ');`}
+        </Script>
       </body>
     </html>
   );
 }
-

@@ -10,6 +10,22 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "athena-cannabis-images.vercel.app", pathname: "/products/delivery/v1/**" },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/banners/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
+      },
+      {
+        source: "/products/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
+      },
+      {
+        source: "/brand-logo-small.webp",
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
+      },
+    ];
+  },
   async redirects() {
     return [
       { source: "/delivery", destination: "/weed-delivery-brampton", statusCode: 301 },

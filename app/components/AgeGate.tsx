@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./AgeGate.module.css";
 
 export default function AgeGate() {
@@ -51,11 +52,13 @@ export default function AgeGate() {
         ) : (
           <div className={styles.promptState}>
             <div className={styles.logoWrap}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/storeFavicon.webp"
+              <Image
+                src="/brand-logo-small.webp"
                 alt="Brampton Smoke Cannabis"
                 className={styles.logo}
+                width={128}
+                height={128}
+                loading="lazy"
               />
             </div>
             <h2 className={styles.title}>Age Verification</h2>

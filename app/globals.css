@@ -3,8 +3,6 @@
    Clean White Theme - Cannabis Green Accents
    ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Cinzel:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@500;700&family=Montserrat:wght@400;700;900&family=Inter:wght@400;600;800&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-
 /* -- CSS Variables -- */
 .deliveryAnnouncement {
   position: fixed;
@@ -107,8 +105,8 @@ body > .deliveryAnnouncement ~ * nav {
   --transition-slow: 0.5s var(--ease-smooth);
 
   /* Typography */
-  --font-display: 'Montserrat', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
 }
 
 /* -- Global Reset -- */
