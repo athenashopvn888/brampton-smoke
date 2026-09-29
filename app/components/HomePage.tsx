@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import FleetAnnouncementBanner from "./FleetAnnouncementBanner";
@@ -16,7 +17,6 @@ import {
   mapsDirectionsUrl,
   mapsEmbedUrl,
 } from "../lib/storeSeo";
-import Papa from "papaparse";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -74,13 +74,13 @@ const EXPLORE_CATEGORIES = [
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/bsc-real/tile-magic.webp" },
 ];
 
-interface Review {
+export interface Review {
   name: string;
   comment: string;
   date: string;
 }
 
-interface ReviewStats {
+export interface ReviewStats {
   total: number;
   avg: number;
 }
@@ -104,66 +104,15 @@ function pickFeaturedStrains(): FlowerProduct[] {
   return picked;
 }
 
-export default function HomePage() {
+interface HomePageProps {
+  initialReviews: Review[];
+  initialReviewStats: ReviewStats | null;
+}
+
+export default function HomePage({ initialReviews, initialReviewStats }: HomePageProps) {
   const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
-  const [reviewsLoading, setReviewsLoading] = useState(true);
-
-  /* ── 1. Fetch Client-Side Review Comments ── */
-  useEffect(() => {
-    const STORE_KEY = "BSC01";
-    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSu6iy9W3YKRzBYo_r96rXcbJsAOzlkzn5Rw9QMFnE0NbYSBgPxKX8kPRZNC9QcffZYj57155esmnqH/pub?gid=1555782756&single=true&output=csv";
-
-    fetch(url)
-      .then((r) => {
-        if (!r.ok) throw new Error(`Review feed returned ${r.status}`);
-        return r.text();
-      })
-      .then((raw) => {
-        const rows = Papa.parse<Record<string, string>>(raw, {
-          header: true,
-          skipEmptyLines: true,
-        }).data;
-
-        const reviewsPool: Review[] = [];
-        let totalVal: number | null = null;
-        let avgVal: number | null = null;
-        let hasStats = false;
-
-        rows.forEach((row) => {
-          if (row.StoreKey !== STORE_KEY) return;
-
-          const rn = row.ReviewerName || "";
-          if (rn === "__STATS__") {
-            const parsedTotal = parseInt(row.Comment || "", 10);
-            const parsedAvg = parseFloat(row.CreateTime || "");
-            if (Number.isFinite(parsedTotal) && Number.isFinite(parsedAvg)) {
-              totalVal = parsedTotal;
-              avgVal = parsedAvg;
-              hasStats = true;
-            }
-            return;
-          }
-
-          const comment = row.Comment || "";
-          if (!comment || comment.length < 10) return;
-          const name = rn || "Customer";
-          const dateStr = row.CreateTime || "";
-          reviewsPool.push({ name, comment, date: dateStr });
-        });
-
-        setReviews(reviewsPool.slice(0, 6));
-        if (hasStats && totalVal !== null && avgVal !== null) {
-          setReviewsStats({ total: totalVal, avg: avgVal });
-        }
-        setReviewsLoading(false);
-      })
-      .catch((err) => {
-        console.warn("Reviews fetch failed:", err);
-        setReviewsLoading(false);
-      });
-  }, []);
+  const reviews = initialReviews;
+  const reviewsStats = initialReviewStats;
 
   /* ── 2. Build Featured Strains ── */
   useEffect(() => {
@@ -180,10 +129,15 @@ export default function HomePage() {
       {/* ── WELCOME BANNER ── */}
       <section className={styles.welcomeBannerSection}>
         <div className={styles.welcomeBannerContainer}>
-          <img
+          <Image
             src="/banners/bsc-real/welcome-real.webp"
             alt="Welcome to Brampton Smoke Cannabis at 132 Falby Rd Unit B, east Brampton"
             className={styles.welcomeBannerImg}
+            width={1320}
+            height={330}
+            sizes="(max-width: 768px) calc(100vw - 32px), 1272px"
+            priority
+            fetchPriority="high"
           />
         </div>
       </section>
@@ -208,7 +162,7 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           {/* Brand branding */}
           <div className={styles.brandBlock}>
-            <img src="/storeFavicon.webp" alt="Brampton Smoke Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
+            <Image src="/brand-logo-small.webp" alt="Brampton Smoke Cannabis Icon" width={60} height={60} loading="lazy" style={{ objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <h1 className={styles.brandTitle}>Brampton Smoke Cannabis — Falby Rd Unit B, East Brampton</h1>
             <p className={styles.brandSub}>Walk-in shop at 132 Falby Rd Unit B · Open 24 Hours · Adults 19+</p>
             <div className={styles.brandBadge}>Open 24 Hours · Unit B</div>
@@ -220,14 +174,17 @@ export default function HomePage() {
               <Link
                 key={tier.slug}
                 href={`/${tier.slug}`}
+                prefetch={false}
                 className={`${styles.bentoTile} ${tier.className}`}
               >
                 <div className={styles.bentoArt}>
-                  <img
+                  <Image
                     src={tier.banner}
                     alt={`${tier.name} Brampton Smoke Cannabis banner`}
                     className={styles.bentoArtImg}
+                    fill
                     loading="lazy"
+                    sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1100px) calc(50vw - 36px), 380px"
                   />
                 </div>
                 <div className={styles.bentoTileOverlay} />
@@ -256,14 +213,17 @@ export default function HomePage() {
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
+                prefetch={false}
                 className={styles.categoryCard}
               >
                 <div className={styles.categoryCardArt}>
-                  <img
+                  <Image
                     src={cat.banner}
                     alt={`${cat.name} Brampton Smoke Cannabis banner`}
                     className={styles.categoryCardImg}
+                    fill
                     loading="lazy"
+                    sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1000px) calc(50vw - 34px), 388px"
                   />
                 </div>
                 <div className={styles.categoryCardOverlay} />
@@ -379,9 +339,7 @@ export default function HomePage() {
           </div>
 
           <div className={styles.reviewsGrid}>
-            {reviewsLoading ? (
-              <div className={styles.reviewsLoading}>Loading customer feedback...</div>
-            ) : reviews.length === 0 ? (
+            {reviews.length === 0 ? (
               <div className={styles.reviewsLoading}>
                 Customer feedback is unavailable right now.
               </div>

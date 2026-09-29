@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 
@@ -39,7 +40,7 @@ export default function Navbar() {
       {/* Top bar — logo + open now */}
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo} aria-label="Brampton Smoke Cannabis" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
-          <img src="/storeFavicon.webp" alt="Brampton Smoke Cannabis Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
+          <Image src="/brand-logo-small.webp" alt="Brampton Smoke Cannabis Logo" width={30} height={30} loading="lazy" style={{ objectFit: "contain", borderRadius: "4px" }} />
           <span className={styles.brandName} style={{
             fontFamily: "var(--font-display)",
             fontWeight: 900,
@@ -69,6 +70,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={false}
                 className={`${styles.pill} ${link.featured ? styles.pillHiring : ""} ${isActive ? styles.pillActive : ""}`}
               >
                 {link.label}
