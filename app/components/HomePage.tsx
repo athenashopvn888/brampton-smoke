@@ -1,4 +1,8 @@
 "use client";
+import { HOME_TITLE } from "../lib/homeDelivery";
+import CohortDeliveryActions from "./CohortDeliveryActions";
+import HomeDeliverySection from "./HomeDeliverySection";
+import HomepageTopNotices from "./HomepageTopNotices";
 
 import { useEffect, useState, type CSSProperties } from "react";
 import Image from "next/image";
@@ -122,9 +126,11 @@ export default function HomePage({ initialReviews, initialReviewStats }: HomePag
 
   return (
     <main className={styles.main}>
+      <Navbar />
+      <HomepageTopNotices />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
-      <Navbar />
+
 
       {/* ── WELCOME BANNER ── */}
       <section className={styles.welcomeBannerSection}>
@@ -163,7 +169,8 @@ export default function HomePage({ initialReviews, initialReviewStats }: HomePag
           {/* Brand branding */}
           <div className={styles.brandBlock}>
             <Image src="/brand-logo-small.webp" alt="Brampton Smoke Cannabis Icon" width={60} height={60} loading="lazy" style={{ objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>Brampton Smoke Cannabis — Falby Rd Unit B, East Brampton</h1>
+            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>Walk-in shop at 132 Falby Rd Unit B · Open 24 Hours · Adults 19+</p>
             <div className={styles.brandBadge}>Open 24 Hours · Unit B</div>
           </div>
@@ -197,6 +204,8 @@ export default function HomePage({ initialReviews, initialReviewStats }: HomePag
           </div>
         </div>
       </section>
+
+      <HomeDeliverySection />
 
       {/* ── EXPLORE CATEGORIES ── */}
       <section className={styles.categoriesSection} id="menu">
