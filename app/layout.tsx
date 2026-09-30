@@ -3,7 +3,6 @@ import Link from "next/link";
 import Script from "next/script";
 import { Inter, Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
-import AgeGate from "./components/AgeGate";
 import { cannabisStoreJsonLd } from "./lib/storeSeo";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
@@ -100,7 +99,6 @@ export default function RootLayout({
           NEW WEED DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
-        <AgeGate />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-K4JG1583SJ" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-K4JG1583SJ');`}
