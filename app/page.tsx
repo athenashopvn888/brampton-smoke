@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Papa from "papaparse";
 import HomePage, { type Review, type ReviewStats } from "./components/HomePage";
 import { JsonLd } from "./components/JsonLd";
-import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
 import { STORE, HOME_FAQS, faqPageJsonLd } from "./lib/storeSeo";
 
 export const metadata: Metadata = {
@@ -65,7 +64,6 @@ export default async function Page() {
   return (
     <>
       <JsonLd data={faqPageJsonLd(HOME_FAQS)} />
-      <FleetAnnouncementBanner holidayOnly />
       <HomePage initialReviews={reviews} initialReviewStats={stats} />
     </>
   );
