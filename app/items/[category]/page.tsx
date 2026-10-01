@@ -12,6 +12,7 @@ import {
   type ItemProduct,
 } from "../../lib/products";
 import styles from "./items.module.css";
+import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
@@ -56,6 +57,7 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
+  const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
 
   return (
     <main className={styles.main}>
@@ -97,6 +99,14 @@ export default async function ItemsCategoryPage({
           </p>
         </div>
       </section>
+
+      {guideGroups.length > 0 && (
+        <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
+          <div className={styles.container}>
+            {guideGroups.map((group) => <div className={styles.guideGroup} key={group.label}><h2>{group.label}</h2><div>{group.guides.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}</div></div>)}
+          </div>
+        </nav>
+      )}
 
       {/* Product Grid */}
       <section className={styles.products}>
