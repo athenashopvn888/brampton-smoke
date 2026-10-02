@@ -102,6 +102,20 @@ export const GUIDE_REGISTRY: GuideEntry[] = seeds.map((seed) => ({
   relatedSlugs: seeds.filter((candidate) => candidate.lane === seed.lane && candidate.slug !== seed.slug).slice(0, seed.lane === "strain" ? 4 : 3).map((candidate) => candidate.slug),
 }));
 
+const GUIDE_LANES: { lane: GuideLane; label: string }[] = [
+  { lane: "strain", label: "Strains" },
+  { lane: "native_cig", label: "Native Cigarettes" },
+  { lane: "nic_vape", label: "Nicotine Vape" },
+  { lane: "thc_vape", label: "THC Vape" },
+];
+
+export function getGuidesByLane() {
+  return GUIDE_LANES.map((group) => ({
+    ...group,
+    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === group.lane),
+  })).filter((group) => group.guides.length > 0);
+}
+
 export const getGuide = (slug: string) => GUIDE_REGISTRY.find((guide) => guide.slug === slug);
 export function resolveGuideProduct(guide: GuideEntry): FlowerProduct | ItemProduct | undefined {
   return guide.lane === "strain" ? allFlowers.find((product) => product.slug === guide.productSlug) : allItems.find((product) => product.slug === guide.productSlug);
