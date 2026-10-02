@@ -13,6 +13,7 @@ import { TIER_SEO } from "../lib/tierSeoContent";
 import { STORE } from "../lib/storeSeo";
 import styles from "./tier.module.css";
 import { getTierGuideLinks } from "../lib/guideRegistry";
+import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -116,29 +117,11 @@ export default async function TierPage({
           </div>
 
           <div className={styles.heroRight}>
-            <div className={styles.unitPriceBox}>
-              <span className={styles.unitPriceLabel}>Starting at</span>
-              <span className={styles.unitPriceValue}>${config.unitPrice}/g</span>
-            </div>
+            {isBogoDeal(config.deal6g) ? <><p className={styles.asLowAsBanner}>{formatAsLowAsAfterPromos(config.deal6g.price, config.deal6g.grams)}</p><p className={styles.listAnchor}>List ${config.unitPrice}/g</p></> : <div className={styles.unitPriceBox}><span className={styles.unitPriceLabel}>Starting at</span><span className={styles.unitPriceValue}>${config.unitPrice}/g</span></div>}
 
             {(config.deal3g || config.deal6g) && (
             <div className={styles.dealRow}>
-              {config.deal3g && (
-              <div className={styles.dealBox}>
-                <div className={styles.dealLabel}>🎁 {config.deal3g.total.toLowerCase()} {config.name} Bundle</div>
-                <div className={styles.dealPrice}>
-                  = <strong>${config.deal3g.price}</strong> / {config.deal3g.total}
-                </div>
-              </div>
-              )}
-              {config.deal6g && (
-                <div className={styles.dealBox}>
-                  <div className={styles.dealLabel}>🎁 {config.deal6g.total.toLowerCase()} {config.name} Bundle</div>
-                  <div className={styles.dealPrice}>
-                    = <strong>${config.deal6g.price}</strong> / {config.deal6g.total}
-                  </div>
-                </div>
-              )}
+              {[config.deal3g, config.deal6g].filter((deal): deal is BoardDeal => deal !== null).map((deal) => <div className={styles.dealBox} key={deal.total}><div className={styles.dealLabel}>{isBogoDeal(deal) ? deal.label : `🎁 ${deal.label}`}</div><div className={styles.dealPrice}>{isBogoDeal(deal) ? <>Pay <strong>${deal.price}</strong> = {deal.grams}g</> : <>= <strong>${deal.price}</strong> / {deal.total}</>}</div>{isBogoDeal(deal) ? <div className={styles.dealMeta}>{formatPerGram(deal.price, deal.grams)} · {deal.equals}</div> : null}</div>)}
             </div>
             )}
           </div>
