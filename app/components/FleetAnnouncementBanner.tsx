@@ -70,6 +70,10 @@ export default function FleetAnnouncementBanner() {
           alt="Exclusive Premium Grade BB Full Flavor, BB Lights, and Belmont King Size cigarettes at Brampton Smoke Cannabis."
         />
       </Link>
+      <Link href="/items/cigarettes" data-belmont-mix-match-banner="" aria-label="BELMONT KING SIZE $10 - 2PACK BB $5 MIX & MATCH">
+        <span data-belmont-offer-lead="">BELMONT KING SIZE $10 -</span>
+        <span data-belmont-offer-tail=""> 2PACK BB $5 MIX &amp; MATCH</span>
+      </Link>
     </aside>
   );
 }
