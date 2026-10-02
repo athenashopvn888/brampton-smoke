@@ -8,11 +8,11 @@ test("BSC01 uses Tri's custom banner and the approved homepage stack", () => {
   const banner = read("app/components/FleetAnnouncementBanner.tsx");
   const deals = read("app/lib/flowerDeals.ts");
   assert.match(deals, /TOP WEED TIER SPECIAL · \$\{BOGO_BUY_2_GET_1\}  \$\{BOGO_BUY_3_GET_3\} \*/);
-  const order = ["<FlowerBogoStrip hero />", 'data-exotic-tier-banner=""', 'top-weed-tier-bsc01.webp', 'data-cigarette-deal=""', 'data-bb-light-deal=""', 'data-cig-mix-banner=""', 'data-bb-premium-banner=""'];
+  const order = ["<FlowerBogoStrip hero />", 'data-exotic-tier-banner=""', 'top-weed-tier-bsc01.webp', 'data-cigarette-deal=""', 'data-bb-light-deal=""', 'data-cig-mix-banner=""', 'data-belmont-premium-banner=""'];
   let offset = -1;
   for (const marker of order) { const next = banner.indexOf(marker); assert.ok(next > offset, `${marker} should follow the previous stack item`); offset = next; }
   assert.ok(existsSync(new URL("../public/banners/top-weed-tier-bsc01.webp", import.meta.url)));
-  assert.ok(existsSync(new URL("../public/banners/bb-premium-grade-full-lights.webp", import.meta.url)));
+  assert.ok(!existsSync(new URL("../public/banners/bb-premium-grade-full-lights.webp", import.meta.url)));
   assert.ok(existsSync(new URL("../public/banners/2pack5cig.webp", import.meta.url)));
 });
 
