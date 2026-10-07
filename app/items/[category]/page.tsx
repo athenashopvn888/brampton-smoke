@@ -6,7 +6,7 @@ import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Footer from "../../components/Footer";
 import {
-  getItemsByCategory,
+  fetchLiveProducts,
   getCategoryFromSlug,
   CATEGORY_CONFIG,
   type ItemProduct,
@@ -28,7 +28,8 @@ export async function generateMetadata({
   const { category: catSlug } = await params;
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) return {};
-  const items = getItemsByCategory(catInfo.key);
+  const { items: liveItems } = await fetchLiveProducts();
+  const items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
 
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
@@ -49,9 +50,10 @@ export default async function ItemsCategoryPage({
   if (!catInfo) notFound();
 
   /* Pre-Rolls also shows accessories (ADD ONS) */
-  let items = getItemsByCategory(catInfo.key);
+  const { items: liveItems } = await fetchLiveProducts();
+  let items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
   if (catInfo.key === "PREROLLS") {
-    const accessories = getItemsByCategory("ADD ONS");
+    const accessories = liveItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
     const existingIds = new Set(items.map(i => i.sku));
     const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
     items = [...items, ...uniqueAccessories];
