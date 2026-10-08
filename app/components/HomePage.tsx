@@ -137,7 +137,7 @@ export default function HomePage({ initialReviews, initialReviewStats }: HomePag
         <div className={styles.welcomeBannerContainer}>
           <Image
             src="/banners/bsc-real/welcome-real.webp"
-            alt="Welcome to Brampton Smoke Cannabis at 132 Falby Rd Unit B, east Brampton"
+            alt="Brampton Smoke Cannabis Dispensary Weed Delivery"
             className={styles.welcomeBannerImg}
             width={1320}
             height={330}

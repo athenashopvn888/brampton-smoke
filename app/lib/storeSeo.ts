@@ -82,7 +82,7 @@ export const cannabisStoreJsonLd = {
   "@context": "https://schema.org",
   "@type": "CannabisStore",
   "@id": STORE.id,
-  name: STORE.name,
+  name: "Brampton Smoke Cannabis Dispensary Weed Delivery",
   description:
     "East Brampton cannabis shop at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Walk in 24 hours. Adults 19+.",
   url: STORE.url,
