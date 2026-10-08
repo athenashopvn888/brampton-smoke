@@ -1,4 +1,4 @@
-import { HOME_TITLE } from "./lib/homeDelivery";
+import { HOME_DOC_TITLE, HOME_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Papa from "papaparse";
 import HomePage, { type Review, type ReviewStats } from "./components/HomePage";
@@ -6,21 +6,21 @@ import { JsonLd } from "./components/JsonLd";
 import { STORE, HOME_FAQS, faqPageJsonLd } from "./lib/storeSeo";
 
 export const metadata: Metadata = {
-  title: { absolute: HOME_TITLE },
+  title: { absolute: HOME_DOC_TITLE },
   description:
     "Brampton Smoke Cannabis is the east Brampton walk-in shop at 132 Falby Rd Unit B. Open 24 Hours. Call +1 (289) 819-5009. Adults 19+.",
   alternates: {
     canonical: STORE.origin,
   },
   openGraph: {
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     siteName: HOME_TITLE,
     description:
       "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B, east Brampton. Open 24 Hours. Adults 19+.",
     url: STORE.url,
   },
 
-  twitter: { card: "summary_large_image", title: HOME_TITLE },
+  twitter: { card: "summary_large_image", title: HOME_DOC_TITLE },
 };
 
 const REVIEWS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSu6iy9W3YKRzBYo_r96rXcbJsAOzlkzn5Rw9QMFnE0NbYSBgPxKX8kPRZNC9QcffZYj57155esmnqH/pub?gid=1555782756&single=true&output=csv";
