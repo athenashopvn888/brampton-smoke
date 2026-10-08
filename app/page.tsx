@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: HOME_TITLE,
+    siteName: HOME_TITLE,
     description:
       "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B, east Brampton. Open 24 Hours. Adults 19+.",
     url: STORE.url,
