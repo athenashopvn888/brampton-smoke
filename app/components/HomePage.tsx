@@ -14,13 +14,14 @@ import Footer from "./Footer";
 import FlowerCard from "./FlowerCard";
 import SmokePilotSpotlight from "./SmokePilotSpotlight";
 import { WeedDiscoveryModule } from "./WeedDiscoveryModule";
-import { allFlowers, type FlowerProduct } from "../lib/products";
+import { type FlowerProduct } from "../lib/products";
 import {
   HOME_FAQS,
   STORE,
   mapsDirectionsUrl,
   mapsEmbedUrl,
 } from "../lib/storeSeo";
+import { useLiveFlowers } from "../lib/useLiveMenu";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -90,7 +91,8 @@ export interface ReviewStats {
 }
 
 function pickFeaturedStrains(): FlowerProduct[] {
-  const pool = [...allFlowers].filter((flower) => flower.image);
+    const __liveFlowers = useLiveFlowers();
+  const pool = [...__liveFlowers].filter((flower) => flower.image);
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
