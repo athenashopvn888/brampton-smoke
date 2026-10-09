@@ -59,6 +59,7 @@ export default function Footer() {
               <Link href="/guides">Guides</Link>
               <Link href="/visit">Visit Falby Unit B</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
               <Link href="/weed-delivery-brampton">Weed Delivery Brampton</Link>
               <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-brampton">Cheap Weed Brampton</Link>
