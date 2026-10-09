@@ -14,6 +14,9 @@ import {
 import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 
+// Read the live menu feed on every request (never a build-time snapshot).
+export const dynamic = "force-dynamic";
+
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
   return Object.values(CATEGORY_CONFIG).map((c) => ({ category: c.slug }));

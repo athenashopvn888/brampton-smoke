@@ -15,6 +15,9 @@ import styles from "./tier.module.css";
 import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
 
+// Read the live menu feed on every request (never a build-time snapshot).
+export const dynamic = "force-dynamic";
+
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
   return Object.values(TIER_CONFIG).map((t) => ({ tier: t.slug }));
