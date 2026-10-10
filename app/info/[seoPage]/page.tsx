@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import VapeConversionBlock from "../../components/VapeConversionBlock";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
 import styles from "./seo.module.css";
@@ -90,6 +91,8 @@ export default async function SeoLandingPage({
           <div className={styles.heroInner}><span className={styles.heroIcon}>{page.icon}</span><h1 className={styles.heroH1}>{page.h1}</h1><p className={styles.heroTagline}>{page.heroTagline}</p></div>
         </section>
       )}
+
+      {slug === "nicotine-vapes-brampton" ? <VapeConversionBlock compact /> : null}
 
       {/* Content Sections */}
       <section className={styles.content}>

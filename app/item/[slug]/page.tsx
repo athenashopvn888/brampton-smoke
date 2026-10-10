@@ -82,6 +82,7 @@ function getJsonLd(item: ItemProduct) {
 
   if (priceNum) {
     offers.price = priceNum;
+    offers.availability = "https://schema.org/InStock";
   }
 
   return {
@@ -90,7 +91,6 @@ function getJsonLd(item: ItemProduct) {
     name: item.name,
     image: item.image ? [item.image.startsWith('http') ? item.image : `https://www.bramptonsmokecannabis.com${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
     description: itemData.description,
-    brand: { "@type": "Brand", name: "Brampton Smoke Cannabis" },
     sku: cleanSku(item.sku || item.slug),
     offers,
   };
@@ -148,11 +148,11 @@ export default async function ItemPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(item)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(item)).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(item)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(item)).replace(/</g, "\\u003c") }}
       />
 
       <main className={styles.main}>

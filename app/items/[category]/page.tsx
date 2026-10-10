@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import SafeImage from "../../components/SafeImage";
+import VapeConversionBlock from "../../components/VapeConversionBlock";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Footer from "../../components/Footer";
+import { STORE } from "../../lib/storeSeo";
 import {
   fetchLiveProducts,
   getCategoryFromSlug,
@@ -13,6 +15,61 @@ import {
 } from "../../lib/products";
 import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
+
+function numericPrice(value: string) {
+  const match = String(value || "").match(/\d+(?:\.\d{1,2})?/);
+  return match ? Number(match[0]) : null;
+}
+
+function getVapeCategoryJsonLd(items: ItemProduct[], categorySlug: string, categoryName: string, faqs: { q: string; a: string }[]) {
+  const url = `${STORE.origin}/items/${categorySlug}`;
+  const products = items.map((item) => {
+    const price = numericPrice(item.price);
+    return {
+      "@type": "Product",
+      "@id": `${STORE.origin}/item/${item.slug}#product`,
+      name: item.name,
+      sku: item.sku,
+      category: categoryName,
+      image: item.image || undefined,
+      url: `${STORE.origin}/item/${item.slug}`,
+      offers: price ? {
+        "@type": "Offer",
+        price,
+        priceCurrency: "CAD",
+        availability: "https://schema.org/InStock",
+        url: `${STORE.origin}/item/${item.slug}`,
+        seller: { "@id": STORE.id },
+      } : undefined,
+    };
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "@id": `${url}#products`,
+        numberOfItems: products.length,
+        itemListElement: products.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: { "@id": product["@id"] },
+        })),
+      },
+      ...products,
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      },
+    ],
+  };
+}
 
 // Read the live menu feed on every request (never a build-time snapshot).
 export const dynamic = "force-dynamic";
@@ -63,9 +120,14 @@ export default async function ItemsCategoryPage({
   }
   const { config } = catInfo;
   const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
+  const isVapeCategory = catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE";
+  const categorySchema = isVapeCategory
+    ? JSON.stringify(getVapeCategoryJsonLd(items, catSlug, config.name, config.faqs)).replace(/</g, "\\u003c")
+    : null;
 
   return (
     <main className={styles.main}>
+      {categorySchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: categorySchema }} /> : null}
       <Navbar />
 
       {/* Hero Banner */}
@@ -104,6 +166,8 @@ export default async function ItemsCategoryPage({
           </p>
         </div>
       </section>
+
+      {isVapeCategory ? <VapeConversionBlock compact /> : null}
 
       {guideGroups.length > 0 && (
         <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
