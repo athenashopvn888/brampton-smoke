@@ -4,7 +4,7 @@ import CohortDeliveryActions from "./CohortDeliveryActions";
 import HomeDeliverySection from "./HomeDeliverySection";
 import HomepageTopNotices from "./HomepageTopNotices";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useMemo, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
@@ -90,9 +90,8 @@ export interface ReviewStats {
   avg: number;
 }
 
-function pickFeaturedStrains(): FlowerProduct[] {
-    const __liveFlowers = useLiveFlowers();
-  const pool = [...__liveFlowers].filter((flower) => flower.image);
+function pickFeaturedStrains(liveFlowers: FlowerProduct[]): FlowerProduct[] {
+  const pool = [...liveFlowers].filter((flower) => flower.image);
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
@@ -116,15 +115,10 @@ interface HomePageProps {
 }
 
 export default function HomePage({ initialReviews, initialReviewStats }: HomePageProps) {
-  const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
+  const liveFlowers = useLiveFlowers();
+  const featuredStrains = useMemo(() => pickFeaturedStrains(liveFlowers), [liveFlowers]);
   const reviews = initialReviews;
   const reviewsStats = initialReviewStats;
-
-  /* ── 2. Build Featured Strains ── */
-  useEffect(() => {
-    const timer = window.setTimeout(() => setFeaturedStrains(pickFeaturedStrains()), 0);
-    return () => window.clearTimeout(timer);
-  }, []);
 
   return (
     <main className={styles.main}>
@@ -253,7 +247,7 @@ export default function HomePage({ initialReviews, initialReviewStats }: HomePag
         storeName="Brampton Smoke Cannabis"
         locationLabel="East Brampton"
         cigaretteHref="/info/native-cigarettes-brampton"
-        nicotineHref="/info/nicotine-vapes-brampton"
+        nicotineHref="/vape-shop-brampton"
       />
 
       <WeedDiscoveryModule />

@@ -86,6 +86,10 @@ export function GBPLandingPage() {
               </Link>
             ))}
           </div>
+          <div className={styles.inlineGuide}>
+            <span>Looking for the separate adult nicotine shelf?</span>
+            <Link href="/vape-shop-brampton">Open the Brampton nicotine vape guide</Link>
+          </div>
           <p className={styles.note}>Individual products can change. If you are coming in for something specific, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
         </section>
 
