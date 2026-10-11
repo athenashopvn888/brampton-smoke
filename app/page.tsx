@@ -4,6 +4,9 @@ import Papa from "papaparse";
 import HomePage, { type Review, type ReviewStats } from "./components/HomePage";
 import { JsonLd } from "./components/JsonLd";
 import { STORE, HOME_FAQS, faqPageJsonLd } from "./lib/storeSeo";
+import { getLiveMenu } from "./lib/liveMenu";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: { absolute: HOME_DOC_TITLE },
@@ -61,11 +64,11 @@ async function getReviews(): Promise<{ reviews: Review[]; stats: ReviewStats | n
 }
 
 export default async function Page() {
-  const { reviews, stats } = await getReviews();
+  const [{ reviews, stats }, { flowers }] = await Promise.all([getReviews(), getLiveMenu()]);
   return (
     <>
       <JsonLd data={faqPageJsonLd(HOME_FAQS)} />
-      <HomePage initialReviews={reviews} initialReviewStats={stats} />
+      <HomePage initialReviews={reviews} initialReviewStats={stats} initialFlowers={flowers} />
     </>
   );
 }
