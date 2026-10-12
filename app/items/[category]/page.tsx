@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
+import CategoryCoreBanners from "../../components/CategoryCoreBanners";
 import SafeImage from "../../components/SafeImage";
 import VapeConversionBlock from "../../components/VapeConversionBlock";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
@@ -153,6 +154,9 @@ export default async function ItemsCategoryPage({
           </div>
         )}
       </section>
+
+      {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
+      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       <section
         className={styles.categoryIntro}
