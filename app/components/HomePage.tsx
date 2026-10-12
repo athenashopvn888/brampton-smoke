@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import FleetAnnouncementBanner from "./FleetAnnouncementBanner";
+import HomeTitleBlock from "./HomeTitleBlock";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FlowerCard from "./FlowerCard";
@@ -131,6 +132,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
   return (
     <main className={styles.main}>
       <Navbar />
+      <HomeTitleBlock />
       <FleetAnnouncementBanner />
       <HomepageTopNotices />
       {/* ── NAVBAR ── */}
@@ -173,7 +175,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
           {/* Brand branding */}
           <div className={styles.brandBlock}>
             <Image src="/brand-logo-small.webp" alt="Brampton Smoke Cannabis Icon" width={60} height={60} loading="lazy" style={{ objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <p className={styles.brandTitle}>{HOME_TITLE}</p>
             <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>Walk-in shop at 132 Falby Rd Unit B · Open 24 Hours · Adults 19+</p>
             <div className={styles.brandBadge}>Open 24 Hours · Unit B</div>
