@@ -131,8 +131,8 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
   return (
     <main className={styles.main}>
       <Navbar />
-      <HomepageTopNotices />
       <FleetAnnouncementBanner />
+      <HomepageTopNotices />
       {/* ── NAVBAR ── */}
 
 
