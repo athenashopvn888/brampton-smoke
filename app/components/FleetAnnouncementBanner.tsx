@@ -19,11 +19,11 @@ const imageObjects = [
   { name: `${STORE_NAME} premium cigarette offer`, description: `BB Full Flavor and Lights two packs for $5 plus Marlboro and Belmont for $10 per pack at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${PREMIUM_CIGARETTE_IMAGE}` },
 ].map((image) => ({ "@type": "ImageObject", ...image, caption: image.description }));
 
-function isThanksgivingNoticeActive(date: Date) {
+function isHalloweenNoticeActive(date: Date) {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(date);
   const value = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
   const dateKey = Number(`${value.year}${value.month}${value.day}`);
-  return dateKey >= 20260930 && dateKey <= 20261012;
+  return dateKey >= 20261014 && dateKey <= 20261031;
 }
 
 const figureStyle = { margin: 0, width: "100%" } as const;
@@ -33,9 +33,9 @@ const captionStyle = { margin: 0, padding: "14px 18px", background: "#111827", c
 const captionLinkStyle = { color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" } as const;
 
 export default function FleetAnnouncementBanner() {
-  const [showThanksgivingNotice, setShowThanksgivingNotice] = useState(false);
+  const [showHalloweenNotice, setShowHalloweenNotice] = useState(false);
   useEffect(() => {
-    const updateVisibility = () => setShowThanksgivingNotice(isThanksgivingNoticeActive(new Date()));
+    const updateVisibility = () => setShowHalloweenNotice(isHalloweenNoticeActive(new Date()));
     updateVisibility();
     const timer = window.setInterval(updateVisibility, 60_000);
     return () => window.clearInterval(timer);
@@ -78,7 +78,7 @@ export default function FleetAnnouncementBanner() {
       </figure>
 
       <FlowerBogoStrip hero />
-      {showThanksgivingNotice ? <p data-thanksgiving-hours-notice="">Thanksgiving Monday (Oct 12): We are open regular hours.</p> : null}
+      {showHalloweenNotice ? <p data-halloween-hours-notice="">Happy Halloween! {STORE_NAME} is open regular hours on Saturday, October 31.</p> : null}
     </aside>
   );
 }
