@@ -38,6 +38,10 @@ export type StoreFaq = {
 
 export const HOME_FAQS: StoreFaq[] = [
   {
+    q: "Need a cannabis store near me in east Brampton?",
+    a: "Brampton Smoke Cannabis is at 132 Falby Rd Unit B in east Brampton, in a plaza with on-site parking. We're open 24 hours for adults 19+ with valid photo ID.",
+  },
+  {
     q: "Where is Brampton Smoke Cannabis in east Brampton?",
     a: "Brampton Smoke Cannabis is at 132 Falby Rd Unit B, Brampton, ON L6P 4L9, on the Falby Road corridor in east Brampton near Steeles Avenue East. Use Unit B when you set directions so you reach this storefront in the retail plaza.",
   },
