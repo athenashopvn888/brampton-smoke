@@ -468,7 +468,7 @@ button { cursor: pointer; font-family: inherit; }
 :root { --fleet-homepage-announcement-height:144px; --flower-bogo-strip-height:44px; }
 [data-fleet-homepage-announcement] { display:flex; flex-direction:column; width:100%; max-width:100vw; height:auto; min-height:0; overflow:hidden; position:relative; z-index:50; }
 [data-fleet-homepage-announcement] > p { display:flex; align-items:center; justify-content:center; margin:0; padding:14px 16px; box-sizing:border-box; color:#fff; font-size:clamp(18px,3vw,32px); font-weight:900; line-height:1.15; letter-spacing:.02em; text-align:center; text-transform:uppercase; }
-[data-thanksgiving-hours-notice] { background:#166534; }
+[data-thanksgiving-hours-notice],[data-halloween-hours-notice] { background:#166534; }
 [data-cigarette-deal] { background:#b91c1c; }
 [data-bb-light-deal] { background:#c2410c; }
 [data-flower-bogo-strip] { display:flex; align-items:center; justify-content:center; width:100%; box-sizing:border-box; margin:0; background:#c5161d; color:#fff; text-align:center; text-decoration:none; text-wrap:balance; }
