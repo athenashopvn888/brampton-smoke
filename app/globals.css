@@ -536,3 +536,11 @@ body:has(#home-delivery-heading) main > .deliveryHoursAnnouncement {
 .tier-range-list ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;padding:0;list-style:none}
 .tier-range-list li{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid currentColor;border-radius:10px}
 .delivery-price-rule{margin-top:18px}
+
+/* Pinned nav: opaque (no content showing through) and above page content, in the store's own nav colour so nav text stays readable. */
+#main-nav {
+  z-index: 1000 !important;
+  background: rgb(0, 0, 0) !important;
+  background-color: rgb(0, 0, 0) !important;
+  backdrop-filter: none !important;
+}

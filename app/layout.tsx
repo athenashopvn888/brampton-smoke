@@ -1,3 +1,4 @@
+import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
@@ -99,6 +100,7 @@ export default function RootLayout({
           NEW WEED DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
+        <PinnedNavClearance />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-K4JG1583SJ" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-K4JG1583SJ');`}
