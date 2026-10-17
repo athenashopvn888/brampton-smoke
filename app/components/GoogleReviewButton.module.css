@@ -1,0 +1,32 @@
+/* BSC01 Google review pill (top bar). Store colours; height matches the neighbouring top-bar pills. */
+.reviewBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 100px;
+  background: #d4af37;
+  border: 1px solid #e5c158;
+  color: #0a0a0c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.2s ease, transform 0.15s ease, filter 0.2s ease;
+}
+.reviewBtn:hover, .reviewBtn:focus { background: #e5c158; color: #0a0a0c; }
+.reviewBtn:active { transform: scale(0.96); }
+.reviewBtn:focus-visible { outline: 2px solid #0a0a0c; outline-offset: 2px; }
+.reviewStar { display: inline-flex; color: #0a0a0c; line-height: 0; }
+.reviewLong { display: inline; }
+@media (max-width: 640px) { .reviewLong { display: none; } }
+@media (max-width: 440px) { .reviewBtn { padding: 0 10px; gap: 4px; font-size: 10px; letter-spacing: 0.05em; } }
+@media (prefers-reduced-motion: reduce) { .reviewBtn { transition: none; } }

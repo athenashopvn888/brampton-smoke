@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import GoogleReviewButton from "./GoogleReviewButton";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const ALL_LINKS = [
@@ -56,6 +57,7 @@ export default function Navbar() {
           </span>
         </Link>
         <div className={styles.topBarRight}>
+          <GoogleReviewButton />
           <span className={styles.open}>
             <span className={styles.dot}></span>
             Open Now

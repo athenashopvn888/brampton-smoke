@@ -166,3 +166,11 @@
 @media (prefers-reduced-motion: reduce) { .scrollAdvance, .pill { transition: none; } }
 
 @media (max-width: 520px) { .brandName { display: none; } }
+
+/* Review pill: top-bar pills share one height; at Android widths logo + pills spread evenly on one centred row */
+.open, .gamesBtn { box-sizing: border-box; height: 30px; }
+@media (max-width: 440px) {
+  .topBar { padding: 0 14px; gap: 8px; justify-content: space-between; }
+  .topBarRight { display: contents; }
+  .open, .gamesBtn { padding: 0 10px; font-size: 10px; letter-spacing: 0.05em; }
+}
