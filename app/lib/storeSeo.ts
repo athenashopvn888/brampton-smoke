@@ -87,6 +87,7 @@ export const cannabisStoreJsonLd = {
   "@type": "CannabisStore",
   "@id": STORE.id,
   name: "Brampton Smoke Cannabis Dispensary Weed Delivery",
+  sameAs: ["https://www.google.com/maps/place/?q=place_id:ChIJXfDoWpI9K4gRYd41mF3PBpU"],
   description:
     "East Brampton cannabis shop at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Walk in 24 hours. Adults 19+.",
   url: STORE.url,
