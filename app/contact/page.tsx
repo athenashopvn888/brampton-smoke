@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FULL_NAME_NAP } from "../lib/fullNameNap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
@@ -30,6 +31,7 @@ export default function ContactPage() {
             alt="Contact Brampton Smoke Cannabis"
             className={styles.bannerImg}
           />
+          <h1 className={styles.heroTitle} data-fullname-contact-h1="" style={{ marginTop: "16px", textAlign: "center", fontSize: "clamp(22px, 4vw, 34px)", lineHeight: 1.2, overflowWrap: "anywhere" }}>Contact {FULL_NAME_NAP.fullName}</h1>
         </div>
       </section>
 
