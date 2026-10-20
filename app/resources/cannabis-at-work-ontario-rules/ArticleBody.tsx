@@ -30,6 +30,13 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
   return (
     <>
       {blocks.map((block, index) => {
+        if (block.type === "h1") {
+          return (
+            <h1 key={index}>
+              <InlineRuns runs={block.inlines} />
+            </h1>
+          );
+        }
         if (block.type === "h2") {
           return (
             <h2 key={index}>
@@ -73,6 +80,7 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
             </ol>
           );
         }
+        if (block.type !== "table") return null;
         return (
           <div key={index} className="articleTable">
             <table>
