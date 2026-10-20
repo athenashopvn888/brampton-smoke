@@ -86,6 +86,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
+  /* Additive article. Kept off RESOURCE_PAGES so the existing resource renderer is unchanged. */
+  const cannabisAtWorkArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/cannabis-at-work-ontario-rules`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
 
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
@@ -98,5 +108,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 
-  return [...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
+  return [...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...cannabisAtWorkArticle, ...seoPages];
 }
