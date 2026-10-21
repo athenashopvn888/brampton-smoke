@@ -23,8 +23,15 @@ export const isCigaretteEntry = (value: Record<string, unknown>) => {
   return lane === "native_cig" || isCigaretteCategory(category) || candidates.some(isCigarettePath);
 };
 
-export const filterCigaretteItems = <T extends { category?: string }>(items: readonly T[]): T[] =>
-  SHOW_CIGARETTES ? [...items] : items.filter((item) => !isCigaretteCategory(item.category));
+export const mentionsGrabba = (value: string | null | undefined) => /grabba/i.test(value ?? "");
+
+export const filterGrabbaReviews = <T extends { comment?: string | null }>(reviews: readonly T[]): T[] =>
+  SHOW_CIGARETTES ? [...reviews] : reviews.filter((review) => !mentionsGrabba(review.comment));
+
+export const filterCigaretteItems = <T extends { category?: string; name?: string | null; slug?: string | null }>(items: readonly T[]): T[] =>
+  SHOW_CIGARETTES
+    ? [...items]
+    : items.filter((item) => isPreservedSmokeAccessory([item.name, item.slug]) || !isCigaretteCategory(item.category));
 
 export const filterCigaretteEntries = <T extends Record<string, unknown>>(entries: readonly T[]): T[] =>
   SHOW_CIGARETTES ? [...entries] : entries.filter((entry) => !isCigaretteEntry(entry));

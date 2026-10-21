@@ -5,6 +5,7 @@ import HomePage, { type Review, type ReviewStats } from "./components/HomePage";
 import { JsonLd } from "./components/JsonLd";
 import { STORE, HOME_FAQS, faqPageJsonLd } from "./lib/storeSeo";
 import { getLiveMenu } from "./lib/liveMenu";
+import { SHOW_CIGARETTES, mentionsGrabba } from "./lib/siteConfig";
 
 export const dynamic = "force-dynamic";
 
@@ -49,6 +50,7 @@ async function getReviews(): Promise<{ reviews: Review[]; stats: ReviewStats | n
         continue;
       }
       if (!row.Comment || row.Comment.length < 10) continue;
+      if (!SHOW_CIGARETTES && mentionsGrabba(row.Comment)) continue;
       reviews.push({
         name: row.ReviewerName || "Customer",
         comment: row.Comment,
