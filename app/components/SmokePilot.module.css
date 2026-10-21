@@ -407,6 +407,7 @@
 
 .spotlightCopy p { color: #a9a5b1; margin-top: 18px; }
 .spotlightCards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.spotlightCardsSingle { grid-template-columns: minmax(0, 1fr); }
 .spotlightCard { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; min-height: 148px; padding: 22px; border: 1px solid #302e37; border-radius: 20px; color: #fff; transition: transform .2s ease, border-color .2s ease; }
 .spotlightCard:hover { transform: translateY(-4px); border-color: var(--card-accent); }
 .cigaretteCard { --card-accent: #e7b85b; background: radial-gradient(circle at 100% 0, rgba(231,184,91,.25), transparent 50%), #15131a; }

@@ -24,6 +24,7 @@ import {
 } from "../lib/storeSeo";
 import { useLiveFlowers } from "../lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
+import { SHOW_CIGARETTES, filterGrabbaReviews } from "../lib/siteConfig";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -126,7 +127,7 @@ interface HomePageProps {
 export default function HomePage({ initialReviews, initialReviewStats, initialFlowers }: HomePageProps) {
   const liveFlowers = useLiveFlowers();
   const featuredStrains = useMemo(() => pickFeaturedStrains(liveFlowers), [liveFlowers]);
-  const reviews = initialReviews;
+  const reviews = filterGrabbaReviews(initialReviews);
   const reviewsStats = initialReviewStats;
 
   return (
@@ -270,7 +271,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
         ["Native cigarettes: cartons and packs","/native-cigarettes-falby-road"],
         ["Nicotine vapes, pods and pouches","/nicotine-vape-falby-road"],
         ["How to get here: parking and Unit B","/visit"],
-      ].map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}</div></div></section>
+      ].filter(([, href]) => SHOW_CIGARETTES || !href.includes("/native-cigarettes")).map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}</div></div></section>
 
       {/* ── FEATURED PRODUCTS ── */}
       <section className={styles.featuredSection}>
