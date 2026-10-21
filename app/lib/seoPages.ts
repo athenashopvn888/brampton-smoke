@@ -1,3 +1,4 @@
+import { SHOW_CIGARETTES, cigaretteSafeContent, isCigarettePath } from "./siteConfig";
 const NICOTINE_VAPE_HERO_PRODUCTS = [
   { name: "Geek Promax 5% — 30K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg", sourceSlug: "geek-promax-5-30k-puffs" },
   { name: "Geek Universe — 25K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp", sourceSlug: "geek-universe-25k-puffs" },
@@ -36,7 +37,7 @@ export interface SeoPageData {
   warning?: string;
 }
 
-export const SEO_PAGES: SeoPageData[] = [
+const SEO_PAGES_RAW: SeoPageData[] = [
   {
     "slug": "brampton-weed-dispensary",
     "title": "Brampton Smoke Cannabis Weed Dispensary in Brampton",
@@ -259,6 +260,12 @@ export const SEO_PAGES: SeoPageData[] = [
     warning: "Adults 19+. Nicotine is addictive.",
   }
 ];
+
+export const SEO_PAGES = SHOW_CIGARETTES
+  ? SEO_PAGES_RAW
+  : SEO_PAGES_RAW
+      .filter((page) => !isCigarettePath(page.slug))
+      .map((page) => cigaretteSafeContent(page));
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
   return SEO_PAGES.find((p) => p.slug === slug);
