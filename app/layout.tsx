@@ -1,3 +1,4 @@
+import { cigaretteSafeContent } from "./lib/siteConfig";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
@@ -11,7 +12,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap", variable: "--font-montserrat" });
 const outfit = Outfit({ subsets: ["latin"], display: "swap", variable: "--font-outfit" });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL("https://www.bramptonsmokecannabis.com"),
   title: {
     default: "East Brampton Dispensary on Falby Rd Unit B | Brampton Smoke Cannabis",
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
   verification: {
     // google: "your-google-verification-code",
   },
-};
+});
 
 /* CannabisStore JSON-LD is defined in storeSeo so homepage, /visit and layout share one entity. */
 
@@ -93,7 +94,7 @@ export default function RootLayout({
         <meta name="ICBM" content="43.7724674, -79.6563479" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(cannabisStoreJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cigaretteSafeContent(cannabisStoreJsonLd)) }}
         />
       </head>
       <body className={`${inter.variable} ${montserrat.variable} ${outfit.variable}`}>
