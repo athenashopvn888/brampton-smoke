@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { FULL_NAME_NAP } from "../lib/fullNameNap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { CODED_NAP } from "../lib/fleet/config";
+import { getFleetContent } from "../lib/fleetContent";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const CONTACT_METADATA: Metadata = {
   title: "Contact Us — Brampton Smoke Cannabis | 132 Falby Rd Unit B, Brampton",
   description:
     "Visit Brampton Smoke Cannabis at 132 Falby Rd Unit B, Brampton, ON L6P 4L9. Open 24 hours, 7 days a week. Walk-ins welcome.",
@@ -18,7 +22,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return CONTACT_METADATA;
+  const description = fleet.pages.Contact?.metaDescription || "";
+  if (!description || description === CONTACT_METADATA.description) return CONTACT_METADATA;
+  return {
+    ...CONTACT_METADATA,
+    description,
+    openGraph: { ...CONTACT_METADATA.openGraph, description },
+  };
+}
+
+export default async function ContactPage() {
+  const fleet = await getFleetContent();
+  const street = fleet.active && fleet.nap.street !== CODED_NAP.street ? fleet.nap.street : "132 Falby Rd Unit B";
+  const cityLine = fleet.active && fleet.nap.cityLine !== CODED_NAP.cityLine ? fleet.nap.cityLine : "Brampton, ON L6P 4L9";
+  const intersection = fleet.active && fleet.nap.intersection !== CODED_NAP.intersection ? fleet.nap.intersection : "Falby Rd & Steeles Ave E";
+  const hours = fleet.active && fleet.nap.hours !== CODED_NAP.hours ? fleet.nap.hours : null;
   return (
     <main className={styles.main}>
       <Navbar />
@@ -44,11 +65,11 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>📍</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                132 Falby Rd Unit B
+                {street}
                 <br />
-                Brampton, ON L6P 4L9
+                {cityLine}
                 <br />
-                <span className={styles.infoMuted}>Falby Rd & Steeles Ave E</span>
+                <span className={styles.infoMuted}>{intersection}</span>
               </p>
             </div>
 
@@ -88,7 +109,7 @@ export default function ContactPage() {
               </div>
               <div className={styles.openBadge}>
                 <span className={styles.openDot}></span>
-                Open 24/7 — Never Closed
+                {hours ?? "Open 24/7 — Never Closed"}
               </div>
             </div>
 
