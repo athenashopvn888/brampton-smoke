@@ -7,6 +7,8 @@ import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FlowerBogoStrip from "./FlowerBogoStrip";
+import { useFleetContent } from "./fleet/FleetContentProvider";
+import SheetBannerFigure from "./fleet/FleetAnnouncementBanner";
 
 const STORE_NAME = "Brampton Smoke Cannabis";
 const STORE_AREA = "Falby Road, Brampton";
@@ -37,6 +39,7 @@ const captionStyle = { margin: 0, padding: "14px 18px", background: "#111827", c
 const captionLinkStyle = { color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" } as const;
 
 export default function FleetAnnouncementBanner() {
+  const sheetBanners = useFleetContent().banners?.filter((banner) => !banner.hidden && (SHOW_CIGARETTES || (banner.id !== "cigarettes" && banner.id !== "premium-cigarettes")));
   const [showHalloweenNotice, setShowHalloweenNotice] = useState(false);
   useEffect(() => {
     const updateVisibility = () => setShowHalloweenNotice(isHalloweenNoticeActive(new Date()));
@@ -49,6 +52,7 @@ export default function FleetAnnouncementBanner() {
     <aside data-fleet-homepage-announcement="" aria-label="Store announcements" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": imageObjects }).replace(/</g, "\\u003c") }} />
 
+      {sheetBanners ? sheetBanners.map((banner) => <SheetBannerFigure key={banner.id} banner={banner} />) : <>
       <figure data-core-banner="weed" data-exotic-tier-banner="" style={figureStyle}>
         <Link href="/exotic-weed" aria-label={`Shop Exotic, Premium and AAA+ weed tiers at ${STORE_NAME}`} style={linkStyle}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -82,6 +86,7 @@ export default function FleetAnnouncementBanner() {
         </Link>
         <figcaption style={captionStyle}>BB Full Flavor + Lights — 2 packs $5 · Marlboro &amp; Belmont — $10/pack · <Link href="/items/cigarettes" style={captionLinkStyle}>Shop cigarettes</Link></figcaption>
       </figure>) : null}
+      </>}
 
       <FlowerBogoStrip hero />
       {showHalloweenNotice ? <p data-halloween-hours-notice="">Happy Halloween! {STORE_NAME} is open regular hours on Saturday, October 31.</p> : null}
