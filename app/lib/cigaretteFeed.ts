@@ -1,20 +1,63 @@
 import { cache } from "react";
-import { SHOW_CIGARETTES } from "./siteConfig";
+import {
+  cigarettePublicHeaders,
+  decideCigaretteGuide,
+  decideCigaretteSurface,
+  reconcileSurfaceItems,
+  type CigaretteSurfaceDecision,
+  type CigaretteWording,
+} from "./cigDecision.ts";
+import { allFlowers, catalogItems, type ItemProduct } from "./products.ts";
+import { cigaretteEnvHardOff } from "./siteConfig.ts";
+import { getCigaretteDataset } from "./tvStock";
 
-/**
- * Diagnostic snapshot for /api/content-status.
- * This store's cigarette pages stay on the existing NEXT_PUBLIC_SHOW_CIGARETTES
- * gate and the next.config redirects. The feed does not replace those routes.
- */
 export type CigaretteSnapshot = {
-  web: { show: boolean };
-  tv: { show: boolean };
-  guides: { show: boolean };
+  web: CigaretteSurfaceDecision;
+  tv: CigaretteSurfaceDecision;
+  guides: CigaretteSurfaceDecision;
+  wording: CigaretteWording;
+  live: boolean;
+  items: ItemProduct[];
 };
 
-function codedSnapshot(): CigaretteSnapshot {
-  const show = SHOW_CIGARETTES;
-  return { web: { show }, tv: { show }, guides: { show } };
+export type PublicCigaretteState = {
+  web: boolean;
+  tv: boolean;
+  wording: CigaretteWording;
+};
+
+function snapshotFrom(cig: unknown, items: ItemProduct[], live: boolean, errored: boolean): CigaretteSnapshot {
+  const web = decideCigaretteSurface({ cig, items, surface: "web", errored });
+  const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored });
+  const guides = decideCigaretteGuide({ cig, items, errored });
+  return { web, tv, guides, wording: web.wording, live, items };
 }
 
-export const getCigaretteSnapshot = cache(async (): Promise<CigaretteSnapshot> => codedSnapshot());
+export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
+  if (cigaretteEnvHardOff()) return snapshotFrom(null, [], false, false);
+  try {
+    const dataset = await getCigaretteDataset({
+      staticFlowers: allFlowers,
+      staticItems: catalogItems,
+    });
+    const live = dataset?.source === "live";
+    const items = Array.isArray(dataset?.items) ? dataset.items as ItemProduct[] : catalogItems;
+    const cig = dataset?.cig ?? null;
+    // Last-good cig is kept on the dataset. A miss with no saved cig fails open.
+    return snapshotFrom(cig, items.length ? items : catalogItems, live, !live && !cig);
+  } catch {
+    return snapshotFrom(null, catalogItems, false, true);
+  }
+}
+
+export const getCigaretteSnapshot = cache(readCigaretteFeed);
+
+export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
+  return { web: snap.web.show, tv: snap.tv.show, wording: snap.wording };
+}
+
+export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
+  return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
+}
+
+export { reconcileSurfaceItems };
