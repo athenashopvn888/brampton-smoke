@@ -41,7 +41,9 @@ import type { BoardDeal } from "./flowerDeals";
 import { getTvData } from "./tvStock";
 
 export const allFlowers: FlowerProduct[] = flowersJson as FlowerProduct[];
-export const allItems: ItemProduct[] = filterCigaretteItems(itemsJson as ItemProduct[]);
+/** Full shelf, including cigarettes. TV boards use this. The website uses allItems. */
+export const catalogItems: ItemProduct[] = itemsJson as ItemProduct[];
+export const allItems: ItemProduct[] = filterCigaretteItems(catalogItems);
 
 /* ── Live stock fetch from Apps Script ── */
 // Shared fleet menu feed (no Gmail on requests). Read ONLY from MENU_FEED_URL; the legacy

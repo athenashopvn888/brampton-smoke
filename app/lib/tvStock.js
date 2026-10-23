@@ -82,6 +82,7 @@ function stockEndpoint(baseUrl) {
 // x-tv-data-stale = "1" when the stock being served is older than 48 h (or a bundled snapshot of unknown age),
 // so /tv and /tv2 can show a small "Menu updating" notice instead of silently serving old stock.
 const MENU_STALE_MS = 48 * 60 * 60 * 1000;
+const CIG_STOCK_CACHE_MS = 60 * 1000;
 let STATIC_STOCK_META = {};
 try {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -105,7 +106,13 @@ function staticDataset(staticFlowers, staticItems) {
     flowers: Array.isArray(staticFlowers) ? staticFlowers : [],
     items: Array.isArray(staticItems) ? staticItems : [],
     stockDate: "",
+    cig: null,
   };
+}
+
+function normalizeCig(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  return value;
 }
 
 function rejectLiveStock(data, staticFlowers, staticItems) {
@@ -129,6 +136,8 @@ let lastGood = null;
 let failureUntil = 0;
 let failureReason = "";
 let inflight = null;
+let cigCached = null;
+let cigInflight = null;
 
 function resetTvStockCache() {
   cached = null;
@@ -136,6 +145,23 @@ function resetTvStockCache() {
   failureUntil = 0;
   failureReason = "";
   inflight = null;
+  cigCached = null;
+  cigInflight = null;
+}
+
+function presentCigDataset(dataset) {
+  const source = dataset && dataset.source ? dataset.source : "static-fallback";
+  const cig = source === "live"
+    ? normalizeCig(dataset.cig)
+    : (lastGood ? normalizeCig(lastGood.cig) : null);
+  return {
+    source,
+    flowers: dataset && Array.isArray(dataset.flowers) ? dataset.flowers : [],
+    items: dataset && Array.isArray(dataset.items) ? dataset.items : [],
+    stockDate: dataset && dataset.stockDate ? dataset.stockDate : "",
+    fallbackReason: dataset && dataset.fallbackReason ? dataset.fallbackReason : "",
+    cig,
+  };
 }
 
 function selectTvPayload(dataset, type) {
@@ -162,10 +188,10 @@ async function resolveDataset(options) {
   const endpoint = stockEndpoint(resolveAppsScriptUrl(options.appsScriptUrl));
 
   try {
-    const res = await fetchImpl(endpoint, {
-      signal: AbortSignal.timeout(timeoutMs),
-      cache: "no-store",
-    });
+    const requestInit = { signal: AbortSignal.timeout(timeoutMs) };
+    if (options.revalidateSeconds) requestInit.next = { revalidate: options.revalidateSeconds };
+    else requestInit.cache = "no-store";
+    const res = await fetchImpl(endpoint, requestInit);
 
     if (!res || !res.ok) {
       const status = res ? res.status : "no response";
@@ -192,9 +218,10 @@ async function resolveDataset(options) {
       flowers: data.flowers,
       items: data.items,
       stockDate: data.stockDate == null ? "" : String(data.stockDate),
+      cig: normalizeCig(data.cig),
     };
     const now = options.now ?? Date.now();
-    cached = { expiresAt: now + TV_STOCK_CACHE_MS, dataset };
+    cached = { expiresAt: now + TV_STOCK_CACHE_MS, fetchedAt: now, dataset };
     lastGood = dataset;
     failureUntil = 0;
     failureReason = "";
@@ -247,10 +274,30 @@ async function getTvData(options) {
   return selectTvPayload(dataset, options.type);
 }
 
+async function getCigaretteDataset(options) {
+  const now = options.now ?? Date.now();
+  if (cached && cached.fetchedAt != null && now - cached.fetchedAt < CIG_STOCK_CACHE_MS) {
+    return presentCigDataset(cached.dataset);
+  }
+  if (cigCached && now < cigCached.expiresAt) return cigCached.dataset;
+  if (!cigInflight) {
+    const started = now;
+    cigInflight = resolveDataset({ ...options, now: started, revalidateSeconds: CIG_STOCK_CACHE_MS / 1000 }).then((dataset) => {
+      const safe = presentCigDataset(dataset);
+      cigCached = { expiresAt: started + CIG_STOCK_CACHE_MS, dataset: safe };
+      return safe;
+    }).finally(() => {
+      cigInflight = null;
+    });
+  }
+  return cigInflight;
+}
+
 module.exports = {
   DEFAULT_APPS_SCRIPT_URL,
   TV_STORE,
   TV_STOCK_CACHE_MS,
+  CIG_STOCK_CACHE_MS,
   TV_STOCK_FAILURE_CACHE_MS,
   TV_STOCK_FETCH_TIMEOUT_MS,
   PARTIAL_STOCK_RATIO,
@@ -260,5 +307,6 @@ module.exports = {
   postprocessItems,
   resolveAppsScriptUrl,
   getTvData,
+  getCigaretteDataset,
   resetTvStockCache,
 };
