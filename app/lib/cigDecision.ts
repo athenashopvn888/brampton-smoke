@@ -89,15 +89,27 @@ export function decideCigaretteSurface(input: {
       : undefined,
   );
   if (cigaretteEnvHardOff(input.envRaw)) return { show: false, reason: "env", wording };
-  // A missing feed or a feed error shows cigarettes. Only an explicit false flag hides them.
-  if (input.errored) return { show: true, reason: "error", wording };
+  // TV hides on a feed error or a missing cig block. A present block still follows tvOn.
+  // The raw website decision stays open; publicWebsiteCigaretteFlag applies the static gate.
+  if (input.errored) return { show: input.surface !== "tv", reason: "error", wording };
   if (!input.cig || typeof input.cig !== "object" || Array.isArray(input.cig)) {
-    return { show: true, reason: "missing", wording };
+    return { show: input.surface !== "tv", reason: "missing", wording };
   }
   if (!resolveSurfaceFlag(input.cig, input.surface)) return { show: false, reason: "off", wording };
   const items = Array.isArray(input.items) ? input.items : [];
   if (!items.some((item) => isRealCigaretteItem(item))) return { show: false, reason: "no-items", wording };
   return { show: true, reason: "on", wording };
+}
+
+/**
+ * Website flag. The coded switch stays in front of the feed.
+ * A feed error or a missing block stays off, even when that switch is on.
+ * TV does not use this.
+ */
+export function publicWebsiteCigaretteFlag(decision: CigaretteSurfaceDecision, codedOn: boolean): boolean {
+  if (!codedOn) return false;
+  if (decision.reason === "error" || decision.reason === "missing") return false;
+  return decision.show;
 }
 
 /** Guide pages follow the master switch (`master`, otherwise `on`), not the web/TV split. */
