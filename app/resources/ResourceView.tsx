@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./resources.module.css";
 import type { ResourcePage } from "./resourceData";
+import { splitSameSiteLinks } from "./sameSiteLinks";
 
 type ResourceViewProps = {
   page: ResourcePage;
@@ -44,7 +46,17 @@ export default function ResourceView({ page }: ResourceViewProps) {
         {page.sections.map((section) => (
           <article key={section.heading} className={styles.section}>
             <h2>{section.heading}</h2>
-            <p>{section.body}</p>
+            <p>
+              {splitSameSiteLinks(section.body).map((part, index) =>
+                part.kind === "link" ? (
+                  <Link key={index} href={part.href}>
+                    {part.text}
+                  </Link>
+                ) : (
+                  <Fragment key={index}>{part.value}</Fragment>
+                ),
+              )}
+            </p>
             {section.bullets && (
               <ul>
                 {section.bullets.map((item) => (

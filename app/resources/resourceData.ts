@@ -441,12 +441,12 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
       {
         heading: "Know The Mission Before You Browse",
         body:
-          "Choose flower, pre-rolls, edibles, vapes, concentrates, accessories, or cigarettes first, then compare the details inside that category.",
+          "Choose flower, pre-rolls, edibles, vapes, concentrates, accessories, or cigarettes first, then compare the details inside that category. A Falby Road walk-in can start at the [weed dispensary in Brampton](/weed-dispensary-brampton). Shoppers who want the order brought over can use [weed delivery in Brampton](/weed-delivery-brampton).",
       },
       {
         heading: "Use Staff For Final Details",
         body:
-          "If timing is tight or one product matters, start with the current menu, then ask staff for the freshest in-store details.",
+          "If timing is tight or one product matters, start with the current menu, then ask staff for the freshest in-store details. A nicotine vape stop can open the [vape shop in Brampton](/vape-shop-brampton).",
       },
     ],
   },
