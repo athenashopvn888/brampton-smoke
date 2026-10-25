@@ -16,6 +16,7 @@
 .section { border-top: 1px solid var(--border-subtle); padding-top: 28px; }
 .section h2 { margin: 0 0 12px; color: var(--text-primary); font-size: clamp(24px, 4vw, 34px); line-height: 1.18; letter-spacing: 0; }
 .section p { margin: 0; color: var(--text-secondary); font-size: 17px; line-height: 1.8; }
+.section p a { color: var(--green-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
 .section ul { margin: 18px 0 0; padding-left: 22px; color: var(--text-secondary); }
 .section li { margin: 8px 0; line-height: 1.65; }
 @media (max-width: 700px) { .hero { padding-top: 116px; } .intro, .section p { font-size: 16px; } }
