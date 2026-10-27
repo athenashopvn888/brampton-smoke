@@ -91,7 +91,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
-  /* Additive article. Kept off RESOURCE_PAGES so the existing resource renderer is unchanged. */
+  /* Additive articles. Kept off RESOURCE_PAGES so the existing resource renderer is unchanged. */
   const cannabisAtWorkArticle: MetadataRoute.Sitemap = [
     {
       url: `${BASE}/resources/cannabis-at-work-ontario-rules`,
@@ -101,6 +101,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  const indicaSativaHybridArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/indica-sativa-hybrid-label-terms`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
 
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
@@ -120,6 +128,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const codedSlugs = new Set([
         ...RESOURCE_PAGES.map((page) => page.slug),
         "cannabis-at-work-ontario-rules",
+        "indica-sativa-hybrid-label-terms",
       ]);
       fleetArticlePages = loaded.articles.filter((article) => !codedSlugs.has(article.slug)).map((article) => ({
         url: `${BASE}/articles/${article.slug}`,
@@ -132,5 +141,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...cannabisAtWorkArticle, ...seoPages, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...cannabisAtWorkArticle, ...indicaSativaHybridArticle, ...seoPages, ...fleetArticlePages]);
 }
