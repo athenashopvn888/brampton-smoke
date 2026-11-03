@@ -110,6 +110,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  const nugRunVsTrimRunArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/nug-run-vs-trim-run`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
@@ -129,6 +138,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...RESOURCE_PAGES.map((page) => page.slug),
         "cannabis-at-work-ontario-rules",
         "indica-sativa-hybrid-label-terms",
+        "nug-run-vs-trim-run",
       ]);
       fleetArticlePages = loaded.articles.filter((article) => !codedSlugs.has(article.slug)).map((article) => ({
         url: `${BASE}/articles/${article.slug}`,
@@ -141,5 +151,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...cannabisAtWorkArticle, ...indicaSativaHybridArticle, ...seoPages, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...guideIndex, ...guidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...cannabisAtWorkArticle, ...indicaSativaHybridArticle, ...nugRunVsTrimRunArticle, ...seoPages, ...fleetArticlePages]);
 }
