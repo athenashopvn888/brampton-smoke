@@ -1,6 +1,7 @@
 "use client";
 
-import { filterCigaretteEntries } from "../lib/siteConfig";
+import { isCigaretteEntry } from "../lib/siteConfig";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 import CohortDeliveryActions from "./CohortDeliveryActions";
 
@@ -34,9 +35,11 @@ const ALL_LINKS_RAW = [
   { href: "/guides", label: "Guides" },
 ];
 
-const ALL_LINKS = filterCigaretteEntries(ALL_LINKS_RAW);
+
 
 export default function Navbar() {
+  const { web } = useCigaretteState();
+  const links = ALL_LINKS_RAW.filter((link) => web || !isCigaretteEntry(link));
   const pathname = usePathname();
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);
@@ -74,7 +77,7 @@ export default function Navbar() {
       <div className={styles.scrollShell}>
         <div ref={scrollBarRef} id="store-menu-scrollbar" className={styles.scrollBar}>
           <div className={styles.scrollInner}>
-          {ALL_LINKS.map((link) => {
+          {links.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link

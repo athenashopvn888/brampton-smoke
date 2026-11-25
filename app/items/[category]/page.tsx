@@ -1,4 +1,5 @@
 import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
+import { getCigaretteSnapshot, reconcileSurfaceItems, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -113,7 +114,8 @@ export default async function ItemsCategoryPage({
 
   /* Pre-Rolls also shows accessories (ADD ONS) */
   const { items: liveItems } = await fetchLiveProducts();
-  let items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  const { web: showCigarettes } = toPublicCigaretteState(await getCigaretteSnapshot());
+  let items = reconcileSurfaceItems(liveItems, [], showCigarettes).filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
   if (catInfo.key === "PREROLLS") {
     const accessories = liveItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
     const existingIds = new Set(items.map(i => i.sku));
@@ -131,14 +133,14 @@ export default async function ItemsCategoryPage({
     <main className={styles.main}>
       {categorySchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: categorySchema }} /> : null}
       <Navbar />
-      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {showCigarettes && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section
         className={styles.bannerSection}
         style={{ "--cat-color": config.color } as React.CSSProperties}
       >
-        {config.banner ? (
+        {config.banner && (catSlug !== "cigarettes" || showCigarettes) ? (
           <div className={styles.bannerFrame}>
             <img
               src={config.banner}
@@ -158,7 +160,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {showCigarettes && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       <section
         className={styles.categoryIntro}
