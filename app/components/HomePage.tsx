@@ -24,7 +24,8 @@ import {
 } from "../lib/storeSeo";
 import { useLiveFlowers } from "../lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
-import { SHOW_CIGARETTES, filterGrabbaReviews } from "../lib/siteConfig";
+import { useCigaretteState } from "./CigaretteStateProvider";
+import { filterGrabbaReviews } from "../lib/siteConfig";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -125,6 +126,7 @@ interface HomePageProps {
 }
 
 export default function HomePage({ initialReviews, initialReviewStats, initialFlowers }: HomePageProps) {
+  const { web: showCigarettes } = useCigaretteState();
   const liveFlowers = useLiveFlowers();
   const featuredStrains = useMemo(() => pickFeaturedStrains(liveFlowers), [liveFlowers]);
   const reviews = filterGrabbaReviews(initialReviews);
@@ -221,7 +223,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Compare flower, pre-rolls, edibles, vapes, concentrates, accessories and cigarettes from the current Brampton selection.
+              Compare flower, pre-rolls, edibles, vapes, concentrates, accessories{showCigarettes ? " and cigarettes" : ""} from the current Brampton selection.
             </p>
           </div>
 
@@ -271,7 +273,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
         ["Native cigarettes: cartons and packs","/native-cigarettes-falby-road"],
         ["Nicotine vapes, pods and pouches","/nicotine-vape-falby-road"],
         ["How to get here: parking and Unit B","/visit"],
-      ].filter(([, href]) => SHOW_CIGARETTES || !href.includes("/native-cigarettes")).map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}</div></div></section>
+      ].filter(([, href]) => showCigarettes || !href.includes("/native-cigarettes")).map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}</div></div></section>
 
       {/* ── FEATURED PRODUCTS ── */}
       <section className={styles.featuredSection}>
@@ -308,7 +310,7 @@ export default function HomePage({ initialReviews, initialReviewStats, initialFl
               Keep the Falby / Unit B facts together here: street address, postal code L6P 4L9, phone +1 (289) 819-5009, and 24-hour walk-in hours. Adults 19+ need valid government photo ID at the door. No appointment is required.
             </p>
             <p className={styles.seoPanelText}>
-              Around the menu, shop by the lane you came for. Flower is grouped into five flower tiers — Exotic, Premium, AAA+, AA and Budget — so shoppers comparing Weed and cannabis flower in Brampton can stay on those shelves instead of mixing them with pre-rolls, edibles, THC vapes, concentrates, accessories or cigarettes. Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
+              Around the menu, shop by the lane you came for. Flower is grouped into five flower tiers — Exotic, Premium, AAA+, AA and Budget — so shoppers comparing Weed and cannabis flower in Brampton can stay on those shelves instead of mixing them with pre-rolls, edibles, THC vapes, concentrates, accessories{showCigarettes ? " or cigarettes" : ""}. Menus change, so use the current menu and staff for product names, prices, and package details before you make the trip.
             </p>
             <p className={styles.seoPanelText}>
               Need a longer arrival guide for spotting Unit B, using the Falby and Steeles approach, parking, transit and ID? Open the visit page. The Google Business Profile website for this store stays on this homepage. The visit page is only a supporting how-to-reach guide for the east Brampton / Falby corridor.
